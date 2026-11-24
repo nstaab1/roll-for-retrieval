@@ -1,0 +1,7765 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 4
+		},
+		"mels": 128,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/nathanstaab/.cache/whisper.cpp/ggml-large-v3-turbo.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,230",
+				"to": "00:00:07,540"
+			},
+			"offsets": {
+				"from": 230,
+				"to": 7540
+			},
+			"text": " oh yeah yeah so there's a shiny here yeah to paint the picture a little bit yeah so there's this"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:07,540",
+				"to": "00:00:12,430"
+			},
+			"offsets": {
+				"from": 7540,
+				"to": 12430
+			},
+			"text": " this seems to have been some sort of bridge that's gone all the way across i think you can see both"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:12,430",
+				"to": "00:00:18,600"
+			},
+			"offsets": {
+				"from": 12430,
+				"to": 18600
+			},
+			"text": " sides there's a bunch of these creepy hands emerging there are like multiple ledges and"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:18,600",
+				"to": "00:00:26,990"
+			},
+			"offsets": {
+				"from": 18600,
+				"to": 26990
+			},
+			"text": " things that you can hop to to try to get across um there are multiple paths leading their way and"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:26,990",
+				"to": "00:00:35,210"
+			},
+			"offsets": {
+				"from": 26990,
+				"to": 35210
+			},
+			"text": " there is a fog starting um to get thicker like around the edges like kind of like closing in on"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,210",
+				"to": "00:00:40,420"
+			},
+			"offsets": {
+				"from": 35210,
+				"to": 40420
+			},
+			"text": " you but you still have some time uh before that you have to worry about that"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,420",
+				"to": "00:00:54,860"
+			},
+			"offsets": {
+				"from": 40420,
+				"to": 54860
+			},
+			"text": " so everyone can roll initiative so this isn't initiative in terms of like you're actually"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:54,860",
+				"to": "00:00:59,920"
+			},
+			"offsets": {
+				"from": 54860,
+				"to": 59920
+			},
+			"text": " fighting i mean you can try to hit the hands if you want um it's initiative in terms of this is a"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:59,920",
+				"to": "00:01:16,270"
+			},
+			"offsets": {
+				"from": 59920,
+				"to": 76270
+			},
+			"text": " times thing so knowing what you can do at what time in what order is one five eight right your"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:16,270",
+				"to": "00:01:44,140"
+			},
+			"offsets": {
+				"from": 76270,
+				"to": 104140
+			},
+			"text": " initiative give me one sec i can make it a little brighter if you need it uh they okay i was feeling"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:44,140",
+				"to": "00:01:55,270"
+			},
+			"offsets": {
+				"from": 104140,
+				"to": 115270
+			},
+			"text": " like i'm saying it wrong uh what was your initiative five yeah it's not the worst time to to get that"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:55,270",
+				"to": "00:02:02,720"
+			},
+			"offsets": {
+				"from": 115270,
+				"to": 122720
+			},
+			"text": " side yeah think of it like glass bridge oh yeah i like that because i know where all the patterns"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:02,720",
+				"to": "00:02:05,700"
+			},
+			"offsets": {
+				"from": 122720,
+				"to": 125700
+			},
+			"text": " are mm-hmm uh lock what was your initiative"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:05,700",
+				"to": "00:02:49,320"
+			},
+			"offsets": {
+				"from": 125700,
+				"to": 169320
+			},
+			"text": " so yeah painting the picture um so flicker is on he kind of made like a small leap onto one of"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,320",
+				"to": "00:02:57,120"
+			},
+			"offsets": {
+				"from": 169320,
+				"to": 177120
+			},
+			"text": " these platforms here um basically we gotta get across and it is now your turn lock how would you"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:57,120",
+				"to": "00:03:25,920"
+			},
+			"offsets": {
+				"from": 177120,
+				"to": 205920
+			},
+			"text": " have to do that yeah you are all carrying these portraits however you want to as well remember"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,920",
+				"to": "00:03:39,430"
+			},
+			"offsets": {
+				"from": 205920,
+				"to": 219430
+			},
+			"text": " those and they all are lit slightly at the moment with all this conversation time to vent so uh lock"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:39,430",
+				"to": "00:03:44,640"
+			},
+			"offsets": {
+				"from": 219430,
+				"to": 224640
+			},
+			"text": " what do you want to do you can have little trots here and there but it's going to be i mean of course you're"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:44,640",
+				"to": "00:03:50,810"
+			},
+			"offsets": {
+				"from": 224640,
+				"to": 230810
+			},
+			"text": " quite yep you can zoom in a little bit at least for now you're not going to need to know oh which"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:50,810",
+				"to": "00:03:59,100"
+			},
+			"offsets": {
+				"from": 230810,
+				"to": 239100
+			},
+			"text": " so like just the information yeah so go ahead and roll you can roll perception or investigation"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,100",
+				"to": "00:04:09,980"
+			},
+			"offsets": {
+				"from": 239100,
+				"to": 249980
+			},
+			"text": " it's his turn so he's rolling for him right now i'm actually going to cut the grid because i think"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,980",
+				"to": "00:04:24,130"
+			},
+			"offsets": {
+				"from": 249980,
+				"to": 264130
+			},
+			"text": " the grid makes it makes it harder to see so 21 um perfect okay natural 20 or dirty 20 uh okay"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:24,130",
+				"to": "00:04:37,380"
+			},
+			"offsets": {
+				"from": 264130,
+				"to": 277380
+			},
+			"text": " this is based on your investigation so you have to like indicate for the rest of the room um here's"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,380",
+				"to": "00:04:45,280"
+			},
+			"offsets": {
+				"from": 277380,
+				"to": 285280
+			},
+			"text": " that on a 30 20 it looks like this in your kind of survivally nature is the easiest path to"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,280",
+				"to": "00:04:55,430"
+			},
+			"offsets": {
+				"from": 285280,
+				"to": 295430
+			},
+			"text": " at least this year that jump jumps impossible yeah that is a freaking hard jump zoom out a little bit"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,430",
+				"to": "00:05:08,260"
+			},
+			"offsets": {
+				"from": 295430,
+				"to": 308260
+			},
+			"text": " this is almost impossible yeah uh fairly difficult okay on a 20 whatever you have that is a very"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,260",
+				"to": "00:05:25,920"
+			},
+			"offsets": {
+				"from": 308260,
+				"to": 325920
+			},
+			"text": " difficult jump that jump what about what about from that one this one here to here not that hard"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:25,920",
+				"to": "00:05:31,110"
+			},
+			"offsets": {
+				"from": 325920,
+				"to": 331110
+			},
+			"text": " so this is pretty high up okay it's kind of like comes out it's like a piece of the grid that's like"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:31,110",
+				"to": "00:05:36,120"
+			},
+			"offsets": {
+				"from": 331110,
+				"to": 336120
+			},
+			"text": " falling on a side and like up so there's like a point up top where you could probably make that down"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:36,120",
+				"to": "00:05:52,550"
+			},
+			"offsets": {
+				"from": 336120,
+				"to": 352550
+			},
+			"text": " so flicker is currently on that path and he kind of reaches do you need any help or do you think you"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:52,550",
+				"to": "00:06:01,670"
+			},
+			"offsets": {
+				"from": 352550,
+				"to": 361670
+			},
+			"text": " can do it on your own there is a little gap there is a little gap it's a slightly difficult step okay"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:01,670",
+				"to": "00:06:14,390"
+			},
+			"offsets": {
+				"from": 361670,
+				"to": 374390
+			},
+			"text": " uh roll we'll put you you know i'm just gonna put you to the side um because he's a tiny do you uh roll"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,390",
+				"to": "00:06:32,850"
+			},
+			"offsets": {
+				"from": 374390,
+				"to": 392850
+			},
+			"text": " either you do have either athletics uh actually athletics or acrobatics could work here acrobatics"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:32,850",
+				"to": "00:06:43,600"
+			},
+			"offsets": {
+				"from": 392850,
+				"to": 403600
+			},
+			"text": " would be a bit of like an excessive 18 you're fine so uh you get across to that first section"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:43,600",
+				"to": "00:06:48,100"
+			},
+			"offsets": {
+				"from": 403600,
+				"to": 408100
+			},
+			"text": " um this is considered difficult terrain so it's going to be having your movement what's your total"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:48,100",
+				"to": "00:06:55,170"
+			},
+			"offsets": {
+				"from": 408100,
+				"to": 415170
+			},
+			"text": " movement speed so that key takes up 20-ish of your movement speed you move it half unless you have"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:55,170",
+				"to": "00:07:04,590"
+			},
+			"offsets": {
+				"from": 415170,
+				"to": 424590
+			},
+			"text": " anything that allows you to move quickly through difficult terrain um okay so you could then make"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:04,590",
+				"to": "00:07:11,190"
+			},
+			"offsets": {
+				"from": 424590,
+				"to": 431190
+			},
+			"text": " uh yeah do whatever you want but yeah you can you could probably get um you could then make the jump"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:11,190",
+				"to": "00:07:16,960"
+			},
+			"offsets": {
+				"from": 431190,
+				"to": 436960
+			},
+			"text": " to the side this one is again like a rock kind of leaning so it's lower at the bottom and you and"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:16,960",
+				"to": "00:07:24,040"
+			},
+			"offsets": {
+				"from": 436960,
+				"to": 444040
+			},
+			"text": " leaning upward okay but i have enough you do you do have enough to do that all right roll uh give me"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,040",
+				"to": "00:07:34,260"
+			},
+			"offsets": {
+				"from": 444040,
+				"to": 454260
+			},
+			"text": " another either acrobatics or athletics totally fine okay so let me see let me make sure i just get you"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:34,260",
+				"to": "00:07:44,680"
+			},
+			"offsets": {
+				"from": 454260,
+				"to": 464680
+			},
+			"text": " as far as you can get um when you can even step up 10 20 what was it was 35 or 45 30 yeah that you"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:44,680",
+				"to": "00:07:49,780"
+			},
+			"offsets": {
+				"from": 464680,
+				"to": 469780
+			},
+			"text": " can basically just get there it's a little short but whatever we'll call it that um on it as i'm"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:49,780",
+				"to": "00:07:55,440"
+			},
+			"offsets": {
+				"from": 469780,
+				"to": 475440
+			},
+			"text": " climbing up well just in terms like true distance but i don't i'm not going to be like a jerk uh"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:55,440",
+				"to": "00:08:02,220"
+			},
+			"offsets": {
+				"from": 475440,
+				"to": 482220
+			},
+			"text": " okay so flicker is holding his action flicker technically it's his point of initiative um you need"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:02,220",
+				"to": "00:08:28,920"
+			},
+			"offsets": {
+				"from": 482220,
+				"to": 508920
+			},
+			"text": " to follow yeah luck says follow me um poppy you're up do you need help crossing you don't know so poppy"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:28,920",
+				"to": "00:08:48,960"
+			},
+			"offsets": {
+				"from": 508920,
+				"to": 528960
+			},
+			"text": " literally is just like think i'm all right go for it i'm just gonna move flicker uh what's your"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:48,960",
+				"to": "00:09:05,050"
+			},
+			"offsets": {
+				"from": 528960,
+				"to": 545050
+			},
+			"text": " movement scheme give it to you you could like just get if you wanted to make the second jump do you"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:05,050",
+				"to": "00:09:12,470"
+			},
+			"offsets": {
+				"from": 545050,
+				"to": 552470
+			},
+			"text": " want to make the second jump yeah do i get help do you want help from flicker do you need help from"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:12,470",
+				"to": "00:09:21,070"
+			},
+			"offsets": {
+				"from": 552470,
+				"to": 561070
+			},
+			"text": " me did you see you would get a help so you guys can also give each other the help action instead of"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:21,070",
+				"to": "00:09:26,840"
+			},
+			"offsets": {
+				"from": 561070,
+				"to": 566840
+			},
+			"text": " taking an action on your turn and this is any time you're doing like a check um help action to be"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,840",
+				"to": "00:09:35,270"
+			},
+			"offsets": {
+				"from": 566840,
+				"to": 575270
+			},
+			"text": " provided so uh flicker's using his turn to give the help um which is a good point vilo does vilo"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:35,270",
+				"to": "00:09:45,750"
+			},
+			"offsets": {
+				"from": 575270,
+				"to": 585750
+			},
+			"text": " have initiative i can't remember now then i need to get vilo in here or did he go on your turn i can't"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:45,750",
+				"to": "00:09:49,770"
+			},
+			"offsets": {
+				"from": 585750,
+				"to": 589770
+			},
+			"text": " remember how oh he has initiative uh just roll a d20 for him he has a plus two on his initiative"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:49,770",
+				"to": "00:10:02,730"
+			},
+			"offsets": {
+				"from": 589770,
+				"to": 602730
+			},
+			"text": " 21 um so he actually would have went before everyone so what would you want vilo to do same thing as"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:02,730",
+				"to": "00:10:27,550"
+			},
+			"offsets": {
+				"from": 602730,
+				"to": 627550
+			},
+			"text": " you kind of all right we'll go with that that he would first jump well his has a plus two to dex and"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:27,550",
+				"to": "00:10:36,230"
+			},
+			"offsets": {
+				"from": 627550,
+				"to": 636230
+			},
+			"text": " plus two to strength it would be the same um flicker would help him roll again we're gonna do 20 again"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:36,230",
+				"to": "00:10:49,410"
+			},
+			"offsets": {
+				"from": 636230,
+				"to": 649410
+			},
+			"text": " he bears gays across um and then have him roll yeah have him roll again to get to where you were"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:49,410",
+				"to": "00:10:59,500"
+			},
+			"offsets": {
+				"from": 649410,
+				"to": 659500
+			},
+			"text": " i'll even put it a little bit there give it to he's meet the pizza so he he kind of gets"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:59,500",
+				"to": "00:11:07,990"
+			},
+			"offsets": {
+				"from": 659500,
+				"to": 667990
+			},
+			"text": " grab him by the right yeah i did like pawing trying to get it oh back in the he looks up and he's like"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:07,990",
+				"to": "00:11:16,650"
+			},
+			"offsets": {
+				"from": 667990,
+				"to": 676650
+			},
+			"text": " back in my day i could save me brother in my prime i could have done this way easier save me brother"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:16,650",
+				"to": "00:11:50,560"
+			},
+			"offsets": {
+				"from": 676650,
+				"to": 710560
+			},
+			"text": " uh i think you get across pretty like okay uh lara you're up over there basically yeah just follow"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:50,560",
+				"to": "00:11:59,340"
+			},
+			"offsets": {
+				"from": 710560,
+				"to": 719340
+			},
+			"text": " me when we get to the middle section like we can try maybe we can draw you a smaller i'm just gonna"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,340",
+				"to": "00:12:15,890"
+			},
+			"offsets": {
+				"from": 719340,
+				"to": 735890
+			},
+			"text": " drop it depends on how far they get lara make a wisdom saving throw right now what he says make"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:15,890",
+				"to": "00:12:44,370"
+			},
+			"offsets": {
+				"from": 735890,
+				"to": 764370
+			},
+			"text": " you just use wild shapes let me look up toad in dnd do toads have a jump oh what are you doing"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:44,370",
+				"to": "00:13:19,430"
+			},
+			"offsets": {
+				"from": 764370,
+				"to": 799430
+			},
+			"text": " giant toad alara changes shape what is your wild shape hold on you have you don't have a track"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:19,430",
+				"to": "00:13:31,760"
+			},
+			"offsets": {
+				"from": 799430,
+				"to": 811760
+			},
+			"text": " it's you are you are but um there's more you don't have anything that can fly it that's one of the"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:31,760",
+				"to": "00:13:39,820"
+			},
+			"offsets": {
+				"from": 811760,
+				"to": 819820
+			},
+			"text": " limitations she has well you just you actually have access to more than you technically should"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:39,820",
+				"to": "00:13:47,040"
+			},
+			"offsets": {
+				"from": 819820,
+				"to": 827040
+			},
+			"text": " with the swimming um no druid would have flying at your level flying because flying is broken um"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:47,040",
+				"to": "00:13:54,400"
+			},
+			"offsets": {
+				"from": 827040,
+				"to": 834400
+			},
+			"text": " the toad can breathe air and water um your toad so you can basically take an action as a toad to"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:54,400",
+				"to": "00:14:01,600"
+			},
+			"offsets": {
+				"from": 834400,
+				"to": 841600
+			},
+			"text": " long jump 20 feet and its high jump is up to 10 feet with or without a running threat"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:01,600",
+				"to": "00:14:21,370"
+			},
+			"offsets": {
+				"from": 841600,
+				"to": 861370
+			},
+			"text": " interesting so 20 feet you get on the edge you could yeah so you could get to the edge of that"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:21,370",
+				"to": "00:14:30,260"
+			},
+			"offsets": {
+				"from": 861370,
+				"to": 870260
+			},
+			"text": " it's up to you it's up to you or you could jump how long does she stay you could oh like an hour"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:30,260",
+				"to": "00:14:36,020"
+			},
+			"offsets": {
+				"from": 870260,
+				"to": 876020
+			},
+			"text": " or uh i can look it up but it's i just didn't know she had like no no it's it's for the whole"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:36,020",
+				"to": "00:14:40,980"
+			},
+			"offsets": {
+				"from": 876020,
+				"to": 880980
+			},
+			"text": " probably the entire time you'll be crossing this bridge she could be a dog unless she takes okay"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:40,980",
+				"to": "00:14:46,940"
+			},
+			"offsets": {
+				"from": 880980,
+				"to": 886940
+			},
+			"text": " few things to know you're now toad everything except your intelligence and stats are now toad like"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:46,940",
+				"to": "00:14:52,600"
+			},
+			"offsets": {
+				"from": 886940,
+				"to": 892600
+			},
+			"text": " so you basically do all the abilities that token you can no longer cast spells um so you have that"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:52,600",
+				"to": "00:15:00,080"
+			},
+			"offsets": {
+				"from": 892600,
+				"to": 900080
+			},
+			"text": " ability um you can bite you can swallow things you can do your standing leap if your uh hit points"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:00,080",
+				"to": "00:15:06,080"
+			},
+			"offsets": {
+				"from": 900080,
+				"to": 906080
+			},
+			"text": " get dropped to zero you transform back into your original form and any damage that exceeds the"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:06,080",
+				"to": "00:15:11,400"
+			},
+			"offsets": {
+				"from": 906080,
+				"to": 911400
+			},
+			"text": " form of the giant toad would go to your body but you start back it's not like you immediately die"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:11,400",
+				"to": "00:15:17,420"
+			},
+			"offsets": {
+				"from": 911400,
+				"to": 917420
+			},
+			"text": " you just are basically you again um yep you have 39 hp and then if you were to go down you would"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:17,420",
+				"to": "00:15:25,100"
+			},
+			"offsets": {
+				"from": 917420,
+				"to": 925100
+			},
+			"text": " basically go back to your 21 age um and then so strength throws deck or strength and dexterity are"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:25,100",
+				"to": "00:15:31,650"
+			},
+			"offsets": {
+				"from": 925100,
+				"to": 931650
+			},
+			"text": " now the toad but any wisdom and intelligence is still you you don't become like a stupid toad"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:31,650",
+				"to": "00:15:49,040"
+			},
+			"offsets": {
+				"from": 931650,
+				"to": 949040
+			},
+			"text": " um so what do you want to do do you want to swim or do you want to jump no no so you can either get"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:49,040",
+				"to": "00:16:03,940"
+			},
+			"offsets": {
+				"from": 949040,
+				"to": 963940
+			},
+			"text": " there or onto this little like ledge in front of you okay so it's considered an action to do that"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:03,940",
+				"to": "00:16:11,620"
+			},
+			"offsets": {
+				"from": 963940,
+				"to": 971620
+			},
+			"text": " but you could basically move to the other edge of this over basically you could hop and then go over"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:11,620",
+				"to": "00:16:18,800"
+			},
+			"offsets": {
+				"from": 971620,
+				"to": 978800
+			},
+			"text": " there so alara you guys see transforms into a giant so this isn't like a little itty bitty thing this"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:18,800",
+				"to": "00:16:26,520"
+			},
+			"offsets": {
+				"from": 978800,
+				"to": 986520
+			},
+			"text": " thing is considered large it is a large beast so it is larger than all of you uh especially poppy"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:26,520",
+				"to": "00:16:49,030"
+			},
+			"offsets": {
+				"from": 986520,
+				"to": 1009030
+			},
+			"text": " but even uh vey it is larger than you oh yeah you see her launch herself and gets the edge uh that and"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:49,030",
+				"to": "00:16:59,550"
+			},
+			"offsets": {
+				"from": 1009030,
+				"to": 1019550
+			},
+			"text": " vey it is your turn yeah how long before that fog rolls up um you look back so this is every turn is"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:59,550",
+				"to": "00:17:08,350"
+			},
+			"offsets": {
+				"from": 1019550,
+				"to": 1028350
+			},
+			"text": " considered like 10 seconds um it is moving rather quickly um roll perception to see if you can pin it"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:08,350",
+				"to": "00:17:22,730"
+			},
+			"offsets": {
+				"from": 1028350,
+				"to": 1042730
+			},
+			"text": " if you don't move this turn it'll uh be at you yeah so you want to get you can either"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:22,730",
+				"to": "00:17:32,840"
+			},
+			"offsets": {
+				"from": 1042730,
+				"to": 1052840
+			},
+			"text": " in flicker dragon yeah flicker looks to you come on i've got a plan in my head flicker looks to you"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:32,840",
+				"to": "00:17:42,200"
+			},
+			"offsets": {
+				"from": 1052840,
+				"to": 1062200
+			},
+			"text": " it says we have to keep moving forward but that's at the edge it's still at the edge of the river uh what"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:42,200",
+				"to": "00:17:54,200"
+			},
+			"offsets": {
+				"from": 1062200,
+				"to": 1074200
+			},
+			"text": " is oh yeah it's it's not even it's behind us and then it's circling us so yeah there are these hands"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:54,200",
+				"to": "00:18:01,270"
+			},
+			"offsets": {
+				"from": 1074200,
+				"to": 1081270
+			},
+			"text": " like emerging there's hands that are emerging from the water and there's like a light fog across it"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:01,270",
+				"to": "00:18:07,760"
+			},
+			"offsets": {
+				"from": 1081270,
+				"to": 1087760
+			},
+			"text": " but on around the outside it's not just behind you but like on the sides there's like a wall of heavier"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:07,760",
+				"to": "00:18:15,920"
+			},
+			"offsets": {
+				"from": 1087760,
+				"to": 1095920
+			},
+			"text": " spots that's kind of like it's just like getting thicker and thicker my next question is can i use"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:15,920",
+				"to": "00:18:23,080"
+			},
+			"offsets": {
+				"from": 1095920,
+				"to": 1103080
+			},
+			"text": " my potion of invisibility walk through the water and carry everybody to space invisibility would make"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:23,080",
+				"to": "00:18:30,080"
+			},
+			"offsets": {
+				"from": 1103080,
+				"to": 1110080
+			},
+			"text": " you invisible but it does not change your physical state so you are still you so if you were to try to"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:30,080",
+				"to": "00:18:42,370"
+			},
+			"offsets": {
+				"from": 1110080,
+				"to": 1122370
+			},
+			"text": " do that you would still suffer any effects of walking through the water yeah yeah i was trying"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:42,370",
+				"to": "00:18:46,320"
+			},
+			"offsets": {
+				"from": 1122370,
+				"to": 1126320
+			},
+			"text": " it's a good good idea yeah it doesn't make you like not there"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:46,320",
+				"to": "00:19:03,400"
+			},
+			"offsets": {
+				"from": 1126320,
+				"to": 1143400
+			},
+			"text": " i can help you yeah okay so i need to ride you go ahead and roll for the first first jump um i think"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:03,400",
+				"to": "00:19:07,880"
+			},
+			"offsets": {
+				"from": 1143400,
+				"to": 1147880
+			},
+			"text": " you have high strength right you probably want to do athletics athletics or acrobatics i don't know"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:07,880",
+				"to": "00:19:20,610"
+			},
+			"offsets": {
+				"from": 1147880,
+				"to": 1160610
+			},
+			"text": " what's your what's your strength uh athletic not mobile yeah yeah"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:20,610",
+				"to": "00:19:31,130"
+			},
+			"offsets": {
+				"from": 1160610,
+				"to": 1171130
+			},
+			"text": " actually flickers already helped so he can't help this turn you know uh vilo get across um but he's"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:31,130",
+				"to": "00:19:36,410"
+			},
+			"offsets": {
+				"from": 1171130,
+				"to": 1176410
+			},
+			"text": " like looking like okay but you are more nimble than most i think lock was the only one that was more"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:36,410",
+				"to": "00:19:40,790"
+			},
+			"offsets": {
+				"from": 1176410,
+				"to": 1180790
+			},
+			"text": " nimble than you getting across there so do you um what's your movement speed should be 30 i believe"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:40,790",
+				"to": "00:19:54,450"
+			},
+			"offsets": {
+				"from": 1180790,
+				"to": 1194450
+			},
+			"text": " okay um shared space okay um i have something that uh halfling okay so you can be in the same space"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:54,450",
+				"to": "00:20:01,320"
+			},
+			"offsets": {
+				"from": 1194450,
+				"to": 1201320
+			},
+			"text": " that saves you so you could make the jump basically where poppy is but poppy would uh allow you to"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:01,320",
+				"to": "00:20:05,140"
+			},
+			"offsets": {
+				"from": 1201320,
+				"to": 1205140
+			},
+			"text": " be there normally if she wasn't a halfling you would kind of have to wait until she got out of the"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:05,140",
+				"to": "00:20:10,580"
+			},
+			"offsets": {
+				"from": 1205140,
+				"to": 1210580
+			},
+			"text": " way um but if you wanted to make that second jump you can i'll just curl up and make myself as small"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:10,580",
+				"to": "00:20:18,110"
+			},
+			"offsets": {
+				"from": 1210580,
+				"to": 1218110
+			},
+			"text": " as possible to jump on top of me thank you poppy i appreciate it well that that does good yep uh"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:18,110",
+				"to": "00:20:31,320"
+			},
+			"offsets": {
+				"from": 1218110,
+				"to": 1231320
+			},
+			"text": " perfect oh vilo okay this is interesting um cool perfect um yeah you guys feel the the um fog starting"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:31,320",
+				"to": "00:20:39,340"
+			},
+			"offsets": {
+				"from": 1231320,
+				"to": 1239340
+			},
+			"text": " to drift in where you guys just were is starting to just build up it's not even like a rolling fog it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:39,340",
+				"to": "00:20:50,390"
+			},
+			"offsets": {
+				"from": 1239340,
+				"to": 1250390
+			},
+			"text": " like the air itself becomes more and more choked with whatever this is um and lock your turn again"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:50,390",
+				"to": "00:20:56,030"
+			},
+			"offsets": {
+				"from": 1250390,
+				"to": 1256030
+			},
+			"text": " then my turn or vilo oh vilo's turn vilo and lock you can kind of go independently because it's your"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:56,030",
+				"to": "00:21:04,290"
+			},
+			"offsets": {
+				"from": 1256030,
+				"to": 1264290
+			},
+			"text": " companion uh you can go interchangeably as well as i said uh then um we might go have lock go first"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:04,290",
+				"to": "00:21:11,930"
+			},
+			"offsets": {
+				"from": 1264290,
+				"to": 1271930
+			},
+			"text": " and we'll just kind of continue on the jumping path yep so the next one would be did you tell me"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:11,930",
+				"to": "00:21:21,710"
+			},
+			"offsets": {
+				"from": 1271930,
+				"to": 1281710
+			},
+			"text": " to go up yep yep uh this crossing is about a visa you wrote 20 or whatever it was this one's just as"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:21,710",
+				"to": "00:21:36,890"
+			},
+			"offsets": {
+				"from": 1281710,
+				"to": 1296890
+			},
+			"text": " easy uh can i really just are we just trying to get straight you notice that there's a ledge here"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:36,890",
+				"to": "00:21:42,310"
+			},
+			"offsets": {
+				"from": 1296890,
+				"to": 1302310
+			},
+			"text": " that's probably your best entry there are these like crumbling ledges over here as well um and then"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:42,310",
+				"to": "00:21:48,590"
+			},
+			"offsets": {
+				"from": 1302310,
+				"to": 1308590
+			},
+			"text": " there's a kind of like gate um that kind of goes through a mountain pass right here so that's ideal"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:48,590",
+				"to": "00:22:02,410"
+			},
+			"offsets": {
+				"from": 1308590,
+				"to": 1322410
+			},
+			"text": " you're where you're trying to get okay go ahead and roll an athletics vilo watches on you're totally fine"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:02,410",
+				"to": "00:22:09,820"
+			},
+			"offsets": {
+				"from": 1322410,
+				"to": 1329820
+			},
+			"text": " um you get across um do you want to wait for violet i'll say like interchangeably like you can use your"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:09,820",
+				"to": "00:22:18,110"
+			},
+			"offsets": {
+				"from": 1329820,
+				"to": 1338110
+			},
+			"text": " movement with his because he's your companion so you could yeah make a rule at advantage for vilo"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:18,110",
+				"to": "00:22:33,860"
+			},
+			"offsets": {
+				"from": 1338110,
+				"to": 1353860
+			},
+			"text": " like i got it back i got it back i'm back in it all right so you can make the second job this one is"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:33,860",
+				"to": "00:22:53,060"
+			},
+			"offsets": {
+				"from": 1353860,
+				"to": 1373060
+			},
+			"text": " also is same difficulty as the other one same difficulty yeah you're fine uh vilo makes it okay"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:53,060",
+				"to": "00:22:57,950"
+			},
+			"offsets": {
+				"from": 1373060,
+				"to": 1377950
+			},
+			"text": " so you guys are leading the way again it's not like you're running so far it's everything i use like"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:57,950",
+				"to": "00:23:07,680"
+			},
+			"offsets": {
+				"from": 1377950,
+				"to": 1387680
+			},
+			"text": " uh because that's as far as you told us um yeah we'll do it at the start of your next turn um"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:08,240",
+				"to": "00:23:20,600"
+			},
+			"offsets": {
+				"from": 1388240,
+				"to": 1400600
+			},
+			"text": " because of the help action you gave uh flicker goes he actually stumbled a little bit but is able to"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:21,280",
+				"to": "00:23:29,160"
+			},
+			"offsets": {
+				"from": 1401280,
+				"to": 1409160
+			},
+			"text": " get up like one of the hands goes to grab him but doesn't seem to uh his back leg it kind of like"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:29,160",
+				"to": "00:23:36,600"
+			},
+			"offsets": {
+				"from": 1409160,
+				"to": 1416600
+			},
+			"text": " goes to grab him and like splits off um and he kind of like trots forward and he kind of waits here"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:36,600",
+				"to": "00:23:49,960"
+			},
+			"offsets": {
+				"from": 1416600,
+				"to": 1429960
+			},
+			"text": " and he's like you guys go first you guys go first copy you're up you make way up there and make a little"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:49,960",
+				"to": "00:24:04,990"
+			},
+			"offsets": {
+				"from": 1429960,
+				"to": 1444990
+			},
+			"text": " leap i'm fine don't worry you don't need to help me just made it that's the last time you're getting"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:04,990",
+				"to": "00:24:11,690"
+			},
+			"offsets": {
+				"from": 1444990,
+				"to": 1451690
+			},
+			"text": " a nine dc on any of these so good luck with that um you start making you get a little overconfident and"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:11,690",
+				"to": "00:24:15,690"
+			},
+			"offsets": {
+				"from": 1451690,
+				"to": 1455690
+			},
+			"text": " go it's it's a relatively easy jump and kind of slip one of some of the rock kind of corrodes"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:16,390",
+				"to": "00:24:24,760"
+			},
+			"offsets": {
+				"from": 1456390,
+				"to": 1464760
+			},
+			"text": " um then you kind of catch your foot in flicker looks at you uh all right make this jump well actually"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:24,760",
+				"to": "00:24:42,040"
+			},
+			"offsets": {
+				"from": 1464760,
+				"to": 1482040
+			},
+			"text": " this one's the same thing but then get done uh yes yeah yeah you can uh you're able to"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:49,630",
+				"to": "00:24:53,860"
+			},
+			"offsets": {
+				"from": 1489630,
+				"to": 1493860
+			},
+			"text": " well lara it is your turn hey i'm gonna head down that path"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:53,860",
+				"to": "00:25:07,850"
+			},
+			"offsets": {
+				"from": 1493860,
+				"to": 1507850
+			},
+			"text": " oh lara lara okay you mean giant toad so 20 feet would get you here"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:07,850",
+				"to": "00:25:20,320"
+			},
+			"offsets": {
+				"from": 1507850,
+				"to": 1520320
+			},
+			"text": " lara be careful um there's an extra 15 feet so you could either just send it how you could send it"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:20,320",
+				"to": "00:25:28,830"
+			},
+			"offsets": {
+				"from": 1520320,
+				"to": 1528830
+			},
+			"text": " knowing that you're gonna swim and just sort it um or i'll let you roll on after what's the giant"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:28,830",
+				"to": "00:25:40,170"
+			},
+			"offsets": {
+				"from": 1528830,
+				"to": 1540170
+			},
+			"text": " circle on athletics to try to make the full leap at disadvantage but based on how poorly you roll you"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:40,170",
+				"to": "00:25:47,300"
+			},
+			"offsets": {
+				"from": 1540170,
+				"to": 1547300
+			},
+			"text": " might if you like so if you rolled a natural one you're ending up like or so like but if you rolled"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:47,300",
+				"to": "00:25:51,690"
+			},
+			"offsets": {
+				"from": 1547300,
+				"to": 1551690
+			},
+			"text": " high enough with the dc that i have in my head you could make it without hitting the wall so it's kind"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:51,690",
+				"to": "00:25:57,590"
+			},
+			"offsets": {
+				"from": 1551690,
+				"to": 1557590
+			},
+			"text": " of high risk high reward or safer would be just take the 20 but you're landing in the water and you're"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:57,590",
+				"to": "00:26:30,720"
+			},
+			"offsets": {
+				"from": 1557590,
+				"to": 1590720
+			},
+			"text": " gonna have to try to swim 20 plus two dc was 18 um so you go to jump okay you're getting used to these"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:30,720",
+				"to": "00:26:36,450"
+			},
+			"offsets": {
+				"from": 1590720,
+				"to": 1596450
+			},
+			"text": " little toe legs you kind of feel like you pulled pushed off enough but you're like i am not making"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:36,450",
+				"to": "00:26:57,650"
+			},
+			"offsets": {
+				"from": 1596450,
+				"to": 1617650
+			},
+			"text": " this you land in a sea of drohan pit up they start grabbing at you at you well you're not even human"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:57,650",
+				"to": "00:27:03,900"
+			},
+			"offsets": {
+				"from": 1617650,
+				"to": 1623900
+			},
+			"text": " so they're grabbing at your like frog legs and you're trying to like kick them off um extinguish one"
+		},
+		{
+			"timestamps": {
+				"from": "00:27:03,900",
+				"to": "00:27:27,570"
+			},
+			"offsets": {
+				"from": 1623900,
+				"to": 1647570
+			},
+			"text": " of your porch lights and also roll a wisdom save yes and d20 and then you should have a save with"
+		},
+		{
+			"timestamps": {
+				"from": "00:27:27,570",
+				"to": "00:28:05,830"
+			},
+			"offsets": {
+				"from": 1647570,
+				"to": 1685830
+			},
+			"text": " fire extinguish two more of your lantern flames yeah you're up grabbing at her they didn't do any"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:05,830",
+				"to": "00:28:29,700"
+			},
+			"offsets": {
+				"from": 1685830,
+				"to": 1709700
+			},
+			"text": " damage extinguishing her flame no it is your bound essence to this pilgrimage yeah what would you like"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:29,700",
+				"to": "00:28:43,880"
+			},
+			"offsets": {
+				"from": 1709700,
+				"to": 1723880
+			},
+			"text": " to do you look back flicker also is looking back and looks like he's anticipating going to try to help"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:43,880",
+				"to": "00:28:56,210"
+			},
+			"offsets": {
+				"from": 1723880,
+				"to": 1736210
+			},
+			"text": " her as well i can well he he also analyzes your athletics and says just keep moving forward i can"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:56,210",
+				"to": "00:29:05,320"
+			},
+			"offsets": {
+				"from": 1736210,
+				"to": 1745320
+			},
+			"text": " get to her okay fine and i'll keep moving forward okay yeah yeah that would be a suicide picture for you"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:05,320",
+				"to": "00:29:18,050"
+			},
+			"offsets": {
+				"from": 1745320,
+				"to": 1758050
+			},
+			"text": " guys um go ahead and roll the d20 okay you get across um yeah pop you small you could make me the"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:18,050",
+				"to": "00:29:40,530"
+			},
+			"offsets": {
+				"from": 1758050,
+				"to": 1780530
+			},
+			"text": " second jump as well at this point it can't um it 100 true um i would these are relatively easy"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:42,470",
+				"to": "00:29:49,530"
+			},
+			"offsets": {
+				"from": 1782470,
+				"to": 1789530
+			},
+			"text": " yeah but misty step you can basically teleport unavailable sorry uh"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:54,970",
+				"to": "00:30:07,240"
+			},
+			"offsets": {
+				"from": 1794970,
+				"to": 1807240
+			},
+			"text": " knowing that you have misty step uh you could get you actually could misty step there you only have two"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:07,240",
+				"to": "00:30:14,400"
+			},
+			"offsets": {
+				"from": 1807240,
+				"to": 1814400
+			},
+			"text": " uses uses of it you could yeah it's just far enough away that it wouldn't help you so yeah i would"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:14,400",
+				"to": "00:30:40,430"
+			},
+			"offsets": {
+				"from": 1814400,
+				"to": 1840430
+			},
+			"text": " continue forward but if for a more different you can teleport basically 30 feet uh you guys can't uh"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:40,430",
+				"to": "00:30:51,690"
+			},
+			"offsets": {
+				"from": 1840430,
+				"to": 1851690
+			},
+			"text": " what are you you're trying to measure between those two 45 feet didn't i didn't even anticipate misty"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:51,690",
+				"to": "00:30:59,500"
+			},
+			"offsets": {
+				"from": 1851690,
+				"to": 1859500
+			},
+			"text": " stuff that it's like inconveniently just too far away for all of you that was not planned okay you get"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:59,500",
+				"to": "00:31:10,370"
+			},
+			"offsets": {
+				"from": 1859500,
+				"to": 1870370
+			},
+			"text": " across on that rock flicker was holding flicker will go before anyway so it's fine uh lock or vile"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:10,370",
+				"to": "00:31:22,570"
+			},
+			"offsets": {
+				"from": 1870370,
+				"to": 1882570
+			},
+			"text": " on lock you guys are up you know that's available all right go ahead and roll an investigation if you"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:22,570",
+				"to": "00:31:30,110"
+			},
+			"offsets": {
+				"from": 1882570,
+				"to": 1890110
+			},
+			"text": " roll poorly i might lie to you just or i might tell you the truth on a bad roll so that you want it okay"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:30,110",
+				"to": "00:31:46,100"
+			},
+			"offsets": {
+				"from": 1890110,
+				"to": 1906100
+			},
+			"text": " um no lying no lying there or maybe you'll find them um looks like i made this jump here so you kind of"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:46,100",
+				"to": "00:31:51,390"
+			},
+			"offsets": {
+				"from": 1906100,
+				"to": 1911390
+			},
+			"text": " like shimmy up here and then it's kind of like a balancing act and then jump down there this is"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:51,390",
+				"to": "00:31:59,020"
+			},
+			"offsets": {
+				"from": 1911390,
+				"to": 1919020
+			},
+			"text": " like relatively hard but this is going to be a bitch because this is like a very spin like kind of like"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:59,020",
+				"to": "00:32:08,620"
+			},
+			"offsets": {
+				"from": 1919020,
+				"to": 1928620
+			},
+			"text": " balance across your hands that are going to be reaching at your leg uh this is kind of easy this is"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:08,620",
+				"to": "00:32:16,080"
+			},
+			"offsets": {
+				"from": 1928620,
+				"to": 1936080
+			},
+			"text": " going to be the hardest jumping on the path that you've got this is hard this is pretty hard you"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:16,080",
+				"to": "00:32:28,060"
+			},
+			"offsets": {
+				"from": 1936080,
+				"to": 1948060
+			},
+			"text": " two are moderately hard and then can you just tell me from where we are to the thing where are you"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:28,060",
+				"to": "00:32:36,590"
+			},
+			"offsets": {
+				"from": 1948060,
+				"to": 1956590
+			},
+			"text": " already here yeah oh i wanted to get over there yeah so actually on your 22 you could also this is an"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:36,590",
+				"to": "00:32:45,610"
+			},
+			"offsets": {
+				"from": 1956590,
+				"to": 1965610
+			},
+			"text": " easy jump because of how high they get it so this is a moderate gap that's an easier jump than doing that"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:45,610",
+				"to": "00:33:00,130"
+			},
+			"offsets": {
+				"from": 1965610,
+				"to": 1980130
+			},
+			"text": " yeah it'll give you like the leap across is moderate like one hard jump but then an easier jump exactly"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:00,130",
+				"to": "00:33:08,330"
+			},
+			"offsets": {
+				"from": 1980130,
+				"to": 1988330
+			},
+			"text": " you have it's like basically easier jump harder it's either medium hard medium hard or medium easy"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:08,330",
+				"to": "00:33:34,000"
+			},
+			"offsets": {
+				"from": 1988330,
+				"to": 2014000
+			},
+			"text": " easy so to get easy so basically to get up here and then run over here is medium yeah from here to"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:34,000",
+				"to": "00:33:40,360"
+			},
+			"offsets": {
+				"from": 2014000,
+				"to": 2020360
+			},
+			"text": " here is easy because of the height and then that's going to be a hard jump or medium hard being hard"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:40,360",
+				"to": "00:34:03,140"
+			},
+			"offsets": {
+				"from": 2020360,
+				"to": 2043140
+			},
+			"text": " okay yeah all right um vilo and lock on uh who's first i'm going to say that acrobatics is not"
+		},
+		{
+			"timestamps": {
+				"from": "00:34:03,140",
+				"to": "00:34:12,080"
+			},
+			"offsets": {
+				"from": 2043140,
+				"to": 2052080
+			},
+			"text": " going to be as useful here acrobatics will be at disadvantage this is an athletics 17 you make it"
+		},
+		{
+			"timestamps": {
+				"from": "00:34:12,080",
+				"to": "00:34:34,620"
+			},
+			"offsets": {
+				"from": 2052080,
+				"to": 2074620
+			},
+			"text": " um vilo kind of look out stretches his legs roll it advantage advantage advantage oh okay roll again"
+		},
+		{
+			"timestamps": {
+				"from": "00:34:34,620",
+				"to": "00:35:05,780"
+			},
+			"offsets": {
+				"from": 2074620,
+				"to": 2105780
+			},
+			"text": " then we'll leap across with you that is the stretch measuring"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:12,000",
+				"to": "00:35:22,100"
+			},
+			"offsets": {
+				"from": 2112000,
+				"to": 2122100
+			},
+			"text": " flicker jumps"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:31,290",
+				"to": "00:35:43,670"
+			},
+			"offsets": {
+				"from": 2131290,
+				"to": 2143670
+			},
+			"text": " he actually jumps into the water he is kind of swimming and these hands seem to not be able to"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:43,670",
+				"to": "00:35:56,950"
+			},
+			"offsets": {
+				"from": 2143670,
+				"to": 2156950
+			},
+			"text": " affect just out of range he's going to dash to swim up to you um he can't do anything this turn but"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:56,950",
+				"to": "00:36:06,410"
+			},
+			"offsets": {
+				"from": 2156950,
+				"to": 2166410
+			},
+			"text": " he's like i'm here i'm here we'll get you over there we'll get it but you might not survive it"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:09,310",
+				"to": "00:36:25,480"
+			},
+			"offsets": {
+				"from": 2169310,
+				"to": 2185480
+			},
+			"text": " i'll keep you alive i'll keep you alive we gotta keep swimming um poppy you're up everything's"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:25,480",
+				"to": "00:36:47,620"
+			},
+			"offsets": {
+				"from": 2185480,
+				"to": 2207620
+			},
+			"text": " athletics here acrobatics acrobatics is like you're like yeah if you want to try to do the balance"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:47,620",
+				"to": "00:36:52,110"
+			},
+			"offsets": {
+				"from": 2207620,
+				"to": 2212110
+			},
+			"text": " team on i would say that i'll give you that that would be out of time you want to take some plus"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:52,110",
+				"to": "00:37:04,450"
+			},
+			"offsets": {
+				"from": 2212110,
+				"to": 2224450
+			},
+			"text": " for that but everything else the other two medium jumps would be active so vilo kind of"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:05,760",
+				"to": "00:37:24,120"
+			},
+			"offsets": {
+				"from": 2225760,
+				"to": 2244120
+			},
+			"text": " you kind of climb up and make the leap oh with help you even without vilo's help he means he goes"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:24,120",
+				"to": "00:37:32,740"
+			},
+			"offsets": {
+				"from": 2244120,
+				"to": 2252740
+			},
+			"text": " to help you so you know there's his help you kind of just land and you're just able to kind of get"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:32,740",
+				"to": "00:37:39,770"
+			},
+			"offsets": {
+				"from": 2252740,
+				"to": 2259770
+			},
+			"text": " up and you can kind of scoot out of the way and you see flicker like as you're at the top of this like"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:39,770",
+				"to": "00:37:45,250"
+			},
+			"offsets": {
+				"from": 2259770,
+				"to": 2265250
+			},
+			"text": " thing you see flicker kind of like pulling at the giant toe trying to get her over to the shiny object"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:45,250",
+				"to": "00:38:04,400"
+			},
+			"offsets": {
+				"from": 2265250,
+				"to": 2284400
+			},
+			"text": " ba or bay you're up oh sorry yes alara you were up uh alara roll a wisdom tape these things so you"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:04,400",
+				"to": "00:38:11,220"
+			},
+			"offsets": {
+				"from": 2284400,
+				"to": 2291220
+			},
+			"text": " no i know but she can offer she's not making any interaction yeah you can keep swimming but you"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:11,220",
+				"to": "00:38:17,880"
+			},
+			"offsets": {
+				"from": 2291220,
+				"to": 2297880
+			},
+			"text": " these hands they're like touching you but they're causing you physical um damage because you're not"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:17,880",
+				"to": "00:38:24,480"
+			},
+			"offsets": {
+				"from": 2297880,
+				"to": 2304480
+			},
+			"text": " taking any hit points but they're like they are sapping your will and desire to keep swimming you're"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:24,480",
+				"to": "00:38:30,460"
+			},
+			"offsets": {
+				"from": 2304480,
+				"to": 2310460
+			},
+			"text": " you're feeling like shiny shiny it's like so far i'm not gonna make it do i just stop swimming so"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:30,460",
+				"to": "00:38:43,420"
+			},
+			"offsets": {
+				"from": 2310460,
+				"to": 2323420
+			},
+			"text": " so roll our wisdom savings though extinguish another one of your lantern you can't really use it as well"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:43,420",
+				"to": "00:38:45,660"
+			},
+			"offsets": {
+				"from": 2323420,
+				"to": 2325660
+			},
+			"text": " no"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:45,660",
+				"to": "00:38:47,660"
+			},
+			"offsets": {
+				"from": 2325660,
+				"to": 2327660
+			},
+			"text": " you're using it as well"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:47,660",
+				"to": "00:38:50,100"
+			},
+			"offsets": {
+				"from": 2327660,
+				"to": 2330100
+			},
+			"text": " oh"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:50,100",
+				"to": "00:38:51,930"
+			},
+			"offsets": {
+				"from": 2330100,
+				"to": 2331930
+			},
+			"text": " all right re-roll re-roll re-roll"
+		},
+		{
+			"timestamps": {
+				"from": "00:38:51,930",
+				"to": "00:39:16,380"
+			},
+			"offsets": {
+				"from": 2331930,
+				"to": 2356380
+			},
+			"text": " you're just gonna die because of that"
+		},
+		{
+			"timestamps": {
+				"from": "00:39:16,380",
+				"to": "00:39:29,760"
+			},
+			"offsets": {
+				"from": 2356380,
+				"to": 2369760
+			},
+			"text": " since you rolled a one on the one that was a d12 we'll just keep the one extinguished so extinguished you"
+		},
+		{
+			"timestamps": {
+				"from": "00:39:29,760",
+				"to": "00:39:41,220"
+			},
+			"offsets": {
+				"from": 2369760,
+				"to": 2381220
+			},
+			"text": " shove one light left because the odds of you having rolled a one on that one on a d12 versus a 24. um"
+		},
+		{
+			"timestamps": {
+				"from": "00:39:41,220",
+				"to": "00:39:48,940"
+			},
+			"offsets": {
+				"from": 2381220,
+				"to": 2388940
+			},
+			"text": " you can see your movement though but you mentally are just being drained of your desire you even for"
+		},
+		{
+			"timestamps": {
+				"from": "00:39:48,940",
+				"to": "00:39:57,250"
+			},
+			"offsets": {
+				"from": 2388940,
+				"to": 2397250
+			},
+			"text": " you seeing the shinies they're like biggest draw to you like didn't really that shiny like i'll just"
+		},
+		{
+			"timestamps": {
+				"from": "00:39:57,250",
+				"to": "00:40:06,830"
+			},
+			"offsets": {
+				"from": 2397250,
+				"to": 2406830
+			},
+			"text": " kind of go to sleep here but you have just enough will to get you there um yeah"
+		},
+		{
+			"timestamps": {
+				"from": "00:40:08,410",
+				"to": "00:40:26,220"
+			},
+			"offsets": {
+				"from": 2408410,
+				"to": 2426220
+			},
+			"text": " you're going to crawl up onto this rock uh and there is a small stone flickering like"
+		},
+		{
+			"timestamps": {
+				"from": "00:40:28,270",
+				"to": "00:40:32,510"
+			},
+			"offsets": {
+				"from": 2428270,
+				"to": 2432510
+			},
+			"text": " i got that one guy to show the other guy so you're going to have to attune to it it is a small"
+		},
+		{
+			"timestamps": {
+				"from": "00:40:33,410",
+				"to": "00:40:40,650"
+			},
+			"offsets": {
+				"from": 2433410,
+				"to": 2440650
+			},
+			"text": " uh hold on one second so you got to the side she's not in the water anymore she is out of it"
+		},
+		{
+			"timestamps": {
+				"from": "00:40:40,650",
+				"to": "00:40:42,910"
+			},
+			"offsets": {
+				"from": 2440650,
+				"to": 2442910
+			},
+			"text": " she will no longer be making a safe"
+		},
+		{
+			"timestamps": {
+				"from": "00:40:42,910",
+				"to": "00:41:09,260"
+			},
+			"offsets": {
+				"from": 2442910,
+				"to": 2469260
+			},
+			"text": " that's the whole time you literally capped your pump up yeah surprisingly you got pretty you got you"
+		},
+		{
+			"timestamps": {
+				"from": "00:41:09,260",
+				"to": "00:41:29,280"
+			},
+			"offsets": {
+				"from": 2469260,
+				"to": 2489280
+			},
+			"text": " just had that one real bad one uh that turned into a real bad it is a pale lavender stone are you like"
+		},
+		{
+			"timestamps": {
+				"from": "00:41:29,280",
+				"to": "00:41:37,470"
+			},
+			"offsets": {
+				"from": 2489280,
+				"to": 2497470
+			},
+			"text": " i was watching that roll i was like that doesn't look like that right there's like a little bit of"
+		},
+		{
+			"timestamps": {
+				"from": "00:41:37,470",
+				"to": "00:41:51,860"
+			},
+			"offsets": {
+				"from": 2497470,
+				"to": 2511860
+			},
+			"text": " excitement but you just feel sapped of your your desires um if you were if you were not one flame"
+		},
+		{
+			"timestamps": {
+				"from": "00:41:51,860",
+				"to": "00:41:59,660"
+			},
+			"offsets": {
+				"from": 2511860,
+				"to": 2519660
+			},
+			"text": " in being you would think this was sick but based on your current situation that's yeah that's exactly"
+		},
+		{
+			"timestamps": {
+				"from": "00:41:59,660",
+				"to": "00:42:10,260"
+			},
+			"offsets": {
+				"from": 2519660,
+				"to": 2530260
+			},
+			"text": " so maybe a question that should have been asked is there a way to really like them after that uh"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:10,260",
+				"to": "00:42:20,660"
+			},
+			"offsets": {
+				"from": 2530260,
+				"to": 2540660
+			},
+			"text": " bae you're up should i go the same way there okay follow the crowd go ahead i offer you help"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:20,660",
+				"to": "00:42:23,320"
+			},
+			"offsets": {
+				"from": 2540660,
+				"to": 2543320
+			},
+			"text": " all right so you can move with advantage"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:23,320",
+				"to": "00:42:36,920"
+			},
+			"offsets": {
+				"from": 2543320,
+				"to": 2556920
+			},
+			"text": " you clear that you actually push poppy not like an aggressive way but poppy's like i got you i got you"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:36,920",
+				"to": "00:42:46,430"
+			},
+			"offsets": {
+				"from": 2556920,
+				"to": 2566430
+			},
+			"text": " actually we'll say on an at 20 you actually jump over poppy she's like expecting you to lay in front"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:46,430",
+				"to": "00:42:55,030"
+			},
+			"offsets": {
+				"from": 2566430,
+				"to": 2575030
+			},
+			"text": " of her you like land behind her like fall back i'm trying thanks for the help it was more you know"
+		},
+		{
+			"timestamps": {
+				"from": "00:42:58,910",
+				"to": "00:43:11,360"
+			},
+			"offsets": {
+				"from": 2578910,
+				"to": 2591360
+			},
+			"text": " you guys can care to get to the next uh i didn't until you pointed it out i didn't anticipate this"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:11,360",
+				"to": "00:43:18,770"
+			},
+			"offsets": {
+				"from": 2591360,
+				"to": 2598770
+			},
+			"text": " this path is actually the easiest not the other one interesting um he doesn't realize that the"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:18,770",
+				"to": "00:43:27,960"
+			},
+			"offsets": {
+				"from": 2598770,
+				"to": 2607960
+			},
+			"text": " path is on each other yeah the egg avoids uh most of the hard stuff um lock you're up lock and or"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:27,960",
+				"to": "00:43:43,450"
+			},
+			"offsets": {
+				"from": 2607960,
+				"to": 2623450
+			},
+			"text": " vilo how far 50 feet so from your okay from your guys's standpoint you've been kind of jumping along"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:43,450",
+				"to": "00:43:49,580"
+			},
+			"offsets": {
+				"from": 2623450,
+				"to": 2629580
+			},
+			"text": " you saw her giant toad over you saw her kind of jump again and kind of fall into you guys were over"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:49,580",
+				"to": "00:43:54,320"
+			},
+			"offsets": {
+				"from": 2629580,
+				"to": 2634320
+			},
+			"text": " here though you didn't really see it then you saw flicker kind of bolt and kind of pull her out so"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:54,320",
+				"to": "00:43:59,520"
+			},
+			"offsets": {
+				"from": 2634320,
+				"to": 2639520
+			},
+			"text": " you're now on a you have a much better perspective and you see her like frog she's alive but she's"
+		},
+		{
+			"timestamps": {
+				"from": "00:43:59,520",
+				"to": "00:44:06,200"
+			},
+			"offsets": {
+				"from": 2639520,
+				"to": 2646200
+			},
+			"text": " just like just looks very like lethargic holding onto this shiny rock kind of like laying her head"
+		},
+		{
+			"timestamps": {
+				"from": "00:44:06,200",
+				"to": "00:44:38,690"
+			},
+			"offsets": {
+				"from": 2646200,
+				"to": 2678690
+			},
+			"text": " next to just like looking at it right now the fog is now pushed in as well for like"
+		},
+		{
+			"timestamps": {
+				"from": "00:44:38,690",
+				"to": "00:44:56,820"
+			},
+			"offsets": {
+				"from": 2678690,
+				"to": 2696820
+			},
+			"text": " the problem is it takes 10 minutes to draw so i just remember that 10 minutes to draw"
+		},
+		{
+			"timestamps": {
+				"from": "00:44:59,070",
+				"to": "00:45:14,700"
+			},
+			"offsets": {
+				"from": 2699070,
+				"to": 2714700
+			},
+			"text": " and each one of these turns is 10 seconds flickers other than flicker he's kind of swimming and saying"
+		},
+		{
+			"timestamps": {
+				"from": "00:45:14,700",
+				"to": "00:45:19,450"
+			},
+			"offsets": {
+				"from": 2714700,
+				"to": 2719450
+			},
+			"text": " i think i can help her get to the next rock with that last jump's gonna be really hard and he's just"
+		},
+		{
+			"timestamps": {
+				"from": "00:45:19,450",
+				"to": "00:45:29,800"
+			},
+			"offsets": {
+				"from": 2719450,
+				"to": 2729800
+			},
+			"text": " kind of like dog and paddling trying to get there maybe if you can help her on the last jump or something"
+		},
+		{
+			"timestamps": {
+				"from": "00:45:29,800",
+				"to": "00:45:41,400"
+			},
+			"offsets": {
+				"from": 2729800,
+				"to": 2741400
+			},
+			"text": " but it's still gonna be very risky keep going i don't like i don't think i have anything"
+		},
+		{
+			"timestamps": {
+				"from": "00:45:42,900",
+				"to": "00:46:00,890"
+			},
+			"offsets": {
+				"from": 2742900,
+				"to": 2760890
+			},
+			"text": " oh my god we'll get it we'll figure this out well i'm trying to actually put fog in there for you"
+		},
+		{
+			"timestamps": {
+				"from": "00:46:00,890",
+				"to": "00:46:30,600"
+			},
+			"offsets": {
+				"from": 2760890,
+				"to": 2790600
+			},
+			"text": " yeah uh so go ahead yeah lock it what is in that you're in there you can just do it just roll"
+		},
+		{
+			"timestamps": {
+				"from": "00:46:30,600",
+				"to": "00:46:49,050"
+			},
+			"offsets": {
+				"from": 2790600,
+				"to": 2809050
+			},
+			"text": " there what am i doing okay uh yeah uh being all out there by yourself is a definitely a tricky thing to"
+		},
+		{
+			"timestamps": {
+				"from": "00:46:49,050",
+				"to": "00:47:03,310"
+			},
+			"offsets": {
+				"from": 2809050,
+				"to": 2823310
+			},
+			"text": " do it um which is going to try his best okay go ahead and make the next jump doing yeah this is"
+		},
+		{
+			"timestamps": {
+				"from": "00:47:03,310",
+				"to": "00:47:15,540"
+			},
+			"offsets": {
+				"from": 2823310,
+				"to": 2835540
+			},
+			"text": " off buttocks oh it's easy yeah okay you're able to get across uh but are you helping vilo yes"
+		},
+		{
+			"timestamps": {
+				"from": "00:47:27,130",
+				"to": "00:47:37,260"
+			},
+			"offsets": {
+				"from": 2847130,
+				"to": 2857260
+			},
+			"text": " vilo's just able to get across he kind of like that paw kind of hits um just for flavor here uh his"
+		},
+		{
+			"timestamps": {
+				"from": "00:47:37,260",
+				"to": "00:47:44,510"
+			},
+			"offsets": {
+				"from": 2857260,
+				"to": 2864510
+			},
+			"text": " paw actually goes in a foot goes a hand goes to grab him and he as well does not get grabbed by these"
+		},
+		{
+			"timestamps": {
+				"from": "00:47:44,510",
+				"to": "00:48:17,020"
+			},
+			"offsets": {
+				"from": 2864510,
+				"to": 2897020
+			},
+			"text": " gets to he swims to the middle over he's like trust me try to make the jump but even if you miss it"
+		},
+		{
+			"timestamps": {
+				"from": "00:48:17,020",
+				"to": "00:48:40,780"
+			},
+			"offsets": {
+				"from": 2897020,
+				"to": 2920780
+			},
+			"text": " you should be okay um he swims to the middle enough he kept the spell basically he's doggy paddling and"
+		},
+		{
+			"timestamps": {
+				"from": "00:48:40,780",
+				"to": "00:48:58,420"
+			},
+			"offsets": {
+				"from": 2920780,
+				"to": 2938420
+			},
+			"text": " then he kind of like uh tenses up in this 20 foot radius blasts off around him like this protective"
+		},
+		{
+			"timestamps": {
+				"from": "00:48:58,420",
+				"to": "00:49:13,530"
+			},
+			"offsets": {
+				"from": 2938420,
+				"to": 2953530
+			},
+			"text": " fiery orb um like over the water around him within 20 feet tells you to go get to your friends this is"
+		},
+		{
+			"timestamps": {
+				"from": "00:49:13,530",
+				"to": "00:49:19,910"
+			},
+			"offsets": {
+				"from": 2953530,
+				"to": 2959910
+			},
+			"text": " about that's about that's about 20 feet uh it's not your turn yet it'll be pop it's poppy's time"
+		},
+		{
+			"timestamps": {
+				"from": "00:49:19,910",
+				"to": "00:49:47,740"
+			},
+			"offsets": {
+				"from": 2959910,
+				"to": 2987740
+			},
+			"text": " describe this climber kit what is that you're not really climbing at this point it's more jumping"
+		},
+		{
+			"timestamps": {
+				"from": "00:50:03,360",
+				"to": "00:50:23,610"
+			},
+			"offsets": {
+				"from": 3003360,
+				"to": 3023610
+			},
+			"text": " you could you could throw a rope oh really you're just it's very far it'd be a really hard throw"
+		},
+		{
+			"timestamps": {
+				"from": "00:50:23,610",
+				"to": "00:50:35,130"
+			},
+			"offsets": {
+				"from": 3023610,
+				"to": 3035130
+			},
+			"text": " and flicker said that he can get her to you guys on the next so you're gonna try to make the jump yeah you do"
+		},
+		{
+			"timestamps": {
+				"from": "00:50:35,130",
+				"to": "00:50:56,540"
+			},
+			"offsets": {
+				"from": 3035130,
+				"to": 3056540
+			},
+			"text": " that you hear deep slamming behind you and like a jump and a figure bursts out of the smokiness"
+		},
+		{
+			"timestamps": {
+				"from": "00:50:56,540",
+				"to": "00:51:09,160"
+			},
+			"offsets": {
+				"from": 3056540,
+				"to": 3069160
+			},
+			"text": " carrying lantern of his own but it is not shining nearly as bright as all well maybe as bright as"
+		},
+		{
+			"timestamps": {
+				"from": "00:51:09,160",
+				"to": "00:51:22,050"
+			},
+			"offsets": {
+				"from": 3069160,
+				"to": 3082050
+			},
+			"text": " the laura because the laura doesn't slow down basically just yells move and he's gonna make the"
+		},
+		{
+			"timestamps": {
+				"from": "00:51:22,050",
+				"to": "00:51:37,760"
+			},
+			"offsets": {
+				"from": 3082050,
+				"to": 3097760
+			},
+			"text": " jump yes he makes the jump and you have to make enough strength yeah because he basically just"
+		},
+		{
+			"timestamps": {
+				"from": "00:51:37,760",
+				"to": "00:52:04,830"
+			},
+			"offsets": {
+				"from": 3097760,
+				"to": 3124830
+			},
+			"text": " pushed you out of the way get not to what else do you want to try to argue he just pushes him um roll"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:04,830",
+				"to": "00:52:11,800"
+			},
+			"offsets": {
+				"from": 3124830,
+				"to": 3131800
+			},
+			"text": " make a wisdom saving throw so he he leaps across and he actually kind of catches the water a little"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:11,800",
+				"to": "00:52:20,640"
+			},
+			"offsets": {
+				"from": 3131800,
+				"to": 3140640
+			},
+			"text": " bit and he guys gets like gunned up pulls himself out uh of the grass but like mentally"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:20,640",
+				"to": "00:52:30,240"
+			},
+			"offsets": {
+				"from": 3140640,
+				"to": 3150240
+			},
+			"text": " seems affected and he's about to make the second jump roll it as that's half as you're falling to"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:30,240",
+				"to": "00:52:42,270"
+			},
+			"offsets": {
+				"from": 3150240,
+				"to": 3162270
+			},
+			"text": " give you a little bit roll perception as your wisdom says 14 go ahead and roll a perception"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:44,440",
+				"to": "00:52:47,900"
+			},
+			"offsets": {
+				"from": 3164440,
+				"to": 3167900
+			},
+			"text": " you can it can be your wisdom uh roll perception"
+		},
+		{
+			"timestamps": {
+				"from": "00:52:49,050",
+				"to": "00:53:03,030"
+			},
+			"offsets": {
+				"from": 3169050,
+				"to": 3183030
+			},
+			"text": " let me see no you don't want to uh oh you lose one lantern he doesn't it wouldn't matter"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:03,030",
+				"to": "00:53:14,680"
+			},
+			"offsets": {
+				"from": 3183030,
+				"to": 3194680
+			},
+			"text": " no matter what um so you fall into the the hands as you do his lantern is not like yours it is like"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:14,680",
+				"to": "00:53:28,770"
+			},
+			"offsets": {
+				"from": 3194680,
+				"to": 3208770
+			},
+			"text": " haphazardly put together um and as he was passing you he has like his resolve seems to also be the move"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:28,770",
+				"to": "00:53:39,570"
+			},
+			"offsets": {
+				"from": 3208770,
+				"to": 3219570
+			},
+			"text": " and pushing out of the way which seems like he's trying to be an asshole"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:39,570",
+				"to": "00:53:44,410"
+			},
+			"offsets": {
+				"from": 3219570,
+				"to": 3224410
+			},
+			"text": " which he kind of is being an asshole i mean he is in the act of doing it as an asshole but it's more"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:44,410",
+				"to": "00:53:53,880"
+			},
+			"offsets": {
+				"from": 3224410,
+				"to": 3233880
+			},
+			"text": " so in a panic of being fomented by whatever is in that fog and trying to get his or away from it as"
+		},
+		{
+			"timestamps": {
+				"from": "00:53:53,880",
+				"to": "00:54:16,640"
+			},
+			"offsets": {
+				"from": 3233880,
+				"to": 3256640
+			},
+			"text": " fast as he can um that happens you are now um water okay roll a deep oh no because you would fall"
+		},
+		{
+			"timestamps": {
+				"from": "00:54:16,640",
+				"to": "00:54:26,880"
+			},
+			"offsets": {
+				"from": 3256640,
+				"to": 3266880
+			},
+			"text": " but there's an interesting thing here the flickers and i put you here uh roll a d4 one okay you were"
+		},
+		{
+			"timestamps": {
+				"from": "00:54:26,880",
+				"to": "00:54:41,370"
+			},
+			"offsets": {
+				"from": 3266880,
+				"to": 3281370
+			},
+			"text": " here one two actually roll d8 and any it's gonna decide on which block you fall this is warm yeah you"
+		},
+		{
+			"timestamps": {
+				"from": "00:54:41,370",
+				"to": "00:54:52,650"
+			},
+			"offsets": {
+				"from": 3281370,
+				"to": 3292650
+			},
+			"text": " take the the lantern damage you kind of get pushed forward uh it's oh it is your turn um yes you can"
+		},
+		{
+			"timestamps": {
+				"from": "00:54:52,650",
+				"to": "00:54:57,850"
+			},
+			"offsets": {
+				"from": 3292650,
+				"to": 3297850
+			},
+			"text": " swim across these things are pulling at you a little bit you feel a little bit of that kind of pull to"
+		},
+		{
+			"timestamps": {
+				"from": "00:54:57,850",
+				"to": "00:55:07,670"
+			},
+			"offsets": {
+				"from": 3297850,
+				"to": 3307670
+			},
+			"text": " but you still have enough to get over it stay focused focus oh laura you're up"
+		},
+		{
+			"timestamps": {
+				"from": "00:55:14,780",
+				"to": "00:55:21,640"
+			},
+			"offsets": {
+				"from": 3314780,
+				"to": 3321640
+			},
+			"text": " you can make a 20 that is a 40 foot jump um you can jump 20 feet and he said you'll be fine"
+		},
+		{
+			"timestamps": {
+				"from": "00:55:27,930",
+				"to": "00:55:39,530"
+			},
+			"offsets": {
+				"from": 3327930,
+				"to": 3339530
+			},
+			"text": " you do that and you kind of you push him down you feel uh um he said you don't she does have to roll"
+		},
+		{
+			"timestamps": {
+				"from": "00:55:39,530",
+				"to": "00:55:58,160"
+			},
+			"offsets": {
+				"from": 3339530,
+				"to": 3358160
+			},
+			"text": " at advantage but go ahead and roll it at advantage roll its parts take the best or plus wisdom it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:55:58,160",
+				"to": "00:56:04,020"
+			},
+			"offsets": {
+				"from": 3358160,
+				"to": 3364020
+			},
+			"text": " a wisdom save so it's your true thing it's not the toad oh it's my true yeah because you're you don't"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:04,020",
+				"to": "00:56:13,260"
+			},
+			"offsets": {
+				"from": 3364020,
+				"to": 3373260
+			},
+			"text": " change your wisdom oh i don't think well i think you rolled a natural one on losing the lanterns so i don't"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:13,260",
+				"to": "00:56:18,850"
+			},
+			"offsets": {
+				"from": 3373260,
+				"to": 3378850
+			},
+			"text": " think it would have mattered uh you can look at okay it even with that"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:18,850",
+				"to": "00:56:27,280"
+			},
+			"offsets": {
+				"from": 3378850,
+				"to": 3387280
+			},
+			"text": " so you go to touch this water and you don't feel that pull it seems to be that spell what the wisdom"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:27,280",
+				"to": "00:56:32,460"
+			},
+			"offsets": {
+				"from": 3387280,
+				"to": 3392460
+			},
+			"text": " in that 20 the knowledge you're gaining is that whatever spell flicker just has is protecting you"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:32,460",
+				"to": "00:56:42,160"
+			},
+			"offsets": {
+				"from": 3392460,
+				"to": 3402160
+			},
+			"text": " from the attack on your will to to make it across so you can make that jump and then you can um walk"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:42,160",
+				"to": "00:56:53,680"
+			},
+			"offsets": {
+				"from": 3402160,
+				"to": 3413680
+			},
+			"text": " across so you are with your everyone i'm back what did you get i have something to show you"
+		},
+		{
+			"timestamps": {
+				"from": "00:56:53,680",
+				"to": "00:57:04,140"
+			},
+			"offsets": {
+				"from": 3413680,
+				"to": 3424140
+			},
+			"text": " dren rolls a natural 20 then he dips out sorry you could you would have enough time in his because"
+		},
+		{
+			"timestamps": {
+				"from": "00:57:04,140",
+				"to": "00:57:08,730"
+			},
+			"offsets": {
+				"from": 3424140,
+				"to": 3428730
+			},
+			"text": " he's just basically dashing and not trying to help anyone you would if you wanted like shoot an arrow"
+		},
+		{
+			"timestamps": {
+				"from": "00:57:08,730",
+				"to": "00:57:24,380"
+			},
+			"offsets": {
+				"from": 3428730,
+				"to": 3444380
+			},
+			"text": " at him or something like that you could do something like that uh but he's gonna get away okay what's the"
+		},
+		{
+			"timestamps": {
+				"from": "00:57:24,380",
+				"to": "00:57:34,240"
+			},
+			"offsets": {
+				"from": 3444380,
+				"to": 3454240
+			},
+			"text": " range on vicious mocker you're fine yeah okay um it's a save saving throw yeah uh what should dc"
+		},
+		{
+			"timestamps": {
+				"from": "00:57:34,240",
+				"to": "00:57:46,320"
+			},
+			"offsets": {
+				"from": 3454240,
+				"to": 3466320
+			},
+			"text": " well save dc um um he has no wisdom though what does he hear in his head he hears so you have to"
+		},
+		{
+			"timestamps": {
+				"from": "00:57:46,320",
+				"to": "00:58:15,160"
+			},
+			"offsets": {
+				"from": 3466320,
+				"to": 3495160
+			},
+			"text": " push were you told you couldn't even come on this he really takes them like roll the damage he takes"
+		},
+		{
+			"timestamps": {
+				"from": "00:58:15,160",
+				"to": "00:58:19,640"
+			},
+			"offsets": {
+				"from": 3495160,
+				"to": 3499640
+			},
+			"text": " like some like you can see him like reaping his head and like ow and he turns back to you and he goes"
+		},
+		{
+			"timestamps": {
+				"from": "00:58:19,640",
+				"to": "00:58:26,470"
+			},
+			"offsets": {
+				"from": 3499640,
+				"to": 3506470
+			},
+			"text": " stopping for you you're all the chosen you guys figure it out i'm already ahead of you and you just"
+		},
+		{
+			"timestamps": {
+				"from": "00:58:26,470",
+				"to": "00:58:33,340"
+			},
+			"offsets": {
+				"from": 3506470,
+				"to": 3513340
+			},
+			"text": " keep going because you use me as a vaulting hole he can't hit you with that i mean you can"
+		},
+		{
+			"timestamps": {
+				"from": "00:58:33,340",
+				"to": "00:58:58,880"
+			},
+			"offsets": {
+				"from": 3513340,
+				"to": 3538880
+			},
+			"text": " help make maybe think you did uh he's gone as bobby says as he's running up he's like coming back"
+		},
+		{
+			"timestamps": {
+				"from": "00:58:58,880",
+				"to": "00:59:03,120"
+			},
+			"offsets": {
+				"from": 3538880,
+				"to": 3543120
+			},
+			"text": " up from like underneath being smushed by a frog that's ten times the size and he's like i can get"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:03,120",
+				"to": "00:59:11,500"
+			},
+			"offsets": {
+				"from": 3543120,
+				"to": 3551500
+			},
+			"text": " across i'm fine you go somebody help her get across okay all right big girl coming your way"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:18,830",
+				"to": "00:59:29,040"
+			},
+			"offsets": {
+				"from": 3558830,
+				"to": 3569040
+			},
+			"text": " yeah take it advantage natural 20 okay the least well i think you have one of the lowest modifiers"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:29,040",
+				"to": "00:59:35,880"
+			},
+			"offsets": {
+				"from": 3569040,
+				"to": 3575880
+			},
+			"text": " and two natural 20s showing your leadership and again poppy thinks she's gonna have to help you"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:35,880",
+				"to": "00:59:44,050"
+			},
+			"offsets": {
+				"from": 3575880,
+				"to": 3584050
+			},
+			"text": " this is a you know another jump thanks again and poppy's already a little distracted too like"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:44,610",
+				"to": "00:59:49,250"
+			},
+			"offsets": {
+				"from": 3584610,
+				"to": 3589250
+			},
+			"text": " she's gonna like why is it to be so hot and then so she was like trying to say she was helping you but"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:49,250",
+				"to": "00:59:53,680"
+			},
+			"offsets": {
+				"from": 3589250,
+				"to": 3593680
+			},
+			"text": " she's in that like moment where she's like not really there yet and by the time she like turns"
+		},
+		{
+			"timestamps": {
+				"from": "00:59:53,680",
+				"to": "01:00:26,950"
+			},
+			"offsets": {
+				"from": 3593680,
+				"to": 3626950
+			},
+			"text": " to be like i'm ready to help you already uh vilo and lock this jump is difficult let me do the"
+		},
+		{
+			"timestamps": {
+				"from": "01:00:26,950",
+				"to": "01:00:43,710"
+			},
+			"offsets": {
+				"from": 3626950,
+				"to": 3643710
+			},
+			"text": " measure give me one sec spectral fog is about there flicker spells technically still there but i'm not"
+		},
+		{
+			"timestamps": {
+				"from": "01:00:43,710",
+				"to": "01:00:51,810"
+			},
+			"offsets": {
+				"from": 3643710,
+				"to": 3651810
+			},
+			"text": " going to caught up in there you can probably zoom in now to the top um all right so what do you say to"
+		},
+		{
+			"timestamps": {
+				"from": "01:00:51,810",
+				"to": "01:01:17,810"
+			},
+			"offsets": {
+				"from": 3651810,
+				"to": 3677810
+			},
+			"text": " vilo as you're kind of beckoning him to go for it take time i'm always up for an experiment"
+		},
+		{
+			"timestamps": {
+				"from": "01:01:20,430",
+				"to": "01:01:39,990"
+			},
+			"offsets": {
+				"from": 3680430,
+				"to": 3699990
+			},
+			"text": " and okay he's gonna jump it uh go ahead yeah he falls about halfway the hands go to reach at him"
+		},
+		{
+			"timestamps": {
+				"from": "01:01:39,990",
+				"to": "01:01:48,680"
+			},
+			"offsets": {
+				"from": 3699990,
+				"to": 3708680
+			},
+			"text": " and pull at his will and they have to do not have any effect um do you want him to keep going or you"
+		},
+		{
+			"timestamps": {
+				"from": "01:01:48,680",
+				"to": "01:02:00,130"
+			},
+			"offsets": {
+				"from": 3708680,
+				"to": 3720130
+			},
+			"text": " want him to change his core direction uh technically probably so you can get the edge there it's about"
+		},
+		{
+			"timestamps": {
+				"from": "01:02:00,130",
+				"to": "01:02:05,690"
+			},
+			"offsets": {
+				"from": 3720130,
+				"to": 3725690
+			},
+			"text": " 15 20 feet it's just you don't have any leverage that's what makes the jump harder there's like"
+		},
+		{
+			"timestamps": {
+				"from": "01:02:05,690",
+				"to": "01:02:11,130"
+			},
+			"offsets": {
+				"from": 3725690,
+				"to": 3731130
+			},
+			"text": " that because a little bit higher a lot of these you've been like going down yeah it's a small thing"
+		},
+		{
+			"timestamps": {
+				"from": "01:02:11,130",
+				"to": "01:02:38,060"
+			},
+			"offsets": {
+				"from": 3731130,
+				"to": 3758060
+			},
+			"text": " of course you can go to metal dice we're able to successfully get across say lore wise vilo"
+		},
+		{
+			"timestamps": {
+				"from": "01:02:38,060",
+				"to": "01:02:51,850"
+			},
+			"offsets": {
+				"from": 3758060,
+				"to": 3771850
+			},
+			"text": " will still like yeah it's technically them but yeah vilo will be because he's like still in the flicker swims up"
+		},
+		{
+			"timestamps": {
+				"from": "01:02:53,600",
+				"to": "01:03:03,970"
+			},
+			"offsets": {
+				"from": 3773600,
+				"to": 3783970
+			},
+			"text": " the giant toad how so again you are you're kind of with vilo the help action that's doing it"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:03,970",
+				"to": "01:03:19,370"
+			},
+			"offsets": {
+				"from": 3783970,
+				"to": 3799370
+			},
+			"text": " saying you want vilo what are you trying to yeah because he can't help anything i was just saying"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:19,370",
+				"to": "01:03:32,170"
+			},
+			"offsets": {
+				"from": 3799370,
+				"to": 3812170
+			},
+			"text": " because of like lore wise he was there but either way yeah yeah yeah he can get over to you uh flicker"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:32,170",
+				"to": "01:03:39,260"
+			},
+			"offsets": {
+				"from": 3812170,
+				"to": 3819260
+			},
+			"text": " kind of swims up to you alara again you're feeling down this is like a moment you should be like"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:39,260",
+				"to": "01:03:50,090"
+			},
+			"offsets": {
+				"from": 3819260,
+				"to": 3830090
+			},
+			"text": " excited about but come on come on we're almost there we're almost there but he's speaking in"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:50,090",
+				"to": "01:03:55,810"
+			},
+			"offsets": {
+				"from": 3830090,
+				"to": 3835810
+			},
+			"text": " well you can still understand comments but he's speaking in comments everyone can understand it"
+		},
+		{
+			"timestamps": {
+				"from": "01:03:55,810",
+				"to": "01:04:11,400"
+			},
+			"offsets": {
+				"from": 3835810,
+				"to": 3851400
+			},
+			"text": " go go we can help you get across um and he kind of is reckoning you guys there poppy you're up do i"
+		},
+		{
+			"timestamps": {
+				"from": "01:04:11,400",
+				"to": "01:04:25,830"
+			},
+			"offsets": {
+				"from": 3851400,
+				"to": 3865830
+			},
+			"text": " hear any more people about to run me over a role perception you hear some noise but you don't know"
+		},
+		{
+			"timestamps": {
+				"from": "01:04:25,830",
+				"to": "01:04:28,950"
+			},
+			"offsets": {
+				"from": 3865830,
+				"to": 3868950
+			},
+			"text": " no no you don't think there's any more people coming there's no no you don't think there's any more"
+		},
+		{
+			"timestamps": {
+				"from": "01:04:28,950",
+				"to": "01:05:15,720"
+			},
+			"offsets": {
+				"from": 3868950,
+				"to": 3915720
+			},
+			"text": " people coming water out of my bag uh roll a wisdom save uh you lose two of your oh wait wait"
+		},
+		{
+			"timestamps": {
+				"from": "01:05:15,720",
+				"to": "01:05:31,030"
+			},
+			"offsets": {
+				"from": 3915720,
+				"to": 3931030
+			},
+			"text": " let me do something a little bit yeah he's not able to redo that spell he needed to get back"
+		},
+		{
+			"timestamps": {
+				"from": "01:05:31,030",
+				"to": "01:05:40,900"
+			},
+			"offsets": {
+				"from": 3931030,
+				"to": 3940900
+			},
+			"text": " uh so you lose two yeah if you ever need me to do it go ahead yeah because they i have a yeah"
+		},
+		{
+			"timestamps": {
+				"from": "01:05:40,900",
+				"to": "01:05:54,790"
+			},
+			"offsets": {
+				"from": 3940900,
+				"to": 3954790
+			},
+			"text": " candles being turned off i don't like this yeah alara you are all these instruments are really"
+		},
+		{
+			"timestamps": {
+				"from": "01:05:54,790",
+				"to": "01:06:04,130"
+			},
+			"offsets": {
+				"from": 3954790,
+				"to": 3964130
+			},
+			"text": " pulling me down alara you still have there's still a pull uh what was the jump hold on"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:07,290",
+				"to": "01:06:21,790"
+			},
+			"offsets": {
+				"from": 3967290,
+				"to": 3981790
+			},
+			"text": " well with your giant leap you can make it so yeah you were thinking that as a toad like but uh flicker"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:21,790",
+				"to": "01:06:30,030"
+			},
+			"offsets": {
+				"from": 3981790,
+				"to": 3990030
+			},
+			"text": " flicker is also like kind of like nuzzling you like just one more jump just one more jump"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:30,030",
+				"to": "01:06:39,960"
+			},
+			"offsets": {
+				"from": 3990030,
+				"to": 3999960
+			},
+			"text": " we'll get over it it'll be fine roll okay we're gonna lower this up a little bit"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:39,960",
+				"to": "01:06:49,070"
+			},
+			"offsets": {
+				"from": 3999960,
+				"to": 4009070
+			},
+			"text": " oh no roll a wisdom save you are fine i'll tell you the stakes don't roll on that one okay no it's"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:49,070",
+				"to": "01:06:54,030"
+			},
+			"offsets": {
+				"from": 4009070,
+				"to": 4014030
+			},
+			"text": " fine it's as long it was just a check for when you jump did you have a moment of like nothing matters"
+		},
+		{
+			"timestamps": {
+				"from": "01:06:59,400",
+				"to": "01:07:28,880"
+			},
+			"offsets": {
+				"from": 4019400,
+				"to": 4048880
+			},
+			"text": " but yeah push through so there was that moment there's this hesitation do i do this and as you"
+		},
+		{
+			"timestamps": {
+				"from": "01:07:28,880",
+				"to": "01:07:44,790"
+			},
+			"offsets": {
+				"from": 4048880,
+				"to": 4064790
+			},
+			"text": " land on the other side um light relight one of your fingers may you're up how do i get her out of the"
+		},
+		{
+			"timestamps": {
+				"from": "01:07:44,790",
+				"to": "01:07:56,710"
+			},
+			"offsets": {
+				"from": 4064790,
+				"to": 4076710
+			},
+			"text": " the water um okay so you see her uh well you could yeah i'm trying to think of like you could technically"
+		},
+		{
+			"timestamps": {
+				"from": "01:07:56,710",
+				"to": "01:08:00,870"
+			},
+			"offsets": {
+				"from": 4076710,
+				"to": 4080870
+			},
+			"text": " get out but i like the lore of you being trapped for a turn i probably should have made this because"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:00,870",
+				"to": "01:08:04,860"
+			},
+			"offsets": {
+				"from": 4080870,
+				"to": 4084860
+			},
+			"text": " this is a guinea pig thing i've never done this before i think you're trapped until your next turn"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:04,860",
+				"to": "01:08:10,440"
+			},
+			"offsets": {
+				"from": 4084860,
+				"to": 4090440
+			},
+			"text": " just for the excitement you can't move until your next turn you can get out next turn"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:14,320",
+				"to": "01:08:22,050"
+			},
+			"offsets": {
+				"from": 4094320,
+				"to": 4102050
+			},
+			"text": " why is he so hot i'm like i'm still reaching out she's like pouting like i'm not going"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:23,290",
+				"to": "01:08:42,190"
+			},
+			"offsets": {
+				"from": 4103290,
+				"to": 4122190
+			},
+			"text": " i don't know what to wear uh but yeah so you can 100% missus deficit uh you call on your dnt to help"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:42,190",
+				"to": "01:08:49,710"
+			},
+			"offsets": {
+				"from": 4122190,
+				"to": 4129710
+			},
+			"text": " you and you basically uh disappear in one spot and reappear on the other side um and you can kind"
+		},
+		{
+			"timestamps": {
+				"from": "01:08:49,710",
+				"to": "01:09:02,050"
+			},
+			"offsets": {
+				"from": 4129710,
+				"to": 4142050
+			},
+			"text": " of reach out to i'll be reaching out to poppy to have her house you are definitely better now that"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:02,050",
+				"to": "01:09:08,490"
+			},
+			"offsets": {
+				"from": 4142050,
+				"to": 4148490
+			},
+			"text": " you're out of the fog um the candle the candle is not a one-to-one representation of like your mental"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:08,490",
+				"to": "01:09:17,440"
+			},
+			"offsets": {
+				"from": 4148490,
+				"to": 4157440
+			},
+			"text": " state it is like perpendicular to it so um yeah you can act in for role-playing you can act as though like"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:17,440",
+				"to": "01:09:25,880"
+			},
+			"offsets": {
+				"from": 4157440,
+				"to": 4165880
+			},
+			"text": " you're kind of starting to come out of that um so she's going down though exactly i'm thinking"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:25,880",
+				"to": "01:09:37,920"
+			},
+			"offsets": {
+				"from": 4165880,
+				"to": 4177920
+			},
+			"text": " about friends yeah it's hot um violet lock do you guys want to do anything um before flicker go and"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:37,920",
+				"to": "01:09:46,460"
+			},
+			"offsets": {
+				"from": 4177920,
+				"to": 4186460
+			},
+			"text": " poppy go next so um flicker's like you don't need to help me there's not much even unless you had"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:46,460",
+				"to": "01:09:55,340"
+			},
+			"offsets": {
+				"from": 4186460,
+				"to": 4195340
+			},
+			"text": " i would say just kind of let poppy swim her way out um clicker then we do that uh flicker can kind of"
+		},
+		{
+			"timestamps": {
+				"from": "01:09:55,340",
+				"to": "01:10:04,110"
+			},
+			"offsets": {
+				"from": 4195340,
+				"to": 4204110
+			},
+			"text": " hop into and just kind of help you get out um and you guys all oh i didn't even have more wow oh"
+		},
+		{
+			"timestamps": {
+				"from": "01:10:04,110",
+				"to": "01:10:06,750"
+			},
+			"offsets": {
+				"from": 4204110,
+				"to": 4206750
+			},
+			"text": " actually there's a wisdom safe here roll wisdom thank you for inviting me"
+		},
+		{
+			"timestamps": {
+				"from": "01:10:06,750",
+				"to": "01:10:24,540"
+			},
+			"offsets": {
+				"from": 4206750,
+				"to": 4224540
+			},
+			"text": " good enough don't roll one one more candle goes out one more uh poppy get any help on that"
+		},
+		{
+			"timestamps": {
+				"from": "01:10:25,020",
+				"to": "01:10:30,680"
+			},
+			"offsets": {
+				"from": 4225020,
+				"to": 4230680
+			},
+			"text": " not in a wisdom safe the wisdom is within your brain unless you want you have parasites in your brain"
+		},
+		{
+			"timestamps": {
+				"from": "01:10:30,680",
+				"to": "01:10:57,250"
+			},
+			"offsets": {
+				"from": 4230680,
+				"to": 4257250
+			},
+			"text": " maybe not those kind of person um so yeah uh you are feeling she had a moment um she knows it's a"
+		},
+		{
+			"timestamps": {
+				"from": "01:10:57,250",
+				"to": "01:11:03,520"
+			},
+			"offsets": {
+				"from": 4257250,
+				"to": 4263520
+			},
+			"text": " lavender rock hold on let's uh let me wrap that up so yeah poppy you're able to get out"
+		},
+		{
+			"timestamps": {
+				"from": "01:11:03,520",
+				"to": "01:11:11,470"
+			},
+			"offsets": {
+				"from": 4263520,
+				"to": 4271470
+			},
+			"text": " again you're you are starting to feel better the lantern is not like a one-to-one and you're meant to"
+		},
+		{
+			"timestamps": {
+				"from": "01:11:11,470",
+				"to": "01:11:32,590"
+			},
+			"offsets": {
+				"from": 4271470,
+				"to": 4292590
+			},
+			"text": " be able to get out of your brain but yeah you do not handle that's the jam um yeah a lar you can"
+		},
+		{
+			"timestamps": {
+				"from": "01:11:32,590",
+				"to": "01:11:50,330"
+			},
+			"offsets": {
+				"from": 4292590,
+				"to": 4310330
+			},
+			"text": " roll an arcana check on that rock you should have an arcana ability it's an intelligence-based"
+		},
+		{
+			"timestamps": {
+				"from": "01:11:50,330",
+				"to": "01:11:57,500"
+			},
+			"offsets": {
+				"from": 4310330,
+				"to": 4317500
+			},
+			"text": " thing right the person yeah it's intelligence-based so you still wouldn't okay wait so we're playing"
+		},
+		{
+			"timestamps": {
+				"from": "01:11:57,500",
+				"to": "01:12:08,820"
+			},
+			"offsets": {
+				"from": 4317500,
+				"to": 4328820
+			},
+			"text": " this up um nobody can understand you right now because you are a frog cause lock can talk to his"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:08,820",
+				"to": "01:12:15,420"
+			},
+			"offsets": {
+				"from": 4328820,
+				"to": 4335420
+			},
+			"text": " animals but he doesn't have to speak with animals not turned on yeah so you could cast speak with it"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:15,420",
+				"to": "01:12:32,600"
+			},
+			"offsets": {
+				"from": 4335420,
+				"to": 4352600
+			},
+			"text": " so it is still seems to be pushing forward but not as aggressively um wait to understand the magical"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:32,600",
+				"to": "01:12:42,570"
+			},
+			"offsets": {
+				"from": 4352600,
+				"to": 4362570
+			},
+			"text": " essence of that rock so we'll say um well you don't know what she's doing she's a frog frog so we'll say"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:43,450",
+				"to": "01:12:49,690"
+			},
+			"offsets": {
+				"from": 4363450,
+				"to": 4369690
+			},
+			"text": " yeah we'll say oh you're giant so nobody can just be carrying you so everyone's kind of like running"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:49,690",
+				"to": "01:12:55,070"
+			},
+			"offsets": {
+				"from": 4369690,
+				"to": 4375070
+			},
+			"text": " up trying to get out going through this mountain pass um you as a giant toad are you you're just"
+		},
+		{
+			"timestamps": {
+				"from": "01:12:55,070",
+				"to": "01:13:18,400"
+			},
+			"offsets": {
+				"from": 4375070,
+				"to": 4398400
+			},
+			"text": " kind of like staring at this rocket like falling along that is a no you're not talking about my own"
+		},
+		{
+			"timestamps": {
+				"from": "01:13:18,400",
+				"to": "01:13:25,110"
+			},
+			"offsets": {
+				"from": 4398400,
+				"to": 4405110
+			},
+			"text": " stone of absorption which i'm going to add to your uh inventory on the app but basically it is a magical"
+		},
+		{
+			"timestamps": {
+				"from": "01:13:25,110",
+				"to": "01:13:33,210"
+			},
+			"offsets": {
+				"from": 4405110,
+				"to": 4413210
+			},
+			"text": " stone uh that you can with your whatever 19 or 20 you threw it you can throw it into the air and it"
+		},
+		{
+			"timestamps": {
+				"from": "01:13:33,210",
+				"to": "01:13:45,620"
+			},
+			"offsets": {
+				"from": 4413210,
+				"to": 4425620
+			},
+			"text": " basically orbits around your head um and and other creatures can attack it it has its own ac it has"
+		},
+		{
+			"timestamps": {
+				"from": "01:13:45,620",
+				"to": "01:13:53,730"
+			},
+			"offsets": {
+				"from": 4425620,
+				"to": 4433730
+			},
+			"text": " its own hit points but as it is there um you can use your reaction to cancel any fourth level spell or"
+		},
+		{
+			"timestamps": {
+				"from": "01:13:53,730",
+				"to": "01:14:04,690"
+			},
+			"offsets": {
+				"from": 4433730,
+				"to": 4444690
+			},
+			"text": " lower cast by a creature that you can see and targeting you you can choose to use it um there is a set"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:04,690",
+				"to": "01:14:14,600"
+			},
+			"offsets": {
+				"from": 4444690,
+				"to": 4454600
+			},
+			"text": " amount of spell levels that it can prevent that i'm not going to tell you uh that will then have"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:14,600",
+				"to": "01:14:21,080"
+			},
+			"offsets": {
+				"from": 4454600,
+				"to": 4461080
+			},
+			"text": " it disintegrate but it's basically floating stone that is counter so it's a very powerful rock that"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:21,080",
+				"to": "01:14:31,320"
+			},
+			"offsets": {
+				"from": 4461080,
+				"to": 4471320
+			},
+			"text": " you just found um hopefully worth all the mental damage you went through to get it what do i get"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:31,320",
+				"to": "01:14:50,220"
+			},
+			"offsets": {
+				"from": 4471320,
+				"to": 4490220
+			},
+			"text": " uh you're still alive so guys make your way out of this uh mountain path uh flicker checks on you"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:50,220",
+				"to": "01:14:59,860"
+			},
+			"offsets": {
+				"from": 4490220,
+				"to": 4499860
+			},
+			"text": " and poppy poppy and um lara as a giant toad but he can talk to you and he just asks how you guys are"
+		},
+		{
+			"timestamps": {
+				"from": "01:14:59,860",
+				"to": "01:15:25,480"
+			},
+			"offsets": {
+				"from": 4499860,
+				"to": 4525480
+			},
+			"text": " feeling are you guys okay terrible i'm sorry why you shouldn't what the hell no you should not be here"
+		},
+		{
+			"timestamps": {
+				"from": "01:15:25,480",
+				"to": "01:15:44,420"
+			},
+			"offsets": {
+				"from": 4525480,
+				"to": 4544420
+			},
+			"text": " why i had answers i don't know though he should not be here that lantern wasn't saying it's something"
+		},
+		{
+			"timestamps": {
+				"from": "01:15:44,420",
+				"to": "01:15:53,220"
+			},
+			"offsets": {
+				"from": 4544420,
+				"to": 4553220
+			},
+			"text": " else should maybe find him and try to help him he's not going to make it there by himself we need each"
+		},
+		{
+			"timestamps": {
+				"from": "01:15:53,220",
+				"to": "01:16:09,880"
+			},
+			"offsets": {
+				"from": 4553220,
+				"to": 4569880
+			},
+			"text": " other you're okay i can help protect you kind of like he understands you're upset at this and it's"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:09,880",
+				"to": "01:16:15,930"
+			},
+			"offsets": {
+				"from": 4569880,
+				"to": 4575930
+			},
+			"text": " kind of like rubbing on your leg trying to like cheer you up okay you're okay i try to play a song but"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:15,930",
+				"to": "01:16:24,280"
+			},
+			"offsets": {
+				"from": 4575930,
+				"to": 4584280
+			},
+			"text": " both of my instruments are waterlogged roll roll performance at disadvantage see is your sheer"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:24,280",
+				"to": "01:16:38,220"
+			},
+			"offsets": {
+				"from": 4584280,
+				"to": 4598220
+			},
+			"text": " hatred you only have to push through match 20. i mean it was at a disadvantage even with these you are so"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:38,220",
+				"to": "01:16:47,650"
+			},
+			"offsets": {
+				"from": 4598220,
+				"to": 4607650
+			},
+			"text": " pissed which which instruments at first there's just water but you are just like using the anger"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:47,650",
+				"to": "01:16:55,440"
+			},
+			"offsets": {
+				"from": 4607650,
+				"to": 4615440
+			},
+			"text": " that you have for thread and then you get like a note like a clear as day note you kind of play a"
+		},
+		{
+			"timestamps": {
+				"from": "01:16:55,440",
+				"to": "01:17:09,230"
+			},
+			"offsets": {
+				"from": 4615440,
+				"to": 4629230
+			},
+			"text": " little ditty oh no you can at any time switch back um you get i think you have three wild shapes you"
+		},
+		{
+			"timestamps": {
+				"from": "01:17:09,230",
+				"to": "01:17:21,000"
+			},
+			"offsets": {
+				"from": 4629230,
+				"to": 4641000
+			},
+			"text": " can use before you take a short or long run so we'll say and don't reference the map anymore we use"
+		},
+		{
+			"timestamps": {
+				"from": "01:17:21,000",
+				"to": "01:17:30,120"
+			},
+			"offsets": {
+				"from": 4641000,
+				"to": 4650120
+			},
+			"text": " the restroom um but yeah you guys are kind of through the these gates that were open um into more natural"
+		},
+		{
+			"timestamps": {
+				"from": "01:17:30,780",
+				"to": "01:17:36,640"
+			},
+			"offsets": {
+				"from": 4650780,
+				"to": 4656640
+			},
+			"text": " it's gonna it's a little more woodlandy um and you guys can kind of start be walking up the mountain"
+		},
+		{
+			"timestamps": {
+				"from": "01:17:36,640",
+				"to": "01:17:42,140"
+			},
+			"offsets": {
+				"from": 4656640,
+				"to": 4662140
+			},
+			"text": " if there's anything you guys want to discuss as you change back and have this shiny rocky stuff"
+		},
+		{
+			"timestamps": {
+				"from": "01:17:42,140",
+				"to": "01:18:16,320"
+			},
+			"offsets": {
+				"from": 4662140,
+				"to": 4696320
+			},
+			"text": " that nobody else knows what is it you're like you're jealous about it obviously you know how pissed he was when you did it?"
+		},
+		{
+			"timestamps": {
+				"from": "01:18:16,320",
+				"to": "01:18:42,290"
+			},
+			"offsets": {
+				"from": 4696320,
+				"to": 4722290
+			},
+			"text": " you know how pissed he was when you did it?"
+		},
+		{
+			"timestamps": {
+				"from": "01:18:42,290",
+				"to": "01:19:11,910"
+			},
+			"offsets": {
+				"from": 4722290,
+				"to": 4751910
+			},
+			"text": " you know how pissed he was when you did it?"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:11,910",
+				"to": "01:19:16,430"
+			},
+			"offsets": {
+				"from": 4751910,
+				"to": 4756430
+			},
+			"text": " we have to know what he's talking about"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:16,430",
+				"to": "01:19:29,610"
+			},
+			"offsets": {
+				"from": 4756430,
+				"to": 4769610
+			},
+			"text": " yeah he looked through here he's like he's still a person we should maybe try to he seems lost"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:29,610",
+				"to": "01:19:30,490"
+			},
+			"offsets": {
+				"from": 4769610,
+				"to": 4770490
+			},
+			"text": " he seems scared"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:30,490",
+				"to": "01:19:35,360"
+			},
+			"offsets": {
+				"from": 4770490,
+				"to": 4775360
+			},
+			"text": " he used it"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:35,360",
+				"to": "01:19:43,560"
+			},
+			"offsets": {
+				"from": 4775360,
+				"to": 4783560
+			},
+			"text": " that was flicker listening"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:43,560",
+				"to": "01:19:48,460"
+			},
+			"offsets": {
+				"from": 4783560,
+				"to": 4788460
+			},
+			"text": " oh yeah he what he did was not kind of better"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:48,460",
+				"to": "01:19:54,970"
+			},
+			"offsets": {
+				"from": 4788460,
+				"to": 4794970
+			},
+			"text": " why was he going what he's doing?"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:54,970",
+				"to": "01:19:58,050"
+			},
+			"offsets": {
+				"from": 4794970,
+				"to": 4798050
+			},
+			"text": " don't know he shouldn't be here he was not chosen"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:58,050",
+				"to": "01:19:59,930"
+			},
+			"offsets": {
+				"from": 4798050,
+				"to": 4799930
+			},
+			"text": " elder briar only said he was chosen"
+		},
+		{
+			"timestamps": {
+				"from": "01:19:59,930",
+				"to": "01:20:08,730"
+			},
+			"offsets": {
+				"from": 4799930,
+				"to": 4808730
+			},
+			"text": " you must not know he would not have let something like this happen"
+		},
+		{
+			"timestamps": {
+				"from": "01:20:08,730",
+				"to": "01:20:38,480"
+			},
+			"offsets": {
+				"from": 4808730,
+				"to": 4838480
+			},
+			"text": " yeah okay he made his way out and so"
+		},
+		{
+			"timestamps": {
+				"from": "01:20:38,480",
+				"to": "01:20:44,030"
+			},
+			"offsets": {
+				"from": 4838480,
+				"to": 4844030
+			},
+			"text": " to paint the picture a little better so you guys kind of go through these big standing doors"
+		},
+		{
+			"timestamps": {
+				"from": "01:20:44,030",
+				"to": "01:20:51,360"
+			},
+			"offsets": {
+				"from": 4844030,
+				"to": 4851360
+			},
+			"text": " make your way out like up the mountain there was just kind of like a makeshift wall there"
+		},
+		{
+			"timestamps": {
+				"from": "01:20:51,360",
+				"to": "01:21:01,740"
+			},
+			"offsets": {
+				"from": 4851360,
+				"to": 4861740
+			},
+			"text": " there's a path you're on now it was man-made but it's like lost to nature a little bit so it's moss"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:01,740",
+				"to": "01:21:11,290"
+			},
+			"offsets": {
+				"from": 4861740,
+				"to": 4871290
+			},
+			"text": " eaten um much more alive and natural than this weird creepy bridge with spectral hands coming out of it"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:11,290",
+				"to": "01:21:17,410"
+			},
+			"offsets": {
+				"from": 4871290,
+				"to": 4877410
+			},
+			"text": " um there's like birds flying around um so there's not there's like a path leading up the mountain"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:17,410",
+				"to": "01:21:25,160"
+			},
+			"offsets": {
+				"from": 4877410,
+				"to": 4885160
+			},
+			"text": " you guys are following um but not like a clear indication like there's woods alongside everything"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:25,710",
+				"to": "01:21:32,770"
+			},
+			"offsets": {
+				"from": 4885710,
+				"to": 4892770
+			},
+			"text": " um you could roll survival in terms of like trying to track where he might have gone"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:32,770",
+				"to": "01:21:40,270"
+			},
+			"offsets": {
+				"from": 4892770,
+				"to": 4900270
+			},
+			"text": " if you would like to do that uh yeah anyone can do it some of you might have higher survival"
+		},
+		{
+			"timestamps": {
+				"from": "01:21:40,270",
+				"to": "01:22:29,360"
+			},
+			"offsets": {
+				"from": 4900270,
+				"to": 4949360
+			},
+			"text": " anybody else 24 the ranger yeah yeah while tracking in the mountains"
+		},
+		{
+			"timestamps": {
+				"from": "01:22:29,360",
+				"to": "01:22:37,340"
+			},
+			"offsets": {
+				"from": 4949360,
+				"to": 4957340
+			},
+			"text": " you also know their exact numbers their size and how long ago they passed so he was uh without your 24"
+		},
+		{
+			"timestamps": {
+				"from": "01:22:38,550",
+				"to": "01:22:53,140"
+			},
+			"offsets": {
+				"from": 4958550,
+				"to": 4973140
+			},
+			"text": " he's heading certainly heading up this path um the 24 we can say you kind of like get the sense as i"
+		},
+		{
+			"timestamps": {
+				"from": "01:22:53,140",
+				"to": "01:22:59,150"
+			},
+			"offsets": {
+				"from": 4973140,
+				"to": 4979150
+			},
+			"text": " would say um on him making his way up the mountain and you can kind of follow it for a little while"
+		},
+		{
+			"timestamps": {
+				"from": "01:22:59,150",
+				"to": "01:23:08,000"
+			},
+			"offsets": {
+				"from": 4979150,
+				"to": 4988000
+			},
+			"text": " is there anything you guys want to chat about while you're making your way up kind of a little bit of"
+		},
+		{
+			"timestamps": {
+				"from": "01:23:08,000",
+				"to": "01:23:29,810"
+			},
+			"offsets": {
+				"from": 4988000,
+				"to": 5009810
+			},
+			"text": " dead time believe just believe it's okay not a whole lot of things that actually can sap the light from"
+		},
+		{
+			"timestamps": {
+				"from": "01:23:29,810",
+				"to": "01:23:40,770"
+			},
+			"offsets": {
+				"from": 5009810,
+				"to": 5020770
+			},
+			"text": " those uh at least in this part of the mountain for sure so i think our dangers currently are more"
+		},
+		{
+			"timestamps": {
+				"from": "01:23:40,770",
+				"to": "01:24:00,990"
+			},
+			"offsets": {
+				"from": 5020770,
+				"to": 5040990
+			},
+			"text": " physical than they are plant training at this point can help at least protect it from extinguishing but"
+		},
+		{
+			"timestamps": {
+				"from": "01:24:00,990",
+				"to": "01:24:09,920"
+			},
+			"offsets": {
+				"from": 5040990,
+				"to": 5049920
+			},
+			"text": " sometimes let's just not worry about it if it exists hopefully we'll be fine we'll make it"
+		},
+		{
+			"timestamps": {
+				"from": "01:24:09,920",
+				"to": "01:24:53,030"
+			},
+			"offsets": {
+				"from": 5049920,
+				"to": 5093030
+			},
+			"text": " dogs i think the mountain yeah knows that you are all a part of the pilgrimage and vilo i think is"
+		},
+		{
+			"timestamps": {
+				"from": "01:24:53,030",
+				"to": "01:25:06,640"
+			},
+			"offsets": {
+				"from": 5093030,
+				"to": 5106640
+			},
+			"text": " part of you as well but he is not carrying such burden because you might have some insight i would"
+		},
+		{
+			"timestamps": {
+				"from": "01:25:06,640",
+				"to": "01:25:27,420"
+			},
+			"offsets": {
+				"from": 5106640,
+				"to": 5127420
+			},
+			"text": " have him roll up but i want you to roll for yourself um so this is coming from flicker but i wanted you to"
+		},
+		{
+			"timestamps": {
+				"from": "01:25:27,420",
+				"to": "01:25:40,660"
+			},
+			"offsets": {
+				"from": 5127420,
+				"to": 5140660
+			},
+			"text": " be able to roll for it it is strange that it would fight so hard against maybe it's not how did you"
+		},
+		{
+			"timestamps": {
+				"from": "01:25:40,660",
+				"to": "01:25:51,930"
+			},
+			"offsets": {
+				"from": 5140660,
+				"to": 5151930
+			},
+			"text": " word it the way you said it was the question you asked was might not yeah it might not be against"
+		},
+		{
+			"timestamps": {
+				"from": "01:25:51,930",
+				"to": "01:26:07,230"
+			},
+			"offsets": {
+				"from": 5151930,
+				"to": 5167230
+			},
+			"text": " the fire as much protecting itself from those that are unworthy making it to the and that is why i am"
+		},
+		{
+			"timestamps": {
+				"from": "01:26:07,230",
+				"to": "01:26:17,370"
+			},
+			"offsets": {
+				"from": 5167230,
+				"to": 5177370
+			},
+			"text": " nervous my friend is here because his flame was he barely didn't even have a flame it was embers himself"
+		},
+		{
+			"timestamps": {
+				"from": "01:26:17,370",
+				"to": "01:27:59,590"
+			},
+			"offsets": {
+				"from": 5177370,
+				"to": 5279590
+			},
+			"text": " hold on hold on let's see what divine sense is i think it's like is it can't you can at any time"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:00,830",
+				"to": "01:28:10,540"
+			},
+			"offsets": {
+				"from": 5280830,
+				"to": 5290540
+			},
+			"text": " the rest of them were just like what do you think and she's like might be ahead of us so it is 60"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:10,540",
+				"to": "01:28:20,510"
+			},
+			"offsets": {
+				"from": 5290540,
+				"to": 5300510
+			},
+			"text": " feet it's not yet yeah and we're not going to give you okay so i was gonna let me say this before you"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:20,510",
+				"to": "01:28:32,670"
+			},
+			"offsets": {
+				"from": 5300510,
+				"to": 5312670
+			},
+			"text": " decide to use it the trail that comes to uh there appears to be at the top you kind of come to a"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:32,670",
+				"to": "01:28:42,650"
+			},
+			"offsets": {
+				"from": 5312670,
+				"to": 5322650
+			},
+			"text": " plateau in the mountain ridge here's like there's an abandoned keep here um looking you can see like"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:42,650",
+				"to": "01:28:56,730"
+			},
+			"offsets": {
+				"from": 5322650,
+				"to": 5336730
+			},
+			"text": " torn aged weathered flags of cinderhole um here's the trend continued forward there's kind of like an"
+		},
+		{
+			"timestamps": {
+				"from": "01:28:56,730",
+				"to": "01:29:08,060"
+			},
+			"offsets": {
+				"from": 5336730,
+				"to": 5348060
+			},
+			"text": " off you can take to come to enter basically an abandoned another abandoned building"
+		},
+		{
+			"timestamps": {
+				"from": "01:29:14,510",
+				"to": "01:29:30,240"
+			},
+			"offsets": {
+				"from": 5354510,
+				"to": 5370240
+			},
+			"text": " how close are we so it's kind of like a kind of like up on a little plateau um so it's like"
+		},
+		{
+			"timestamps": {
+				"from": "01:29:30,240",
+				"to": "01:29:39,390"
+			},
+			"offsets": {
+				"from": 5370240,
+				"to": 5379390
+			},
+			"text": " yeah you'd have to kind of like 80 feet off the path um you'd have to it's like making a little detour"
+		},
+		{
+			"timestamps": {
+				"from": "01:29:39,390",
+				"to": "01:29:52,110"
+			},
+			"offsets": {
+				"from": 5379390,
+				"to": 5392110
+			},
+			"text": " possible to get there but again this building is much more military than the other place of the"
+		},
+		{
+			"timestamps": {
+				"from": "01:29:52,110",
+				"to": "01:30:20,610"
+			},
+			"offsets": {
+				"from": 5392110,
+				"to": 5420610
+			},
+			"text": " farm that you guys stopped at this is like a like heat from the outside are you going to try to enter"
+		},
+		{
+			"timestamps": {
+				"from": "01:30:20,610",
+				"to": "01:30:55,380"
+			},
+			"offsets": {
+				"from": 5420610,
+				"to": 5455380
+			},
+			"text": " are you looking from the outside a real investigation we all need to go to see it"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:00,210",
+				"to": "01:31:05,490"
+			},
+			"offsets": {
+				"from": 5460210,
+				"to": 5465490
+			},
+			"text": " hold on i'm reviewing my notes i forgot about the last building so i'm really he's like oh"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:05,490",
+				"to": "01:31:16,880"
+			},
+			"offsets": {
+				"from": 5465490,
+				"to": 5476880
+			},
+			"text": " shit those people exist no there are notes for this though that's that's the beauty of those um you"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:16,880",
+				"to": "01:31:25,290"
+			},
+			"offsets": {
+				"from": 5476880,
+				"to": 5485290
+			},
+			"text": " got the 20 as a reindeer she how did you what did you say in order to have him look because you had"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:25,290",
+				"to": "01:31:29,020"
+			},
+			"offsets": {
+				"from": 5485290,
+				"to": 5489020
+			},
+			"text": " the idea to look but he's the one that's going to see it so how does that play out um lore wise"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:29,020",
+				"to": "01:31:48,140"
+			},
+			"offsets": {
+				"from": 5489020,
+				"to": 5508140
+			},
+			"text": " roleplay was poppy probably was just thinking out loud you and then just like whisper over to it"
+		},
+		{
+			"timestamps": {
+				"from": "01:31:48,140",
+				"to": "01:32:12,580"
+			},
+			"offsets": {
+				"from": 5508140,
+				"to": 5532580
+			},
+			"text": " and you get uh without saying anything back yeah poppy kind of looks around a little bit uh but"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:12,580",
+				"to": "01:32:16,020"
+			},
+			"offsets": {
+				"from": 5532580,
+				"to": 5536020
+			},
+			"text": " can tell she's kind of like she doesn't believe she's she's really going to be able to tell anyway"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:16,020",
+				"to": "01:32:23,480"
+			},
+			"offsets": {
+				"from": 5536020,
+				"to": 5543480
+			},
+			"text": " she's like that doesn't seem like it lock you and vilo lock into something this door has been opened"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:23,480",
+				"to": "01:32:34,850"
+			},
+			"offsets": {
+				"from": 5543480,
+				"to": 5554850
+			},
+			"text": " recently um you can kind of look in you see some abandonness from not it was a nat 20. you're"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:34,850",
+				"to": "01:32:41,430"
+			},
+			"offsets": {
+				"from": 5554850,
+				"to": 5561430
+			},
+			"text": " killing me on this not not in a bad way just like okay we're rolling this um you are fairly certain"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:41,430",
+				"to": "01:32:47,920"
+			},
+			"offsets": {
+				"from": 5561430,
+				"to": 5567920
+			},
+			"text": " that the time frame of like within the last month and knowing that thren did not come here his path"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:47,920",
+				"to": "01:32:58,780"
+			},
+			"offsets": {
+				"from": 5567920,
+				"to": 5578780
+			},
+			"text": " continued forward that most likely it's them um with a fair amount of certainty can i need detect him"
+		},
+		{
+			"timestamps": {
+				"from": "01:32:58,780",
+				"to": "01:33:14,320"
+			},
+			"offsets": {
+				"from": 5578780,
+				"to": 5594320
+			},
+			"text": " is that a spell you have to cast or is it ability where do you have detection okay uh 120 feet you"
+		},
+		{
+			"timestamps": {
+				"from": "01:33:14,320",
+				"to": "01:33:50,880"
+			},
+			"offsets": {
+				"from": 5594320,
+				"to": 5630880
+			},
+			"text": " sense the presence of any traps within the building you see you from where you're at because you have"
+		},
+		{
+			"timestamps": {
+				"from": "01:33:50,880",
+				"to": "01:33:58,000"
+			},
+			"offsets": {
+				"from": 5630880,
+				"to": 5638000
+			},
+			"text": " to be able to see it so you'd have to go inside to sense the presence of any traps within the building"
+		},
+		{
+			"timestamps": {
+				"from": "01:33:58,000",
+				"to": "01:34:13,800"
+			},
+			"offsets": {
+				"from": 5638000,
+				"to": 5653800
+			},
+			"text": " you have to have a line of sight basically okay uh is everyone going with you or what do you want the"
+		},
+		{
+			"timestamps": {
+				"from": "01:34:13,800",
+				"to": "01:34:40,890"
+			},
+			"offsets": {
+				"from": 5653800,
+				"to": 5680890
+			},
+			"text": " marching word so i'd say welcome vilo would like he'll wait outside the door he'll go in with his"
+		},
+		{
+			"timestamps": {
+				"from": "01:34:40,890",
+				"to": "01:35:12,410"
+			},
+			"offsets": {
+				"from": 5680890,
+				"to": 5712410
+			},
+			"text": " like ready to like this sounds good who's next okay that's good you can all right so you cast flying"
+		},
+		{
+			"timestamps": {
+				"from": "01:35:12,410",
+				"to": "01:35:22,940"
+			},
+			"offsets": {
+				"from": 5712410,
+				"to": 5722940
+			},
+			"text": " traps all right cast cast about trays um plus 10 to stealth checks okay so as you're entering yeah everyone"
+		},
+		{
+			"timestamps": {
+				"from": "01:35:22,940",
+				"to": "01:35:26,940"
+			},
+			"offsets": {
+				"from": 5722940,
+				"to": 5726940
+			},
+			"text": " will roll roll a stealth check so you cast that as everybody's entering so roll stealth and then add"
+		},
+		{
+			"timestamps": {
+				"from": "01:35:26,940",
+				"to": "01:35:36,640"
+			},
+			"offsets": {
+				"from": 5726940,
+				"to": 5736640
+			},
+			"text": " 10 to whatever you're uh d20 and then add 10 plus 10 to it that's what pass the last year"
+		},
+		{
+			"timestamps": {
+				"from": "01:35:49,980",
+				"to": "01:36:04,230"
+			},
+			"offsets": {
+				"from": 5749980,
+				"to": 5764230
+			},
+			"text": " clicker roll for vilo too just make sure he doesn't get it i think i gave you status form"
+		},
+		{
+			"timestamps": {
+				"from": "01:36:09,730",
+				"to": "01:36:24,440"
+			},
+			"offsets": {
+				"from": 5769730,
+				"to": 5784440
+			},
+			"text": " yeah yeah yeah so you just whatever okay or seven total plus the 10 for past 17 yeah um okay i'm gonna"
+		},
+		{
+			"timestamps": {
+				"from": "01:36:24,440",
+				"to": "01:36:36,830"
+			},
+			"offsets": {
+				"from": 5784440,
+				"to": 5796830
+			},
+			"text": " see you guys enter through the already open door so that a trace given to you guys looking around it"
+		},
+		{
+			"timestamps": {
+				"from": "01:36:36,830",
+				"to": "01:36:47,180"
+			},
+			"offsets": {
+				"from": 5796830,
+				"to": 5807180
+			},
+			"text": " gives off it is just an abandoned seat um military books the wall down here is basically deteriorated"
+		},
+		{
+			"timestamps": {
+				"from": "01:36:47,180",
+				"to": "01:36:57,470"
+			},
+			"offsets": {
+				"from": 5807180,
+				"to": 5817470
+			},
+			"text": " uh away doors around are closed there appears to be another level at one point you could get to but"
+		},
+		{
+			"timestamps": {
+				"from": "01:36:57,470",
+				"to": "01:37:05,590"
+			},
+			"offsets": {
+				"from": 5817470,
+				"to": 5825590
+			},
+			"text": " pretty much gone there's nothing there detecting you cast detect traps and it doesn't stay active"
+		},
+		{
+			"timestamps": {
+				"from": "01:37:05,590",
+				"to": "01:37:13,480"
+			},
+			"offsets": {
+				"from": 5825590,
+				"to": 5833480
+			},
+			"text": " for a period of time it's instantaneous but i'll play that a little bit that's kind of weird like"
+		},
+		{
+			"timestamps": {
+				"from": "01:37:13,480",
+				"to": "01:37:21,300"
+			},
+			"offsets": {
+				"from": 5833480,
+				"to": 5841300
+			},
+			"text": " i'll say like for the sake of like exploring this building you can keep it active um make your way in"
+		},
+		{
+			"timestamps": {
+				"from": "01:37:21,300",
+				"to": "01:37:39,450"
+			},
+			"offsets": {
+				"from": 5841300,
+				"to": 5859450
+			},
+			"text": " all these doors are closed this door up here is open do you want to enter this room no trap did anybody"
+		},
+		{
+			"timestamps": {
+				"from": "01:37:39,450",
+				"to": "01:37:52,930"
+			},
+			"offsets": {
+				"from": 5859450,
+				"to": 5872930
+			},
+			"text": " else want to cast anything this must have yeah flicker's looking around this must have been"
+		},
+		{
+			"timestamps": {
+				"from": "01:37:52,930",
+				"to": "01:38:01,720"
+			},
+			"offsets": {
+				"from": 5872930,
+				"to": 5881720
+			},
+			"text": " uh checkpoint i guess for some of the previous pilgrimages shame it's not here anymore be a good"
+		},
+		{
+			"timestamps": {
+				"from": "01:38:01,720",
+				"to": "01:38:32,220"
+			},
+			"offsets": {
+				"from": 5881720,
+				"to": 5912220
+			},
+			"text": " place to rest for sure lock you go in does everybody else follow you in yeah it appears to be the doors"
+		},
+		{
+			"timestamps": {
+				"from": "01:38:32,220",
+				"to": "01:38:41,430"
+			},
+			"offsets": {
+				"from": 5912220,
+				"to": 5921430
+			},
+			"text": " appear to be unlocked let's say as you guys go poppy are you staying with lock you guys enter with your"
+		},
+		{
+			"timestamps": {
+				"from": "01:38:41,430",
+				"to": "01:38:49,480"
+			},
+			"offsets": {
+				"from": 5921430,
+				"to": 5929480
+			},
+			"text": " 24 you're still tracking um this room appears to be some sort of like command room where there was"
+		},
+		{
+			"timestamps": {
+				"from": "01:38:49,480",
+				"to": "01:38:55,330"
+			},
+			"offsets": {
+				"from": 5929480,
+				"to": 5935330
+			},
+			"text": " like a table with like you know uh understanding where like little figurines and like tactical things"
+		},
+		{
+			"timestamps": {
+				"from": "01:38:55,330",
+				"to": "01:39:13,210"
+			},
+			"offsets": {
+				"from": 5935330,
+				"to": 5953210
+			},
+			"text": " occurred um roll investigation both of you is a chest it's not on the map because i didn't make this"
+		},
+		{
+			"timestamps": {
+				"from": "01:39:13,210",
+				"to": "01:39:23,350"
+			},
+			"offsets": {
+				"from": 5953210,
+				"to": 5963350
+			},
+			"text": " i'm not even gonna run i got 13. the 20s kind of so you find there's a the previous party seem to have"
+		},
+		{
+			"timestamps": {
+				"from": "01:39:23,350",
+				"to": "01:39:30,470"
+			},
+			"offsets": {
+				"from": 5963350,
+				"to": 5970470
+			},
+			"text": " made the same path with you on your 24th and there's a chest um like a military style chest in the"
+		},
+		{
+			"timestamps": {
+				"from": "01:39:30,470",
+				"to": "01:39:54,420"
+			},
+			"offsets": {
+				"from": 5970470,
+				"to": 5994420
+			},
+			"text": " corner of this room so you go to kind of the locks as she's walking towards the top so so poppy's opening"
+		},
+		{
+			"timestamps": {
+				"from": "01:39:54,420",
+				"to": "01:40:01,690"
+			},
+			"offsets": {
+				"from": 5994420,
+				"to": 6001690
+			},
+			"text": " the chest okay you want to know but i'm gonna walk the same thing wiggle yeah this door also seems to be"
+		},
+		{
+			"timestamps": {
+				"from": "01:40:01,690",
+				"to": "01:40:13,630"
+			},
+			"offsets": {
+				"from": 6001690,
+				"to": 6013630
+			},
+			"text": " um so poppy you're gonna go the chest is probably as big as you are um you go to kind of flick as you do"
+		},
+		{
+			"timestamps": {
+				"from": "01:40:13,630",
+				"to": "01:40:26,830"
+			},
+			"offsets": {
+				"from": 6013630,
+				"to": 6026830
+			},
+			"text": " your hand into it as a giant purple tongue emerges mimics are considered creatures their natural"
+		},
+		{
+			"timestamps": {
+				"from": "01:40:26,830",
+				"to": "01:40:39,380"
+			},
+			"offsets": {
+				"from": 6026830,
+				"to": 6039380
+			},
+			"text": " camouflage is not considered a trap i i knew it knew it and this giant the chest basically becomes this"
+		},
+		{
+			"timestamps": {
+				"from": "01:40:39,380",
+				"to": "01:40:54,720"
+			},
+			"offsets": {
+				"from": 6039380,
+				"to": 6054720
+			},
+			"text": " weird weird creature i didn't make you yeah everyone will initiative i'll let you what what is poppy's"
+		},
+		{
+			"timestamps": {
+				"from": "01:40:54,720",
+				"to": "01:41:03,410"
+			},
+			"offsets": {
+				"from": 6054720,
+				"to": 6063410
+			},
+			"text": " scream as this chest now becomes a creature that is trying to eat her it kind of like slithers kind"
+		},
+		{
+			"timestamps": {
+				"from": "01:41:03,410",
+				"to": "01:41:26,730"
+			},
+			"offsets": {
+				"from": 6063410,
+				"to": 6086730
+			},
+			"text": " of like wraps around your arm and kind of gets up to your neck yeah you're pretty far give me one sec let"
+		},
+		{
+			"timestamps": {
+				"from": "01:41:26,730",
+				"to": "01:41:56,800"
+			},
+			"offsets": {
+				"from": 6086730,
+				"to": 6116800
+			},
+			"text": " me get the music i googled it to make sure your fine trap wouldn't uh wouldn't detect it because i was like"
+		},
+		{
+			"timestamps": {
+				"from": "01:41:56,800",
+				"to": "01:42:03,700"
+			},
+			"offsets": {
+				"from": 6116800,
+				"to": 6123700
+			},
+			"text": " i feel like it could but they said it wasn't i'm not trying to fuck you i feel like it's a trap"
+		},
+		{
+			"timestamps": {
+				"from": "01:42:03,700",
+				"to": "01:42:22,210"
+			},
+			"offsets": {
+				"from": 6123700,
+				"to": 6142210
+			},
+			"text": " oh my god you said you were gonna open it i said i'm gonna go check it yeah i i didn't we'll say"
+		},
+		{
+			"timestamps": {
+				"from": "01:42:22,210",
+				"to": "01:42:33,620"
+			},
+			"offsets": {
+				"from": 6142210,
+				"to": 6153620
+			},
+			"text": " on your nat 20 as you're getting sucked up you look over uh you notice that i'll give you here i'll give you"
+		},
+		{
+			"timestamps": {
+				"from": "01:42:33,620",
+				"to": "01:42:48,870"
+			},
+			"offsets": {
+				"from": 6153620,
+				"to": 6168870
+			},
+			"text": " something you notice that you notice that may the woman that was part of the last pilgrimage that you"
+		},
+		{
+			"timestamps": {
+				"from": "01:42:48,870",
+				"to": "01:42:55,820"
+			},
+			"offsets": {
+				"from": 6168870,
+				"to": 6175820
+			},
+			"text": " remember seeing in the bar that was kind of the roguey one is laying in the ground next to the chest with"
+		},
+		{
+			"timestamps": {
+				"from": "01:42:55,820",
+				"to": "01:43:15,960"
+			},
+			"offsets": {
+				"from": 6175820,
+				"to": 6195960
+			},
+			"text": " a giant teeth mark ripped from her side neither of us know what's in the chest behind them i was just"
+		},
+		{
+			"timestamps": {
+				"from": "01:43:15,960",
+				"to": "01:43:22,130"
+			},
+			"offsets": {
+				"from": 6195960,
+				"to": 6202130
+			},
+			"text": " giving you a little lords up there because i felt better so okay what was everyone's initiative"
+		},
+		{
+			"timestamps": {
+				"from": "01:43:22,130",
+				"to": "01:43:52,630"
+			},
+			"offsets": {
+				"from": 6202130,
+				"to": 6232630
+			},
+			"text": " so okay so to make it not weird as the mimic becomes a mimic and its mouth opens you see her body"
+		},
+		{
+			"timestamps": {
+				"from": "01:43:52,630",
+				"to": "01:44:04,230"
+			},
+			"offsets": {
+				"from": 6232630,
+				"to": 6244230
+			},
+			"text": " inside of the chest yeah her like head severed head that's being digested by this mimic is yeah there"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:04,230",
+				"to": "01:44:14,260"
+			},
+			"offsets": {
+				"from": 6244230,
+				"to": 6254260
+			},
+			"text": " you go there you go that makes it better uh she's dead she's dead dead uh we'll do that okay uh"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:20,990",
+				"to": "01:44:34,890"
+			},
+			"offsets": {
+				"from": 6260990,
+				"to": 6274890
+			},
+			"text": " okay lock you are up i mean you have yeah dual short swords right now katie you can close them"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:35,690",
+				"to": "01:44:44,640"
+			},
+			"offsets": {
+				"from": 6275690,
+				"to": 6284640
+			},
+			"text": " past without a trace yeah so it is activated if it was just like looking for you it's like it basically"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:44,640",
+				"to": "01:44:50,150"
+			},
+			"offsets": {
+				"from": 6284640,
+				"to": 6290150
+			},
+			"text": " has a lot of trace gives you super high stealthers so whenever you're doing like stealthy things like"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:50,150",
+				"to": "01:44:57,500"
+			},
+			"offsets": {
+				"from": 6290150,
+				"to": 6297500
+			},
+			"text": " pastel out of trace won't let you guys get away with it do you like in it or i'm gonna go pull her out"
+		},
+		{
+			"timestamps": {
+				"from": "01:44:57,500",
+				"to": "01:45:24,260"
+			},
+			"offsets": {
+				"from": 6297500,
+				"to": 6324260
+			},
+			"text": " i thought we're gonna violent then uh yeah okay okay oh your initiative is"
+		},
+		{
+			"timestamps": {
+				"from": "01:45:30,560",
+				"to": "01:46:04,600"
+			},
+			"offsets": {
+				"from": 6330560,
+				"to": 6364600
+			},
+			"text": " tell me on the prize so you can get there you have elad violent his moves what 30 he has plenty"
+		},
+		{
+			"timestamps": {
+				"from": "01:46:04,600",
+				"to": "01:46:42,950"
+			},
+			"offsets": {
+				"from": 6364600,
+				"to": 6402950
+			},
+			"text": " of yeah it's going to be a uh contested grapple check so it's basically a i think it's the target"
+		},
+		{
+			"timestamps": {
+				"from": "01:46:42,950",
+				"to": "01:46:50,030"
+			},
+			"offsets": {
+				"from": 6402950,
+				"to": 6410030
+			},
+			"text": " chooses so i the mimic would choose athletics so you could use it's either athletics or acrobatics"
+		},
+		{
+			"timestamps": {
+				"from": "01:46:50,030",
+				"to": "01:47:03,550"
+			},
+			"offsets": {
+				"from": 6410030,
+				"to": 6423550
+			},
+			"text": " mimic chooses athletics so uh just an athletics check beat it um so you are able to we'll say"
+		},
+		{
+			"timestamps": {
+				"from": "01:47:03,550",
+				"to": "01:47:12,800"
+			},
+			"offsets": {
+				"from": 6423550,
+				"to": 6432800
+			},
+			"text": " as your action pull poppy out i'll let even with that i'll let vilo still get an attack because he"
+		},
+		{
+			"timestamps": {
+				"from": "01:47:12,800",
+				"to": "01:47:50,310"
+			},
+			"offsets": {
+				"from": 6432800,
+				"to": 6470310
+			},
+			"text": " was next in initiative so you pull out vilo can still do his attack okay we'll just okay he runs"
+		},
+		{
+			"timestamps": {
+				"from": "01:47:50,310",
+				"to": "01:48:08,830"
+			},
+			"offsets": {
+				"from": 6470310,
+				"to": 6488830
+			},
+			"text": " forward go ahead and uh skull yeah so roll a d20 plus seven down meets it beats it it go ahead and roll"
+		},
+		{
+			"timestamps": {
+				"from": "01:48:08,830",
+				"to": "01:48:19,100"
+			},
+			"offsets": {
+				"from": 6488830,
+				"to": 6499100
+			},
+			"text": " one d8 plus two plus proficiency bonus so your proficiency bonus is plus three so d8 plus five"
+		},
+		{
+			"timestamps": {
+				"from": "01:48:19,100",
+				"to": "01:48:36,180"
+			},
+			"offsets": {
+				"from": 6499100,
+				"to": 6516180
+			},
+			"text": " full damage so in a matter of a few seconds uh poppy gets dragged into this mimic you instinctually"
+		},
+		{
+			"timestamps": {
+				"from": "01:48:36,180",
+				"to": "01:48:43,700"
+			},
+			"offsets": {
+				"from": 6516180,
+				"to": 6523700
+			},
+			"text": " react help pull her out vilo runs up and bites into the like chest that is now like growing legs and"
+		},
+		{
+			"timestamps": {
+				"from": "01:48:43,700",
+				"to": "01:48:52,650"
+			},
+			"offsets": {
+				"from": 6523700,
+				"to": 6532650
+			},
+			"text": " arms um and kind of like rips a little like splintery skin from this mimic um who makes there's a little"
+		},
+		{
+			"timestamps": {
+				"from": "01:48:52,650",
+				"to": "01:49:07,030"
+			},
+			"offsets": {
+				"from": 6532650,
+				"to": 6547030
+			},
+			"text": " gasp it definitely did some damage to it uh vay europe creatures that's why it's a it's not an"
+		},
+		{
+			"timestamps": {
+				"from": "01:49:07,030",
+				"to": "01:49:12,840"
+			},
+			"offsets": {
+				"from": 6547030,
+				"to": 6552840
+			},
+			"text": " object that's trapped it is a creature that is pretending to be a trap so it's like it's involved"
+		},
+		{
+			"timestamps": {
+				"from": "01:49:12,840",
+				"to": "01:49:20,830"
+			},
+			"offsets": {
+				"from": 6552840,
+				"to": 6560830
+			},
+			"text": " enough what is this thing like what are you trying to do inorganic no it's organic it's a creature"
+		},
+		{
+			"timestamps": {
+				"from": "01:49:20,830",
+				"to": "01:49:33,850"
+			},
+			"offsets": {
+				"from": 6560830,
+				"to": 6573850
+			},
+			"text": " that's why i define traffic i mean and organic or inorganic what are you trying to do just tell"
+		},
+		{
+			"timestamps": {
+				"from": "01:49:33,850",
+				"to": "01:50:05,090"
+			},
+			"offsets": {
+				"from": 6573850,
+				"to": 6605090
+			},
+			"text": " me what you're trying to do i'm curious uh vay you can let me know what you're doing i'm looking"
+		},
+		{
+			"timestamps": {
+				"from": "01:50:05,090",
+				"to": "01:50:19,600"
+			},
+			"offsets": {
+				"from": 6605090,
+				"to": 6619600
+			},
+			"text": " yourself up as well yeah yeah take your time creature creature takes uh a creature made of"
+		},
+		{
+			"timestamps": {
+				"from": "01:50:19,600",
+				"to": "01:50:31,360"
+			},
+			"offsets": {
+				"from": 6619600,
+				"to": 6631360
+			},
+			"text": " inorganic computer i'll give it to you i don't know i'll give it to you say i didn't help you"
+		},
+		{
+			"timestamps": {
+				"from": "01:50:34,940",
+				"to": "01:50:47,500"
+			},
+			"offsets": {
+				"from": 6634940,
+				"to": 6647500
+			},
+			"text": " like in the mouth so you didn't see it like oh hold on hold on you're not supposed to can you look"
+		},
+		{
+			"timestamps": {
+				"from": "01:50:47,500",
+				"to": "01:51:11,510"
+			},
+			"offsets": {
+				"from": 6647500,
+				"to": 6671510
+			},
+			"text": " away real fast let it in yeah i'm sure i'll keep it home divine smite is good better is really good"
+		},
+		{
+			"timestamps": {
+				"from": "01:51:11,510",
+				"to": "01:51:18,430"
+			},
+			"offsets": {
+				"from": 6671510,
+				"to": 6678430
+			},
+			"text": " against it'll like hold it there divine is always good but it's really good against undead creatures"
+		},
+		{
+			"timestamps": {
+				"from": "01:51:18,430",
+				"to": "01:51:40,730"
+			},
+			"offsets": {
+				"from": 6678430,
+				"to": 6700730
+			},
+			"text": " we'll say you you would know mimics would be coming it's not it's a monstrosity running in what's your"
+		},
+		{
+			"timestamps": {
+				"from": "01:51:40,730",
+				"to": "01:51:57,940"
+			},
+			"offsets": {
+				"from": 6700730,
+				"to": 6717940
+			},
+			"text": " movement you have how many all right you can just get this um so there's a road attack attack it like"
+		},
+		{
+			"timestamps": {
+				"from": "01:51:57,940",
+				"to": "01:52:05,120"
+			},
+			"offsets": {
+				"from": 6717940,
+				"to": 6725120
+			},
+			"text": " with your sword and once you hit you can basically add in staring strength so roll one d20 what kind"
+		},
+		{
+			"timestamps": {
+				"from": "01:52:05,120",
+				"to": "01:52:13,620"
+			},
+			"offsets": {
+				"from": 6725120,
+				"to": 6733620
+			},
+			"text": " of sword do you have again so one d20 plus your dex plus proficiency maybe i don't want to talk"
+		},
+		{
+			"timestamps": {
+				"from": "01:52:16,930",
+				"to": "01:52:27,380"
+			},
+			"offsets": {
+				"from": 6736930,
+				"to": 6747380
+			},
+			"text": " roll on strength anyway i don't i might have screwed you up with the swords lately roll d20 and then add"
+		},
+		{
+			"timestamps": {
+				"from": "01:52:27,380",
+				"to": "01:52:40,610"
+			},
+			"offsets": {
+				"from": 6747380,
+				"to": 6760610
+			},
+			"text": " three to it and another three for proficiency so that hit 14. okay um oh long bow i'm a idiot uh"
+		},
+		{
+			"timestamps": {
+				"from": "01:52:41,350",
+				"to": "01:52:53,100"
+			},
+			"offsets": {
+				"from": 6761350,
+				"to": 6773100
+			},
+			"text": " roll okay so you're gonna hit so roll roll one d8 plus your strength modifier and then you can also"
+		},
+		{
+			"timestamps": {
+				"from": "01:52:53,100",
+				"to": "01:53:16,660"
+			},
+			"offsets": {
+				"from": 6773100,
+				"to": 6796660
+			},
+			"text": " add in staring strength to it that's it so whatever the d8 was plus strength so that was 10. i believe"
+		},
+		{
+			"timestamps": {
+				"from": "01:53:16,660",
+				"to": "01:53:27,970"
+			},
+			"offsets": {
+				"from": 6796660,
+				"to": 6807970
+			},
+			"text": " that just hold does add damage it has a strength saving throw against it rolls a four it does not save"
+		},
+		{
+			"timestamps": {
+				"from": "01:53:27,970",
+				"to": "01:53:37,530"
+			},
+			"offsets": {
+				"from": 6807970,
+				"to": 6817530
+			},
+			"text": " um oh while we're strained by the spell the target takes 1d6 piercing damage at the start of its turn"
+		},
+		{
+			"timestamps": {
+				"from": "01:53:37,530",
+				"to": "01:53:46,690"
+			},
+			"offsets": {
+				"from": 6817530,
+				"to": 6826690
+			},
+			"text": " it is oh did you want to do anything else i think you get second attack you get extra attacks you can"
+		},
+		{
+			"timestamps": {
+				"from": "01:53:46,690",
+				"to": "01:54:13,410"
+			},
+			"offsets": {
+				"from": 6826690,
+				"to": 6853410
+			},
+			"text": " attack again okay roll one d20 and then add uh strength plus add throw damage 1d8 plus three so you run up"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:13,410",
+				"to": "01:54:23,200"
+			},
+			"offsets": {
+				"from": 6853410,
+				"to": 6863200
+			},
+			"text": " instinctually helping the party first flash he's like what would you want your ensnaring off like something's"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:23,200",
+				"to": "01:54:26,970"
+			},
+			"offsets": {
+				"from": 6863200,
+				"to": 6866970
+			},
+			"text": " going to come out of the ground and like pull this thing though what do you want those to be made of"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:26,970",
+				"to": "01:54:37,600"
+			},
+			"offsets": {
+				"from": 6866970,
+				"to": 6877600
+			},
+			"text": " it could be vines it could be anything that you think these vines kind of come out and then tie it"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:37,600",
+				"to": "01:54:44,320"
+			},
+			"offsets": {
+				"from": 6877600,
+				"to": 6884320
+			},
+			"text": " caught on it and kind of pull it and then on that second strike um more of this kind of splintery"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:44,320",
+				"to": "01:54:52,060"
+			},
+			"offsets": {
+				"from": 6884320,
+				"to": 6892060
+			},
+			"text": " substance falls off the mimic and it seems hurt it is now the mimic's turn so go ahead and roll 1d6"
+		},
+		{
+			"timestamps": {
+				"from": "01:54:52,060",
+				"to": "01:55:14,480"
+			},
+			"offsets": {
+				"from": 6892060,
+				"to": 6914480
+			},
+			"text": " and it's going to take that damage it's going to try to break free it has to use this action"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:14,480",
+				"to": "01:55:17,440"
+			},
+			"offsets": {
+				"from": 6914480,
+				"to": 6917440
+			},
+			"text": " that's not your mouth that's my mouth look at the logo"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:20,000",
+				"to": "01:55:26,180"
+			},
+			"offsets": {
+				"from": 6920000,
+				"to": 6926180
+			},
+			"text": " cymbal's like i'll get the out of here there's a little mice like running around yeah you guys"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:26,180",
+				"to": "01:55:38,370"
+			},
+			"offsets": {
+				"from": 6926180,
+				"to": 6938370
+			},
+			"text": " notice a little guy ran into the mice cymbal put his helmet on he failed on his face"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:38,370",
+				"to": "01:55:46,100"
+			},
+			"offsets": {
+				"from": 6938370,
+				"to": 6946100
+			},
+			"text": " he cannot he had to use his action to do it he cannot do anything this time uh that ensnaring"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:46,100",
+				"to": "01:55:57,040"
+			},
+			"offsets": {
+				"from": 6946100,
+				"to": 6957040
+			},
+			"text": " strike is very powerful wait let me make sure he doesn't have anything else the internal dialogue"
+		},
+		{
+			"timestamps": {
+				"from": "01:55:57,040",
+				"to": "01:56:17,170"
+			},
+			"offsets": {
+				"from": 6957040,
+				"to": 6977170
+			},
+			"text": " happens what does alara choose to do you're running in i will say four whitewoods move wise 15 i mean"
+		},
+		{
+			"timestamps": {
+				"from": "01:56:17,170",
+				"to": "01:56:25,110"
+			},
+			"offsets": {
+				"from": 6977170,
+				"to": 6985110
+			},
+			"text": " you can definitely get in the room 25 uh you see this giant mimic uh basically a chest spreading"
+		},
+		{
+			"timestamps": {
+				"from": "01:56:25,110",
+				"to": "01:56:38,940"
+			},
+			"offsets": {
+				"from": 6985110,
+				"to": 6998940
+			},
+			"text": " arms and legs yeah getting just screwed over right now uh what do you do even get it yeah you're next"
+		},
+		{
+			"timestamps": {
+				"from": "01:56:38,940",
+				"to": "01:56:55,070"
+			},
+			"offsets": {
+				"from": 6998940,
+				"to": 7015070
+			},
+			"text": " yeah the problem is you can't get within melee yeah because your staff you have to be within five"
+		},
+		{
+			"timestamps": {
+				"from": "01:56:55,070",
+				"to": "01:57:04,330"
+			},
+			"offsets": {
+				"from": 7015070,
+				"to": 7024330
+			},
+			"text": " feet uh you can catch a spell oh you can because poppy is a freaking halfling i've never had the"
+		},
+		{
+			"timestamps": {
+				"from": "01:57:04,330",
+				"to": "01:57:22,210"
+			},
+			"offsets": {
+				"from": 7024330,
+				"to": 7042210
+			},
+			"text": " halfling feet ability to have become so useful boom boom boom boom you kind of roll how do you find that"
+		},
+		{
+			"timestamps": {
+				"from": "01:57:22,210",
+				"to": "01:57:40,970"
+			},
+			"offsets": {
+				"from": 7042210,
+				"to": 7060970
+			},
+			"text": " trail the quarterstaff wait wait is the head like in green oh um i thought it was inside it yeah the"
+		},
+		{
+			"timestamps": {
+				"from": "01:57:40,970",
+				"to": "01:57:51,390"
+			},
+			"offsets": {
+				"from": 7060970,
+				"to": 7071390
+			},
+			"text": " in its mouth um she's gonna try and grab it over there i mean you can reach in there but it's a giant"
+		},
+		{
+			"timestamps": {
+				"from": "01:57:51,390",
+				"to": "01:57:59,470"
+			},
+			"offsets": {
+				"from": 7071390,
+				"to": 7079470
+			},
+			"text": " deep mouth with a and the head like jiggling around like as he's taking damage it's like in a dryer kind"
+		},
+		{
+			"timestamps": {
+				"from": "01:57:59,470",
+				"to": "01:58:13,090"
+			},
+			"offsets": {
+				"from": 7079470,
+				"to": 7093090
+			},
+			"text": " of like so you want to hit it or you want to turn it out you say as you come down with this step go"
+		},
+		{
+			"timestamps": {
+				"from": "01:58:13,090",
+				"to": "01:58:40,320"
+			},
+			"offsets": {
+				"from": 7093090,
+				"to": 7120320
+			},
+			"text": " ahead and roll one d d20 i think it's a dex hold on can i have that it's either strength or dex what's"
+		},
+		{
+			"timestamps": {
+				"from": "01:58:40,320",
+				"to": "01:58:59,270"
+			},
+			"offsets": {
+				"from": 7120320,
+				"to": 7139270
+			},
+			"text": " higher for you okay so d20 plus dex plus roll damage one b are you two hitting it or you have a shield"
+		},
+		{
+			"timestamps": {
+				"from": "01:58:59,270",
+				"to": "01:59:13,470"
+			},
+			"offsets": {
+				"from": 7139270,
+				"to": 7153470
+			},
+			"text": " okay so 1d8 of damage plus your dex yeah yep it's like a double pyramid plus your dex modifier you're"
+		},
+		{
+			"timestamps": {
+				"from": "01:59:13,470",
+				"to": "01:59:55,580"
+			},
+			"offsets": {
+				"from": 7153470,
+				"to": 7195580
+			},
+			"text": " fine poppy you're up always had issues with how to do plot events so let me look it up the way they"
+		},
+		{
+			"timestamps": {
+				"from": "01:59:55,580",
+				"to": "02:00:03,140"
+			},
+			"offsets": {
+				"from": 7195580,
+				"to": 7203140
+			},
+			"text": " say it is very awkward oh it sounds like my feet it's i would say one square i think there's an argument"
+		},
+		{
+			"timestamps": {
+				"from": "02:00:03,140",
+				"to": "02:00:07,920"
+			},
+			"offsets": {
+				"from": 7203140,
+				"to": 7207920
+			},
+			"text": " that can do that it would technically affect four squares but i would say we put it in like a it's"
+		},
+		{
+			"timestamps": {
+				"from": "02:00:07,920",
+				"to": "02:00:25,600"
+			},
+			"offsets": {
+				"from": 7207920,
+				"to": 7225600
+			},
+			"text": " like a five foot cube i'd say you could do that okay yeah there's actually a tornado of daggers now"
+		},
+		{
+			"timestamps": {
+				"from": "02:00:25,600",
+				"to": "02:00:35,800"
+			},
+			"offsets": {
+				"from": 7225600,
+				"to": 7235800
+			},
+			"text": " um so good luck reaching your hand in there uh the future on for the first time on a turn or start"
+		},
+		{
+			"timestamps": {
+				"from": "02:00:35,800",
+				"to": "02:00:55,130"
+			},
+			"offsets": {
+				"from": 7235800,
+				"to": 7255130
+			},
+			"text": " to turn there so it'll take the 4d4 now so we'll 4d4 right now poppy has had a bad day"
+		},
+		{
+			"timestamps": {
+				"from": "02:00:55,770",
+				"to": "02:01:02,820"
+			},
+			"offsets": {
+				"from": 7255770,
+				"to": 7262820
+			},
+			"text": " and she is taking it out on this mimic it's this it's just like in this tornado of daggers like a"
+		},
+		{
+			"timestamps": {
+				"from": "02:01:02,820",
+				"to": "02:01:09,630"
+			},
+			"offsets": {
+				"from": 7262820,
+				"to": 7269630
+			},
+			"text": " tooth gets knocked off um yeah there's one gets embedded at the time and kind of pushes through"
+		},
+		{
+			"timestamps": {
+				"from": "02:01:09,630",
+				"to": "02:01:45,530"
+			},
+			"offsets": {
+				"from": 7269630,
+				"to": 7305530
+			},
+			"text": " flicker runs in oh wait uh yeah for sure if that's how you're gonna inspire who wants and so yeah you"
+		},
+		{
+			"timestamps": {
+				"from": "02:01:45,530",
+				"to": "02:01:53,070"
+			},
+			"offsets": {
+				"from": 7305530,
+				"to": 7313070
+			},
+			"text": " can use it at any time you want it what is it all for ability check okay so how barn against racing"
+		},
+		{
+			"timestamps": {
+				"from": "02:01:53,070",
+				"to": "02:01:57,550"
+			},
+			"offsets": {
+				"from": 7313070,
+				"to": 7317550
+			},
+			"text": " works if you have that die you can basically it's it's for 10 minutes so basically the length of this"
+		},
+		{
+			"timestamps": {
+				"from": "02:01:57,550",
+				"to": "02:02:02,920"
+			},
+			"offsets": {
+				"from": 7317550,
+				"to": 7322920
+			},
+			"text": " fight um if you have to make any saving throws an ability check or an attack roll you can roll that"
+		},
+		{
+			"timestamps": {
+				"from": "02:02:02,920",
+				"to": "02:02:10,370"
+			},
+			"offsets": {
+				"from": 7322920,
+				"to": 7330370
+			},
+			"text": " on top of whatever you're allowed to roll it gives you a little extra to use once you use it it goes"
+		},
+		{
+			"timestamps": {
+				"from": "02:02:10,370",
+				"to": "02:02:25,660"
+			},
+			"offsets": {
+				"from": 7330370,
+				"to": 7345660
+			},
+			"text": " away but it's it's good to have it's just kind of like a there's this cloud of daggers swirling around"
+		},
+		{
+			"timestamps": {
+				"from": "02:02:25,660",
+				"to": "02:02:40,770"
+			},
+			"offsets": {
+				"from": 7345660,
+				"to": 7360770
+			},
+			"text": " this mimic turn start so we're going to go back to start though the mimic lets out a screech and dark"
+		},
+		{
+			"timestamps": {
+				"from": "02:02:40,770",
+				"to": "02:02:53,940"
+			},
+			"offsets": {
+				"from": 7360770,
+				"to": 7373940
+			},
+			"text": " mist fuse out in the shape of creature in the three other quarters of the room they're going to roll"
+		},
+		{
+			"timestamps": {
+				"from": "02:02:53,940",
+				"to": "02:03:11,760"
+			},
+			"offsets": {
+				"from": 7373940,
+				"to": 7391760
+			},
+			"text": " initiative now uh they came from the mimic sorry before that happened too i was doing flicker's turn"
+		},
+		{
+			"timestamps": {
+				"from": "02:03:11,760",
+				"to": "02:03:21,580"
+			},
+			"offsets": {
+				"from": 7391760,
+				"to": 7401580
+			},
+			"text": " while you're ready flicker ran into the room and cast fell dissimilar to the other one um it's a it's a"
+		},
+		{
+			"timestamps": {
+				"from": "02:03:21,580",
+				"to": "02:04:10,690"
+			},
+			"offsets": {
+				"from": 7401580,
+				"to": 7450690
+			},
+			"text": " a spell that's going to give you an advantage on saying you're still for yeah it was so the mimic took"
+		},
+		{
+			"timestamps": {
+				"from": "02:04:10,690",
+				"to": "02:04:18,090"
+			},
+			"offsets": {
+				"from": 7450690,
+				"to": 7458090
+			},
+			"text": " damn or was has been taking damage and then like almost like letting out a scream of pain but or"
+		},
+		{
+			"timestamps": {
+				"from": "02:04:18,980",
+				"to": "02:04:25,190"
+			},
+			"offsets": {
+				"from": 7458980,
+				"to": 7465190
+			},
+			"text": " mixing a stream of pain with like regurgitation and these three shadows kind of like went up into"
+		},
+		{
+			"timestamps": {
+				"from": "02:04:25,190",
+				"to": "02:04:43,970"
+			},
+			"offsets": {
+				"from": 7465190,
+				"to": 7483970
+			},
+			"text": " the air and then came down in these forms humans attempt to talk to this well it's locked right now"
+		},
+		{
+			"timestamps": {
+				"from": "02:04:43,970",
+				"to": "02:05:34,590"
+			},
+			"offsets": {
+				"from": 7483970,
+				"to": 7534590
+			},
+			"text": " uh go ahead and roll sword swords so roll 1d20 plus dex plus dex it's getting chewed up it's you guys"
+		},
+		{
+			"timestamps": {
+				"from": "02:05:34,590",
+				"to": "02:05:53,280"
+			},
+			"offsets": {
+				"from": 7534590,
+				"to": 7553280
+			},
+			"text": " did a significant amount of damage but it still hits uh roll 1d6 plus your dex okay and then you can"
+		},
+		{
+			"timestamps": {
+				"from": "02:05:53,280",
+				"to": "02:05:58,110"
+			},
+			"offsets": {
+				"from": 7553280,
+				"to": 7558110
+			},
+			"text": " also use light so you can attack again with your other sword sword as a bonus action would you like"
+		},
+		{
+			"timestamps": {
+				"from": "02:05:58,110",
+				"to": "02:06:18,610"
+			},
+			"offsets": {
+				"from": 7558110,
+				"to": 7578610
+			},
+			"text": " to do that um 1d20 plus dex plus proficiency again that'll hit uh regardless of whatever and then so"
+		},
+		{
+			"timestamps": {
+				"from": "02:06:18,610",
+				"to": "02:06:41,040"
+			},
+			"offsets": {
+				"from": 7578610,
+				"to": 7601040
+			},
+			"text": " now it's just 1d6 so you don't get the dex but you yes slash slash into this creature here it's doing"
+		},
+		{
+			"timestamps": {
+				"from": "02:06:41,040",
+				"to": "02:06:51,380"
+			},
+			"offsets": {
+				"from": 7601040,
+				"to": 7611380
+			},
+			"text": " damage there appears to be some resistance to physical damage so it it did take i mean you did"
+		},
+		{
+			"timestamps": {
+				"from": "02:06:51,380",
+				"to": "02:07:02,040"
+			},
+			"offsets": {
+				"from": 7611380,
+				"to": 7622040
+			},
+			"text": " its essence is like kind of like melting away a little bit like it's pretty hurt but not as much like"
+		},
+		{
+			"timestamps": {
+				"from": "02:07:02,040",
+				"to": "02:07:12,990"
+			},
+			"offsets": {
+				"from": 7622040,
+				"to": 7632990
+			},
+			"text": " as you probably could have done uh otherwise uh by logan go the mimic still okay 1d10 plus seven"
+		},
+		{
+			"timestamps": {
+				"from": "02:07:12,990",
+				"to": "02:07:40,760"
+			},
+			"offsets": {
+				"from": 7632990,
+				"to": 7660760
+			},
+			"text": " yeah the d20 plus zero zero spell um it has to be on your turn and it's an action um so he hits"
+		},
+		{
+			"timestamps": {
+				"from": "02:07:40,760",
+				"to": "02:08:01,050"
+			},
+			"offsets": {
+				"from": 7660760,
+				"to": 7681050
+			},
+			"text": " roll damage which is 1d8 plus before this mimic can even get a an attack off based on the combination"
+		},
+		{
+			"timestamps": {
+				"from": "02:08:01,050",
+				"to": "02:08:12,990"
+			},
+			"offsets": {
+				"from": 7681050,
+				"to": 7692990
+			},
+			"text": " of everyone just wailing at it and being cornered by a little bites into it and just like rips its jaw"
+		},
+		{
+			"timestamps": {
+				"from": "02:08:13,530",
+				"to": "02:08:23,530"
+			},
+			"offsets": {
+				"from": 7693530,
+				"to": 7703530
+			},
+			"text": " which then has the head of maeve just kind of roll out right in right at alara's feet um yeah"
+		},
+		{
+			"timestamps": {
+				"from": "02:08:23,530",
+				"to": "02:08:31,210"
+			},
+			"offsets": {
+				"from": 7703530,
+				"to": 7711210
+			},
+			"text": " yeah you look down and looking down at poppy looking down at the yeah pick it up"
+		},
+		{
+			"timestamps": {
+				"from": "02:08:38,290",
+				"to": "02:08:48,280"
+			},
+			"offsets": {
+				"from": 7718290,
+				"to": 7728280
+			},
+			"text": " do that the shadow looks three and is going to attack 19 but it's got to stay inside and"
+		},
+		{
+			"timestamps": {
+				"from": "02:08:48,280",
+				"to": "02:09:04,620"
+			},
+			"offsets": {
+				"from": 7728280,
+				"to": 7744620
+			},
+			"text": " see not hit you can feel the shadow wraps around you and looks in your eyes and tries to pull something"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:04,620",
+				"to": "02:09:22,870"
+			},
+			"offsets": {
+				"from": 7744620,
+				"to": 7762870
+			},
+			"text": " out of you um but is unsuccessful uh and then it's your turn uh which cool the one that's a fighting"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:22,870",
+				"to": "02:09:29,220"
+			},
+			"offsets": {
+				"from": 7762870,
+				"to": 7769220
+			},
+			"text": " lock this one down here yeah okay uh javelin's a throwing weapon or did you want to get closer"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:29,220",
+				"to": "02:09:37,790"
+			},
+			"offsets": {
+				"from": 7769220,
+				"to": 7777790
+			},
+			"text": " oh yeah yeah yeah you could throw it it's just up to if you wanted to be yeah you can throw a javelin"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:37,790",
+				"to": "02:09:44,930"
+			},
+			"offsets": {
+				"from": 7777790,
+				"to": 7784930
+			},
+			"text": " well so if you wanted to do a javelin you're you're total you're perfectly fine if you wanted to use"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:44,930",
+				"to": "02:09:50,900"
+			},
+			"offsets": {
+				"from": 7784930,
+				"to": 7790900
+			},
+			"text": " your short sword or something like that you could get closer the only the only risk"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:52,830",
+				"to": "02:09:57,460"
+			},
+			"offsets": {
+				"from": 7792830,
+				"to": 7797460
+			},
+			"text": " the only risk with a javelin or any throw weapon is if you throw a nat one there's a chance you're"
+		},
+		{
+			"timestamps": {
+				"from": "02:09:57,460",
+				"to": "02:10:02,760"
+			},
+			"offsets": {
+				"from": 7797460,
+				"to": 7802760
+			},
+			"text": " going to like throw it at uh somebody else and so uh it's a little safer to just run up"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:02,760",
+				"to": "02:10:10,640"
+			},
+			"offsets": {
+				"from": 7802760,
+				"to": 7810640
+			},
+			"text": " uh you and divine smite these are creatures are considered undead"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:13,710",
+				"to": "02:10:17,470"
+			},
+			"offsets": {
+				"from": 7813710,
+				"to": 7817470
+			},
+			"text": " well it's uh you still do your attack and then you add divine smite to it"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:17,470",
+				"to": "02:10:31,280"
+			},
+			"offsets": {
+				"from": 7817470,
+				"to": 7831280
+			},
+			"text": " uh roll 1d 20 plus your strength modifier plus per christian so i think it's 1d 20 plus 6 for"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:31,280",
+				"to": "02:10:37,890"
+			},
+			"offsets": {
+				"from": 7831280,
+				"to": 7837890
+			},
+			"text": " you i think i have to tune down vital a little bit just gonna i'm gonna have to modify he's very"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:37,890",
+				"to": "02:10:46,770"
+			},
+			"offsets": {
+				"from": 7837890,
+				"to": 7846770
+			},
+			"text": " powerful uh dirty 20 hits go ahead and roll damage if you want to use divine smite that'll be your"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:46,770",
+				"to": "02:10:55,850"
+			},
+			"offsets": {
+				"from": 7846770,
+				"to": 7855850
+			},
+			"text": " last what were you using staring strike you'd have one more spell slot uh to use divine smite if you do"
+		},
+		{
+			"timestamps": {
+				"from": "02:10:55,850",
+				"to": "02:11:07,830"
+			},
+			"offsets": {
+				"from": 7855850,
+				"to": 7867830
+			},
+			"text": " that you would add uh 2d8 radiant damage plus a third add 3d8 of damage because he's undead"
+		},
+		{
+			"timestamps": {
+				"from": "02:11:13,890",
+				"to": "02:11:19,010"
+			},
+			"offsets": {
+				"from": 7873890,
+				"to": 7879010
+			},
+			"text": " yeah actually four times could you get one from your sword too this is divine smite against undead"
+		},
+		{
+			"timestamps": {
+				"from": "02:11:19,010",
+				"to": "02:11:48,950"
+			},
+			"offsets": {
+				"from": 7879010,
+				"to": 7908950
+			},
+			"text": " is nuts and then add your strength modifier um even with this resistance is you just lay him down at"
+		},
+		{
+			"timestamps": {
+				"from": "02:11:48,950",
+				"to": "02:12:04,550"
+			},
+			"offsets": {
+				"from": 7908950,
+				"to": 7924550
+			},
+			"text": " this shadowy figure and it just dissipates do you feel that look that's that urge in you that urge"
+		},
+		{
+			"timestamps": {
+				"from": "02:12:04,550",
+				"to": "02:12:13,710"
+			},
+			"offsets": {
+				"from": 7924550,
+				"to": 7933710
+			},
+			"text": " to love blood is boiling people yep uh mimic is dead cannot go uh this next shadow who you got"
+		},
+		{
+			"timestamps": {
+				"from": "02:12:13,710",
+				"to": "02:12:37,260"
+			},
+			"offsets": {
+				"from": 7933710,
+				"to": 7957260
+			},
+			"text": " one one two three oh it'll be six uh he's gonna go for rilo natural one uh does not hit wow today you"
+		},
+		{
+			"timestamps": {
+				"from": "02:12:37,260",
+				"to": "02:12:50,450"
+			},
+			"offsets": {
+				"from": 7957260,
+				"to": 7970450
+			},
+			"text": " guys are lucky yeah it doesn't matter uh oh yeah yeah yeah yeah yeah yeah for sure yeah so like no"
+		},
+		{
+			"timestamps": {
+				"from": "02:12:52,140",
+				"to": "02:12:57,370"
+			},
+			"offsets": {
+				"from": 7972140,
+				"to": 7977370
+			},
+			"text": " you go to pick up this head and then jump in front and you're just holding ahead the shadow is"
+		},
+		{
+			"timestamps": {
+				"from": "02:12:57,370",
+				"to": "02:13:06,060"
+			},
+			"offsets": {
+				"from": 7977370,
+				"to": 7986060
+			},
+			"text": " just like what the fuck uh and hesitate to it goes to suck basically strength draining and it goes to"
+		},
+		{
+			"timestamps": {
+				"from": "02:13:06,060",
+				"to": "02:13:11,000"
+			},
+			"offsets": {
+				"from": 7986060,
+				"to": 7991000
+			},
+			"text": " strength drain phylo but then tries to strength drain the head because you put it in front of it and"
+		},
+		{
+			"timestamps": {
+				"from": "02:13:11,000",
+				"to": "02:13:16,280"
+			},
+			"offsets": {
+				"from": 7991000,
+				"to": 7996280
+			},
+			"text": " it's just like there's no strength to drain what's going on i'm confused um i lost initiative hold"
+		},
+		{
+			"timestamps": {
+				"from": "02:13:16,280",
+				"to": "02:13:34,310"
+			},
+			"offsets": {
+				"from": 7996280,
+				"to": 8014310
+			},
+			"text": " on shadow okay halara halara you're out cam uh i'll give you like a small yeah like what do you want"
+		},
+		{
+			"timestamps": {
+				"from": "02:13:34,310",
+				"to": "02:14:10,140"
+			},
+			"offsets": {
+				"from": 8014310,
+				"to": 8050140
+			},
+			"text": " to try to say what language is no response but yeah screw it and cast a movie and then what are you"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:10,140",
+				"to": "02:14:19,620"
+			},
+			"offsets": {
+				"from": 8050140,
+				"to": 8059620
+			},
+			"text": " just what are you casting oh okay um it's gonna be a disadvantage because he's in melee range so that's"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:19,620",
+				"to": "02:14:28,160"
+			},
+			"offsets": {
+				"from": 8059620,
+				"to": 8068160
+			},
+			"text": " the downside of being a spell caster you're still be in you're considered uh threatened so it'll always"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:28,160",
+				"to": "02:14:34,640"
+			},
+			"offsets": {
+				"from": 8068160,
+				"to": 8074640
+			},
+			"text": " be at the advantage you can step away which you would risk taking an attack of opportunity or just"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:34,640",
+				"to": "02:14:40,360"
+			},
+			"offsets": {
+				"from": 8074640,
+				"to": 8080360
+			},
+			"text": " take well wait hold on hold on it's a saving throw you can do you can do it never mind you're fine it's"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:40,360",
+				"to": "02:14:46,370"
+			},
+			"offsets": {
+				"from": 8080360,
+				"to": 8086370
+			},
+			"text": " not in a spell attack you can do you can do what you're trying to do it's a save instead of an attack"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:46,370",
+				"to": "02:14:58,020"
+			},
+			"offsets": {
+				"from": 8086370,
+				"to": 8098020
+			},
+			"text": " uh so which one do you want to do it at okay uh when a creature enters oh so it's a five foot radius"
+		},
+		{
+			"timestamps": {
+				"from": "02:14:58,020",
+				"to": "02:15:05,570"
+			},
+			"offsets": {
+				"from": 8098020,
+				"to": 8105570
+			},
+			"text": " 40 foot beam so you're just like directing it right at him like right through the door basically okay"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:06,910",
+				"to": "02:15:15,140"
+			},
+			"offsets": {
+				"from": 8106910,
+				"to": 8115140
+			},
+			"text": " it can i don't know i don't know what's behind it well okay let me imagine if you open the door"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:15,140",
+				"to": "02:15:22,560"
+			},
+			"offsets": {
+				"from": 8115140,
+				"to": 8122560
+			},
+			"text": " there's more than five it's just it's just an orphanage isn't it a puppy orphanage oh my god"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:22,560",
+				"to": "02:15:30,290"
+			},
+			"offsets": {
+				"from": 8122560,
+				"to": 8130290
+			},
+			"text": " it rolled a four on it's safe i am rolling so bad right now uh i didn't need that keep that"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:30,290",
+				"to": "02:15:45,640"
+			},
+			"offsets": {
+				"from": 8130290,
+				"to": 8145640
+			},
+			"text": " no it's gone um golf in the future oh okay so when the spill when it enters the spell area for the"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:45,640",
+				"to": "02:15:54,230"
+			},
+			"offsets": {
+				"from": 8145640,
+				"to": 8154230
+			},
+			"text": " first time which is currently entering it for the first time it failed made roll 2d10 and let me"
+		},
+		{
+			"timestamps": {
+				"from": "02:15:54,230",
+				"to": "02:16:34,310"
+			},
+			"offsets": {
+				"from": 8154230,
+				"to": 8194310
+			},
+			"text": " know that amount 2d10 or like yeah yeah i can't remember if it's resistant no uh not for a spell but"
+		},
+		{
+			"timestamps": {
+				"from": "02:16:34,310",
+				"to": "02:16:52,010"
+			},
+			"offsets": {
+				"from": 8194310,
+				"to": 8212010
+			},
+			"text": " it's a radiant damage roll this ball i got it something's wrong here just be possible 11 you"
+		},
+		{
+			"timestamps": {
+				"from": "02:16:52,010",
+				"to": "02:17:02,930"
+			},
+			"offsets": {
+				"from": 8212010,
+				"to": 8222930
+			},
+			"text": " said so starts it's on the service turn it takes 11 damage and kind of like stumbles back from this"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:02,930",
+				"to": "02:17:11,460"
+			},
+			"offsets": {
+				"from": 8222930,
+				"to": 8231460
+			},
+			"text": " giant radiant beam the beam shoots through the door um we'll say it blows the door open um and it's kind"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:11,460",
+				"to": "02:17:21,250"
+			},
+			"offsets": {
+				"from": 8231460,
+				"to": 8241250
+			},
+			"text": " of like directing through a window um because it's 40 feet so yeah just keep going um but it doesn't"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:21,250",
+				"to": "02:17:34,170"
+			},
+			"offsets": {
+				"from": 8241250,
+				"to": 8254170
+			},
+			"text": " appear to be anything in that room it seems to be just uh an abandoned storage uh poppy you're up but"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:34,170",
+				"to": "02:17:41,460"
+			},
+			"offsets": {
+				"from": 8254170,
+				"to": 8261460
+			},
+			"text": " he will take so the cooling on moonbeam on the start of his turn he then has to save again or take more"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:41,460",
+				"to": "02:17:49,170"
+			},
+			"offsets": {
+				"from": 8261460,
+				"to": 8269170
+			},
+			"text": " damage and anything in that beam so if you can ever get like creatures lined up like a moonbeam it's just"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:49,170",
+				"to": "02:17:57,680"
+			},
+			"offsets": {
+				"from": 8269170,
+				"to": 8277680
+			},
+			"text": " like yeah like a big wall yeah also other creatures have spells like that so avoid lining up when"
+		},
+		{
+			"timestamps": {
+				"from": "02:17:57,680",
+				"to": "02:18:02,280"
+			},
+			"offsets": {
+				"from": 8277680,
+				"to": 8282280
+			},
+			"text": " possible when you're fighting because there's spells that can be what you're trying to do as well sorry"
+		},
+		{
+			"timestamps": {
+				"from": "02:18:02,280",
+				"to": "02:18:27,560"
+			},
+			"offsets": {
+				"from": 8282280,
+				"to": 8307560
+			},
+			"text": " go ahead or history to see if you would have heard stories about what these are and you don't know"
+		},
+		{
+			"timestamps": {
+				"from": "02:18:27,560",
+				"to": "02:18:39,720"
+			},
+			"offsets": {
+				"from": 8307560,
+				"to": 8319720
+			},
+			"text": " anything about these okay and what kind of damage was that that was a pickaxe sorry um okay"
+		},
+		{
+			"timestamps": {
+				"from": "02:18:39,720",
+				"to": "02:18:58,090"
+			},
+			"offsets": {
+				"from": 8319720,
+				"to": 8338090
+			},
+			"text": " okay save new dice 15 saves needs to beat it oh my gosh i'm never going to hear the end of this"
+		},
+		{
+			"timestamps": {
+				"from": "02:18:58,090",
+				"to": "02:19:25,360"
+			},
+			"offsets": {
+				"from": 8338090,
+				"to": 8365360
+			},
+			"text": " um anything else just a more bardic inspiration thanks for getting me out of that mimic"
+		},
+		{
+			"timestamps": {
+				"from": "02:19:47,040",
+				"to": "02:19:59,950"
+			},
+			"offsets": {
+				"from": 8387040,
+				"to": 8399950
+			},
+			"text": " um seeing you seeing you inspire lock he's going to run up next to you to enfold an action well"
+		},
+		{
+			"timestamps": {
+				"from": "02:19:59,950",
+				"to": "02:20:16,070"
+			},
+			"offsets": {
+				"from": 8399950,
+				"to": 8416070
+			},
+			"text": " next to you and alara he's like not right now lock you're out go for it um 1d20 plus proficiency plus"
+		},
+		{
+			"timestamps": {
+				"from": "02:20:16,070",
+				"to": "02:21:04,330"
+			},
+			"offsets": {
+				"from": 8416070,
+				"to": 8464330
+			},
+			"text": " that you hit him again d6 no modifier just enough um you come down with your sword and the shadow"
+		},
+		{
+			"timestamps": {
+				"from": "02:21:04,330",
+				"to": "02:21:27,270"
+			},
+			"offsets": {
+				"from": 8464330,
+				"to": 8487270
+			},
+			"text": " dissipates vilo is up 1d10 or d20 plus seven roll damage take off the proficiency i think the proficiency"
+		},
+		{
+			"timestamps": {
+				"from": "02:21:27,270",
+				"to": "02:21:34,290"
+			},
+			"offsets": {
+				"from": 8487270,
+				"to": 8494290
+			},
+			"text": " is killing it so one what is it what do they give him uh he's just doing too much damage uh just do"
+		},
+		{
+			"timestamps": {
+				"from": "02:21:34,290",
+				"to": "02:21:52,440"
+			},
+			"offsets": {
+				"from": 8494290,
+				"to": 8512440
+			},
+			"text": " one d8 plus two he uh kills it so he simultaneously you stab into that and he bites into the shadow"
+		},
+		{
+			"timestamps": {
+				"from": "02:21:52,440",
+				"to": "02:22:07,640"
+			},
+			"offsets": {
+				"from": 8512440,
+				"to": 8527640
+			},
+			"text": " and yeah i need to i'm gonna bring violence damage that's just a little bit he's a stronger he's doing"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:07,640",
+				"to": "02:22:20,810"
+			},
+			"offsets": {
+				"from": 8527640,
+				"to": 8540810
+			},
+			"text": " as much damage as playable characters so we're just gonna tune in a little bit uh yeah yeah so the room"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:20,810",
+				"to": "02:22:29,410"
+			},
+			"offsets": {
+				"from": 8540810,
+				"to": 8549410
+			},
+			"text": " goes silent uh alara is holding up a dead head and poppy is sitting underneath her and that's where"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:29,410",
+				"to": "02:22:40,550"
+			},
+			"offsets": {
+				"from": 8549410,
+				"to": 8560550
+			},
+			"text": " we we leave initiative what do you guys want to do did anybody get i rolled so"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:40,550",
+				"to": "02:22:43,030"
+			},
+			"offsets": {
+				"from": 8560550,
+				"to": 8563030
+			},
+			"text": " bad"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:47,470",
+				"to": "02:22:48,510"
+			},
+			"offsets": {
+				"from": 8567470,
+				"to": 8568510
+			},
+			"text": " i rolled so bad"
+		},
+		{
+			"timestamps": {
+				"from": "02:22:48,510",
+				"to": "02:23:00,470"
+			},
+			"offsets": {
+				"from": 8568510,
+				"to": 8580470
+			},
+			"text": " i am not happy with the i mean the above table the mimic you guys in staring the mimic was huge and"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:00,470",
+				"to": "02:23:05,270"
+			},
+			"offsets": {
+				"from": 8580470,
+				"to": 8585270
+			},
+			"text": " not letting him get out of that um and then just counting on him before the shadows could get out"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:05,270",
+				"to": "02:23:10,450"
+			},
+			"offsets": {
+				"from": 8585270,
+				"to": 8590450
+			},
+			"text": " because that was a planned time so just getting enough damage in so he was useless yeah and then"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:10,450",
+				"to": "02:23:17,050"
+			},
+			"offsets": {
+				"from": 8590450,
+				"to": 8597050
+			},
+			"text": " the shadows and mimic not being able to save out of it she killed the miss he killed the data thing"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:17,050",
+				"to": "02:23:27,860"
+			},
+			"offsets": {
+				"from": 8597050,
+				"to": 8607860
+			},
+			"text": " yeah so i was gonna say well divine divine smite whenever there's an undead creature yeah use divine"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:27,860",
+				"to": "02:23:33,910"
+			},
+			"offsets": {
+				"from": 8607860,
+				"to": 8613910
+			},
+			"text": " smite uh i will say you guys have all used a fair amount of spell slots now so you get a feeling of"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:33,910",
+				"to": "02:23:39,060"
+			},
+			"offsets": {
+				"from": 8613910,
+				"to": 8619060
+			},
+			"text": " you know it's a little we're a little tired um by the way i would like to say that i do remove my"
+		},
+		{
+			"timestamps": {
+				"from": "02:23:39,060",
+				"to": "02:23:50,980"
+			},
+			"offsets": {
+				"from": 8619060,
+				"to": 8630980
+			},
+			"text": " cloud of daggers came off anyway but yeah cloud of daggers but is there is the body is there anything else"
+		},
+		{
+			"timestamps": {
+				"from": "02:24:05,600",
+				"to": "02:24:13,890"
+			},
+			"offsets": {
+				"from": 8645600,
+				"to": 8653890
+			},
+			"text": " the head itself is starting to go a little skeletal um it definitely smells uh you could definitely"
+		},
+		{
+			"timestamps": {
+				"from": "02:24:13,890",
+				"to": "02:24:28,760"
+			},
+			"offsets": {
+				"from": 8653890,
+				"to": 8668760
+			},
+			"text": " find some bones uh 15 yeah you find like some bones inside of it don't know if they're necessarily"
+		},
+		{
+			"timestamps": {
+				"from": "02:24:28,760",
+				"to": "02:24:36,760"
+			},
+			"offsets": {
+				"from": 8668760,
+				"to": 8676760
+			},
+			"text": " hers or these other creatures seems to be on the unfortunate side of this mimic that apparently is"
+		},
+		{
+			"timestamps": {
+				"from": "02:24:36,760",
+				"to": "02:24:56,500"
+			},
+			"offsets": {
+				"from": 8676760,
+				"to": 8696500
+			},
+			"text": " no match for a part of your caliber okay clicker nod as well violent"
+		},
+		{
+			"timestamps": {
+				"from": "02:24:56,500",
+				"to": "02:25:28,510"
+			},
+			"offsets": {
+				"from": 8696500,
+				"to": 8728510
+			},
+			"text": " um yeah you go through um you can roll investigation this place"
+		},
+		{
+			"timestamps": {
+				"from": "02:25:28,510",
+				"to": "02:25:51,730"
+			},
+			"offsets": {
+				"from": 8728510,
+				"to": 8751730
+			},
+			"text": " i think we're all going right we're all bad now let's see we talk and wait let's investigate this"
+		},
+		{
+			"timestamps": {
+				"from": "02:25:51,730",
+				"to": "02:26:00,100"
+			},
+			"offsets": {
+				"from": 8751730,
+				"to": 8760100
+			},
+			"text": " room yeah check that corner i'll check this corner please don't open anything"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:04,110",
+				"to": "02:26:16,580"
+			},
+			"offsets": {
+				"from": 8764110,
+				"to": 8776580
+			},
+			"text": " giant chestnut um like looking around the only thing that was shiny was kind of that uh treasure"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:16,580",
+				"to": "02:26:23,800"
+			},
+			"offsets": {
+				"from": 8776580,
+				"to": 8783800
+			},
+			"text": " well you had to uh this place has been here for it seems like long long time like you can look at"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:23,800",
+				"to": "02:26:37,180"
+			},
+			"offsets": {
+				"from": 8783800,
+				"to": 8797180
+			},
+			"text": " some of the books yeah a lord for like for the sanctity of not making you guys just walk around"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:37,180",
+				"to": "02:26:43,470"
+			},
+			"offsets": {
+				"from": 8797180,
+				"to": 8803470
+			},
+			"text": " rolling investigation checks um yeah i mean you see a few books like written from previous times"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:45,930",
+				"to": "02:26:55,870"
+			},
+			"offsets": {
+				"from": 8805930,
+				"to": 8815870
+			},
+			"text": " yeah but the ones that are still left are just like well either legible or like just like kind of like"
+		},
+		{
+			"timestamps": {
+				"from": "02:26:55,870",
+				"to": "02:27:02,520"
+			},
+			"offsets": {
+				"from": 8815870,
+				"to": 8822520
+			},
+			"text": " stories not like history like oh this is you know just like some i've heard this story before yeah"
+		},
+		{
+			"timestamps": {
+				"from": "02:27:02,520",
+				"to": "02:27:17,230"
+			},
+			"offsets": {
+				"from": 8822520,
+				"to": 8837230
+			},
+			"text": " you can read them before but yeah nothing nothing that gives you yeah it's just been picked through"
+		},
+		{
+			"timestamps": {
+				"from": "02:27:17,230",
+				"to": "02:27:25,010"
+			},
+			"offsets": {
+				"from": 8837230,
+				"to": 8845010
+			},
+			"text": " you can tell that's like anything of value is most likely left um you guys head outside"
+		},
+		{
+			"timestamps": {
+				"from": "02:27:25,010",
+				"to": "02:28:14,850"
+			},
+			"offsets": {
+				"from": 8845010,
+				"to": 8894850
+			},
+			"text": " you guys have to take it back together yeah amen amen here's the part"
+		},
+		{
+			"timestamps": {
+				"from": "02:28:17,690",
+				"to": "02:28:25,500"
+			},
+			"offsets": {
+				"from": 8897690,
+				"to": 8905500
+			},
+			"text": " throw all the bones and flowers clicker kind of stands there in reference as well and as you do that"
+		},
+		{
+			"timestamps": {
+				"from": "02:28:25,500",
+				"to": "02:28:28,820"
+			},
+			"offsets": {
+				"from": 8905500,
+				"to": 8908820
+			},
+			"text": " both of your lanterns get in a little bit so you can light one"
+		},
+		{
+			"timestamps": {
+				"from": "02:28:28,820",
+				"to": "02:29:07,160"
+			},
+			"offsets": {
+				"from": 8908820,
+				"to": 8947160
+			},
+			"text": " this is a pretty decent spot to stop at i would say yeah definitely well in game as well as yeah"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:07,900",
+				"to": "02:29:15,470"
+			},
+			"offsets": {
+				"from": 8947900,
+				"to": 8955470
+			},
+			"text": " yeah did you want to cover stop here because she wakes up at five in the morning okay so yeah"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:15,470",
+				"to": "02:29:21,110"
+			},
+			"offsets": {
+				"from": 8955470,
+				"to": 8961110
+			},
+			"text": " this isn't like a safe place for us to actually get so much as well so that's what i'm kind of like"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:21,110",
+				"to": "02:29:27,650"
+			},
+			"offsets": {
+				"from": 8961110,
+				"to": 8967650
+			},
+			"text": " gonna end it on more wise is you guys can spend your time here there's like other than the wall"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:27,650",
+				"to": "02:29:36,070"
+			},
+			"offsets": {
+				"from": 8967650,
+				"to": 8976070
+			},
+			"text": " that's kind of knocked out it seems like the safest place at least so you look out um you're kind of"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:36,070",
+				"to": "02:29:40,270"
+			},
+			"offsets": {
+				"from": 8976070,
+				"to": 8980270
+			},
+			"text": " at this like plateau of the mountains the mountains keep going up it seems like it's going to be very"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:40,270",
+				"to": "02:29:47,320"
+			},
+			"offsets": {
+				"from": 8980270,
+				"to": 8987320
+			},
+			"text": " wildernessy like really not really you feel like more wildernessy than it is here this seems like"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:47,320",
+				"to": "02:29:53,450"
+			},
+			"offsets": {
+				"from": 8987320,
+				"to": 8993450
+			},
+			"text": " a good place as any it gives you at least some walls um you can kind of post up in one of the rooms"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:54,060",
+				"to": "02:29:58,730"
+			},
+			"offsets": {
+				"from": 8994060,
+				"to": 8998730
+			},
+			"text": " and we'll go from there we'll do a short rest and you guys can have any conversations you want to do while we're up to"
+		},
+		{
+			"timestamps": {
+				"from": "02:29:58,730",
+				"to": "02:29:59,450"
+			},
+			"offsets": {
+				"from": 8998730,
+				"to": 8999450
+			},
+			"text": " next question"
+		},
+		{
+			"timestamps": {
+				"from": "02:30:05,510",
+				"to": "02:30:10,060"
+			},
+			"offsets": {
+				"from": 9005510,
+				"to": 9010060
+			},
+			"text": " you might yeah depending on who you're probably going to want a long rest um"
+		},
+		{
+			"timestamps": {
+				"from": "02:30:10,060",
+				"to": "02:30:13,580"
+			},
+			"offsets": {
+				"from": 9010060,
+				"to": 9013580
+			},
+			"text": " to get everyone their smoke folks back because i think only some of you would be"
+		},
+		{
+			"timestamps": {
+				"from": "02:30:19,840",
+				"to": "02:30:23,620"
+			},
+			"offsets": {
+				"from": 9019840,
+				"to": 9023620
+			},
+			"text": " smelling my doll here thinking of home"
+		},
+		{
+			"timestamps": {
+				"from": "02:30:39,710",
+				"to": "02:30:46,130"
+			},
+			"offsets": {
+				"from": 9039710,
+				"to": 9046130
+			},
+			"text": " you might find yourself in a hole"
+		}
+	]
+}

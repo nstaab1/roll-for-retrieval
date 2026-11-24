@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Act 3: Embed, Index and Search</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Act 3
+        </div>
+        <div>
+          <h1>Embed, Index and Search</h1>
+          <p class="lede">
+            A chunk is text, and you can't search text by what it means. You
+            embed every chunk into a vector, store the vectors in Postgres
+            beside the night, time and visibility each chunk carries, and write
+            the search that brings back the nearest ones. Then you read what
+            comes back, mistakes included.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li><code>npm test -- 3</code> passes</li>
+            <li>a line under <b>Retrieval</b> in <code>DECISIONS.md</code></li>
+            <li>the wisdom checks, if there's time</li>
+          </ul>
+        </div>
+      </header>
+      <div class="card">
+        <b>Similarity grid.</b> Before you embed anything, open the
+        <a href="similarity-grid.html">similarity grid</a> and see what an
+        embedding catches and misses in eight short phrases.
+      </div>
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Add <code>embedChunks</code>
+      </h2>
+      <p>
+        Open <code>src/embed.ts</code>. An embedding model turns a text into a
+        vector, a long list of numbers, so that texts that mean similar things
+        get vectors that point in similar directions. The shipped client in
+        <code>src/hosted.ts</code> makes the call. You send it the chunks in
+        batches of 256.
+      </p>
+      <p class="replace">
+        In <code>src/embed.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-3.html, step 1.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/embed.ts · embedChunks</span
+            ><button
+              class="copy"
+              data-copy="%20%20const%20embedded%3A%20EmbeddedChunk%5B%5D%20%3D%20%5B%5D%3B%0A%20%20%2F%2F%20(1)%20One%20request%20per%20batch%20of%20chunks%2C%20not%20one%20per%20chunk.%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20chunks.length%3B%20i%20%2B%3D%20embedBatchSize)%20%7B%0A%20%20%20%20const%20batch%20%3D%20chunks.slice(i%2C%20i%20%2B%20embedBatchSize)%3B%0A%20%20%20%20%2F%2F%20(2)%20The%20shipped%20client%3A%20one%20vector%20per%20text%2C%20in%20the%20order%20sent.%0A%20%20%20%20const%20vectors%20%3D%20await%20embed(%0A%20%20%20%20%20%20batch.map((chunk)%20%3D%3E%20chunk.text)%2C%0A%20%20%20%20%20%20%7B%20model%20%7D%2C%0A%20%20%20%20)%3B%0A%20%20%20%20%2F%2F%20(3)%20Each%20vector%20rides%20with%20its%20chunk.%0A%20%20%20%20for%20(const%20%5Bj%2C%20chunk%5D%20of%20batch.entries())%20%7B%0A%20%20%20%20%20%20embedded.push(%7B%20...chunk%2C%20embedding%3A%20vectors%5Bj%5D%20%7D)%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20return%20embedded%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners=""><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> embedded: EmbeddedChunk[] = [];</span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> One request per batch of chunks, not one per chunk.</span></span></span><span class="ln" data-owners="1"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">for</span> (<span class="t-key">let</span> i = 0; i &lt; chunks.length; i += embedBatchSize) {</span></span><span class="ln" data-owners="1"><span class="num">4</span><span class="src" style="--ind: 6ch">    <span class="t-key">const</span> batch = chunks.slice(i, i + embedBatchSize);</span></span><span class="ln" data-owners="1 2"><span class="num">5</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(2)</span> The shipped client: one vector per text, in the order sent.</span></span></span><span class="ln" data-owners="1 2"><span class="num">6</span><span class="src" style="--ind: 6ch">    <span class="t-key">const</span> vectors = <span class="t-key">await</span> embed(</span></span><span class="ln" data-owners="1 2"><span class="num">7</span><span class="src" style="--ind: 8ch">      batch.map((chunk) =&gt; chunk.text),</span></span><span class="ln" data-owners="1 2"><span class="num">8</span><span class="src" style="--ind: 8ch">      { model },</span></span><span class="ln" data-owners="1 2"><span class="num">9</span><span class="src" style="--ind: 6ch">    );</span></span><span class="ln" data-owners="1 3"><span class="num">10</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(3)</span> Each vector rides with its chunk.</span></span></span><span class="ln" data-owners="1 3"><span class="num">11</span><span class="src" style="--ind: 6ch">    <span class="t-key">for</span> (<span class="t-key">const</span> [j, chunk] <span class="t-key">of</span> batch.entries()) {</span></span><span class="ln" data-owners="1 3"><span class="num">12</span><span class="src" style="--ind: 8ch">      embedded.push({ ...chunk, embedding: vectors[j] });</span></span><span class="ln" data-owners="1 3"><span class="num">13</span><span class="src" style="--ind: 6ch">    }</span></span><span class="ln" data-owners="1"><span class="num">14</span><span class="src" style="--ind: 4ch">  }</span></span><span class="ln" data-owners=""><span class="num">15</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> embedded;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 3">
+          <div class="ncard" data-note="1">
+            <b
+              ><span class="badge">(1)</span> Batches, not one call per
+              chunk.</b
+            >
+            Sending the 1,021 chunks one at a time would take 1,021 round trips.
+            A request can only carry so much, so you can't send them all in one
+            either.
+          </div>
+          <div class="ncard" data-note="2">
+            <b><span class="badge">(2)</span> The shipped client.</b>
+            <code>embed</code> picks the provider from your key, returns one
+            vector per text in the order sent, and writes the call to the cost
+            log. The last hour reads cost per question from that log.
+          </div>
+          <div class="ncard" data-note="3">
+            <b
+              ><span class="badge">(3)</span> The vector rides with its
+              chunk.</b
+            >
+            <code>vectors[j]</code> belongs to <code>batch[j]</code>, and the
+            spread keeps the night, times, document and visibility beside it.
+            Get the pairing off by one and every chunk is filed under its
+            neighbour's meaning.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Add <code>indexChunks</code>
+      </h2>
+      <p>
+        Open <code>src/store.ts</code>. The vector store is PGlite, which is
+        Postgres running inside Node, with the pgvector extension. The
+        <code>chunks</code> table is already there. It has a column for
+        everything a chunk carries, <code>visibility</code> included, and an
+        <code>embedding</code> column of pgvector's <code>vector</code> type.
+        You write the insert.
+      </p>
+      <p class="replace">
+        In <code>src/store.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-3.html, step 2.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/store.ts · indexChunks</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(4)%20One%20transaction%3A%20every%20row%20lands%2C%20or%20none%20does.%0A%20%20await%20store.db.transaction(async%20(tx)%20%3D%3E%20%7B%0A%20%20%20%20for%20(const%20chunk%20of%20chunks)%20%7B%0A%20%20%20%20%20%20%2F%2F%20(5)%20Each%20field%20the%20chunk%20carries%20gets%20its%20own%20column.%0A%20%20%20%20%20%20await%20tx.query(%0A%20%20%20%20%20%20%20%20%60INSERT%20INTO%20chunks%0A%20%20%20%20%20%20%20%20%20%20%20(night%2C%20start_ms%2C%20end_ms%2C%20document%2C%20campaign%2C%20visibility%2C%20text%2C%20embedding)%0A%20%20%20%20%20%20%20%20%20VALUES%20(%241%2C%20%242%2C%20%243%2C%20%244%2C%20%245%2C%20%246%2C%20%247%2C%20%248)%60%2C%0A%20%20%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20chunk.night%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.start_ms%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.end_ms%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.document%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.campaign%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.visibility%2C%0A%20%20%20%20%20%20%20%20%20%20chunk.text%2C%0A%20%20%20%20%20%20%20%20%20%20toVector(chunk.embedding)%2C%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20)%3B%0A%20%20%20%20%7D%0A%20%20%7D)%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="4"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(4)</span> One transaction: every row lands, or none does.</span></span></span><span class="ln" data-owners="4"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">await</span> store.db.transaction(<span class="t-key">async</span> (tx) =&gt; {</span></span><span class="ln" data-owners="4"><span class="num">3</span><span class="src" style="--ind: 6ch">    <span class="t-key">for</span> (<span class="t-key">const</span> chunk <span class="t-key">of</span> chunks) {</span></span><span class="ln" data-owners="4 5"><span class="num">4</span><span class="src" style="--ind: 8ch">      <span class="t-com">// <span class="t-mark">(5)</span> Each field the chunk carries gets its own column.</span></span></span><span class="ln" data-owners="4 5"><span class="num">5</span><span class="src" style="--ind: 8ch">      <span class="t-key">await</span> tx.query(</span></span><span class="ln" data-owners="4 5"><span class="num">6</span><span class="src" style="--ind: 10ch">        <span class="t-str">`INSERT INTO chunks</span></span></span><span class="ln" data-owners="4 5"><span class="num">7</span><span class="src" style="--ind: 13ch"><span class="t-str">           (night, start_ms, end_ms, document, campaign, visibility, text, embedding)</span></span></span><span class="ln" data-owners="4 5"><span class="num">8</span><span class="src" style="--ind: 11ch"><span class="t-str">         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`</span>,</span></span><span class="ln" data-owners="4 5"><span class="num">9</span><span class="src" style="--ind: 10ch">        [</span></span><span class="ln" data-owners="4 5"><span class="num">10</span><span class="src" style="--ind: 12ch">          chunk.night,</span></span><span class="ln" data-owners="4 5"><span class="num">11</span><span class="src" style="--ind: 12ch">          chunk.start_ms,</span></span><span class="ln" data-owners="4 5"><span class="num">12</span><span class="src" style="--ind: 12ch">          chunk.end_ms,</span></span><span class="ln" data-owners="4 5"><span class="num">13</span><span class="src" style="--ind: 12ch">          chunk.document,</span></span><span class="ln" data-owners="4 5"><span class="num">14</span><span class="src" style="--ind: 12ch">          chunk.campaign,</span></span><span class="ln" data-owners="4 5"><span class="num">15</span><span class="src" style="--ind: 12ch">          chunk.visibility,</span></span><span class="ln" data-owners="4 5"><span class="num">16</span><span class="src" style="--ind: 12ch">          chunk.text,</span></span><span class="ln" data-owners="4 5"><span class="num">17</span><span class="src" style="--ind: 12ch">          toVector(chunk.embedding),</span></span><span class="ln" data-owners="4 5"><span class="num">18</span><span class="src" style="--ind: 10ch">        ],</span></span><span class="ln" data-owners="4 5"><span class="num">19</span><span class="src" style="--ind: 8ch">      );</span></span><span class="ln" data-owners="4"><span class="num">20</span><span class="src" style="--ind: 6ch">    }</span></span><span class="ln" data-owners="4"><span class="num">21</span><span class="src" style="--ind: 4ch">  });</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 2">
+          <div class="ncard" data-note="4">
+            <b><span class="badge">(4)</span> One transaction.</b> If an insert
+            fails halfway, no rows land, so you never search a half-built index.
+            Postgres also commits once, not once a row.
+          </div>
+          <div class="ncard" data-note="5">
+            <b><span class="badge">(5)</span> A column for everything.</b> Act 4
+            cites the night and <code>start_ms</code>, or the document, and the
+            last hour filters on <code>visibility</code>. A field left out here
+            is gone for every later step.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Add <code>search</code>
+      </h2>
+      <p>
+        Open <code>src/search.ts</code>. A search embeds the question, then asks
+        Postgres for the rows whose vectors are nearest it.
+        <code>&lt;=&gt;</code> is pgvector's cosine distance: 0 when two vectors
+        point the same way, and bigger the further apart they point.
+      </p>
+      <p class="replace">
+        In <code>src/search.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-3.html, step 3.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/search.ts · search</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(6)%20Embed%20the%20question%20with%20the%20model%20that%20built%20the%20index.%0A%20%20const%20%5Bvector%5D%20%3D%20await%20embed(%5Bquestion%5D%2C%20%7B%20model%3A%20store.settings.model%20%7D)%3B%0A%20%20%2F%2F%20(7)%20Nearest%20first%2C%20and%20only%20the%20first%20k.%0A%20%20const%20%7B%20rows%20%7D%20%3D%20await%20store.db.query%3CHit%3E(%0A%20%20%20%20%60SELECT%20night%2C%20start_ms%2C%20end_ms%2C%20document%2C%20campaign%2C%20visibility%2C%20text%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20embedding%20%3C%3D%3E%20%241%20AS%20distance%0A%20%20%20%20%20FROM%20chunks%0A%20%20%20%20%20ORDER%20BY%20distance%0A%20%20%20%20%20LIMIT%20%242%60%2C%0A%20%20%20%20%5BtoVector(vector)%2C%20k%5D%2C%0A%20%20)%3B%0A%20%20return%20rows%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="6"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(6)</span> Embed the question with the model that built the index.</span></span></span><span class="ln" data-owners="6"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> [vector] = <span class="t-key">await</span> embed([question], { model: store.settings.model });</span></span><span class="ln" data-owners="7"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(7)</span> Nearest first, and only the first k.</span></span></span><span class="ln" data-owners="7"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> { rows } = <span class="t-key">await</span> store.db.query&lt;Hit&gt;(</span></span><span class="ln" data-owners="7"><span class="num">5</span><span class="src" style="--ind: 6ch">    <span class="t-str">`SELECT night, start_ms, end_ms, document, campaign, visibility, text,</span></span></span><span class="ln" data-owners="7"><span class="num">6</span><span class="src" style="--ind: 14ch"><span class="t-str">            embedding &lt;=&gt; $1 AS distance</span></span></span><span class="ln" data-owners="7"><span class="num">7</span><span class="src" style="--ind: 7ch"><span class="t-str">     FROM chunks</span></span></span><span class="ln" data-owners="7"><span class="num">8</span><span class="src" style="--ind: 7ch"><span class="t-str">     ORDER BY distance</span></span></span><span class="ln" data-owners="7"><span class="num">9</span><span class="src" style="--ind: 7ch"><span class="t-str">     LIMIT $2`</span>,</span></span><span class="ln" data-owners="7"><span class="num">10</span><span class="src" style="--ind: 6ch">    [toVector(vector), k],</span></span><span class="ln" data-owners="7"><span class="num">11</span><span class="src" style="--ind: 4ch">  );</span></span><span class="ln" data-owners=""><span class="num">12</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> rows;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 2">
+          <div class="ncard" data-note="6">
+            <b
+              ><span class="badge">(6)</span> The index's model, not the newest
+              one.</b
+            >
+            Each embedding model places texts in a space of its own, so a
+            distance only means something between two vectors from the same
+            model. That's why the index records the model it was built with.
+          </div>
+          <div class="ncard" data-note="7">
+            <b><span class="badge">(7)</span> Nearest first, then stop at k.</b>
+            <code>ORDER BY distance</code> puts the closest meaning first and
+            <code>LIMIT</code> keeps k. Nothing in this query reads
+            <code>visibility</code> yet, so any chunk can come back to anyone.
+          </div>
+        </div>
+      </div>
+      <p class="checkcap">
+        Before you move on. One question about what you just pasted.
+      </p>
+      <div class="q" data-check="model"></div>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Choose your k
+      </h2>
+      <p>
+        Open <code>src/choices.ts</code> and fill in <code>RETRIEVAL_K</code>,
+        the number of chunks a search returns. In Act 4 the reranker reads all k
+        and keeps the best few for the prompt.
+      </p>
+      <ul>
+        <li>
+          <b>A small k</b> is fast and cheap to rerank, but the chunk that
+          answers the question may sit just past the cut.
+        </li>
+        <li>
+          <b>A big k</b> gives the reranker more chances to find that chunk, and
+          costs a reranker pass on every extra one.
+        </li>
+      </ul>
+      <div class="q" data-check="net"></div>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Run the tests
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- 3</pre>
+        <button class="copy" data-copy="npm%20test%20--%203">Copy</button>
+      </div>
+      <p>
+        Until <code>RETRIEVAL_K</code> is set, one test fails and tells you to
+        pick it. The rest embed a few short chunks for real, for well under a
+        cent. They check one vector per chunk, sent in batches; every field in
+        its column; nearest first; and the question embedded with the index's
+        model. One builds a small index from the start of one night and a DM
+        document.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Build your index
+      </h2>
+      <p>
+        The act 3 checkpoint ships an index at
+        <code>index/shipped.tar.gz</code>, built at chunk size 600, overlap 1,
+        with <code>openai/text-embedding-3-small</code>. If your chunk values
+        from Act 2 are the same, skip this step. If not, build one at yours:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">npm run ingest</pre>
+        <button class="copy" data-copy="npm%20run%20ingest">Copy</button>
+      </div>
+      <p>
+        It prints the nights it found, grouped by campaign, then loads the
+        documents. It runs your cleaning and chunker, embeds every chunk, and
+        saves <code>index/yours.tar.gz</code> with the values it was built at.
+        At the shipped values that's 1,021 chunks for about $0.003. From then
+        on, <code>npm run search</code> searches yours.
+      </p>
+      <h2 id="step-7">
+        <span class="n"><span>7</span></span> Read what comes back
+      </h2>
+      <p>
+        Ask the store a question and read the raw result, with no reranker and
+        no answer yet:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run search -- &quot;How did the party destroy the windmill?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20search%20--%20%22How%20did%20the%20party%20destroy%20the%20windmill%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The first line says which index you searched and what it was built at.
+        Each hit gives its distance, then its night and the moment in it, or its
+        document, then its visibility.
+      </p>
+      <p>
+        The party burned the windmill in <code>barovia-2026-01-07</code>. At
+        0:12:11 the DM says
+        <i>The windmill starts to take off in flames.</i> Now read down your
+        list. Which nights do the nearest hits come from?
+      </p>
+      <p>
+        Look for hits from other nights near the top. Distance measures how
+        alike the words and the topic are, not whether a chunk answers the
+        question. That's the job Act 4 gives the reranker, which reads the
+        question and each chunk together and sorts your k again. The last hour
+        comes back to this question to see how far that gets you.
+      </p>
+      <h2 id="step-8">
+        <span class="n"><span>8</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and write a line under <b>Retrieval</b>:
+        the k you picked, and what you saw in the list that makes it enough. The
+        last hour adds to this line.
+      </p>
+      <p class="shape">k ___, because ___.</p>
+      <h2 id="step-9">
+        <span class="n"><span>9</span></span> Wisdom check
+      </h2>
+      <p class="checkcap">
+        One more, a minute at most. Skip it if the room is moving on.
+      </p>
+      <div class="q" data-check="anyone"></div>
+      <p class="passed" hidden>✦ Wisdom check passed. On to act 4.</p>
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- 3</code>. It brings this act's code and the
+        shipped index onto your branch and leaves your
+        <code>choices.ts</code> as it is. If you haven't picked k yet,
+        <code>src/presenter-choices.ts</code> has the presenter's to start from.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "model": {
+          "kind": "predict",
+          "reread": "6",
+          "q": "The shipped index was built with \u003ccode>openai/text-embedding-3-small\u003c/code>. You change line (6) to embed the question with \u003ccode>openai/text-embedding-3-large\u003c/code>, a bigger model, and search. What happens?",
+          "opts": [
+            {
+              "t": "Better results, since the bigger model understands the question better.",
+              "why": "The question's vector would come from a different space than the index's, so nearness between them means nothing."
+            },
+            {
+              "t": "The same results. Both models read the same words.",
+              "why": "Each model places text in its own space. The same words get different vectors."
+            },
+            {
+              "t": "The search fails, because the two models write vectors of different lengths.",
+              "ok": true,
+              "why": "The large model writes longer vectors, and \u003ccode>&lt;=&gt;\u003c/code> refuses to compare vectors of different lengths. Even two models with the same length can't be compared, which is why the index records its model."
+            },
+            {
+              "t": "The index rebuilds itself with the bigger model.",
+              "why": "Nothing rebuilds the index but \u003ccode>npm run ingest\u003c/code>."
+            }
+          ]
+        },
+        "net": {
+          "kind": "choice",
+          "reread": "step-4",
+          "q": "Your search returns 5 chunks. The chunk that answers the question is 9th nearest. In Act 4 the reranker only reads what search returns. Which change in \u003ccode>src/choices.ts\u003c/code> gets the answer to the reranker?",
+          "opts": [
+            {
+              "t": "Lower \u003ccode>RETRIEVAL_K\u003c/code>, so only the best chunks come back.",
+              "why": "The answer is already outside the 5. A smaller k leaves it further out."
+            },
+            {
+              "t": "Raise \u003ccode>RETRIEVAL_K\u003c/code> to 10 or more.",
+              "ok": true,
+              "why": "The reranker can only promote a chunk the search returned. A wider net costs a little more reranking."
+            },
+            {
+              "t": "Nothing. The reranker will find it.",
+              "why": "The reranker sorts the k it's given. It never sees the 9th chunk."
+            },
+            {
+              "t": "Raise \u003ccode>CHUNK_SIZE\u003c/code>.",
+              "why": "That's a different knob. It changes every chunk and needs an index rebuild, and may or may not move this one."
+            }
+          ]
+        },
+        "anyone": {
+          "kind": "concept",
+          "reread": "7",
+          "q": "You search for what Strahd plans to do, and a chunk with visibility \u003ccode>barovia/dm\u003c/code> comes back, from the DM's notes. Why does search return it to anyone who asks?",
+          "opts": [
+            {
+              "t": "The DM documents shouldn't be in the index.",
+              "why": "They belong there. The DM asks questions too, and the last hour keeps them from players."
+            },
+            {
+              "t": "The embedding has no visibility in it, so nothing can stop it.",
+              "why": "The vector doesn't carry it, but the row does, in its own column, and a query can read any column."
+            },
+            {
+              "t": "pgvector can only sort by distance. It can't filter.",
+              "why": "It's Postgres. A query can filter on any column."
+            },
+            {
+              "t": "Nothing in the query reads visibility yet.",
+              "ok": true,
+              "why": "The query sorts by distance and stops at k. The \u003ccode>visibility\u003c/code> column is filled, and the last hour writes the query that reads it."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>

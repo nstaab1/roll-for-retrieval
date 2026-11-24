@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Act 2: Clean and Chunk the Nights</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Act 2
+        </div>
+        <div>
+          <h1>Clean and Chunk the Nights</h1>
+          <p class="lede">
+            Whisper's segments are too short to search one at a time, and they
+            come with its mistakes in them. You clean them into records that
+            know their night, their campaign and who may see them, then cut each
+            night into chunks of whole segments, at a size and overlap you
+            choose.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li><code>npm test -- 2</code> passes</li>
+            <li>a line under <b>Chunking</b> in <code>DECISIONS.md</code></li>
+            <li>the wisdom checks, if there's time</li>
+          </ul>
+        </div>
+      </header>
+      <div class="card">
+        <b>Chunk viewer.</b> Before you write a chunker, open the
+        <a href="chunk-viewer.html">chunk viewer</a> and see where a cutter that
+        ignores segments cuts a scene from the windmill finale.
+      </div>
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Add <code>clean</code>
+      </h2>
+      <p>
+        Open <code>src/clean.ts</code>. Cleaning turns a night's segments into
+        records: the text, when it was said, which night and campaign it's from,
+        and who may see it.
+      </p>
+      <p>
+        It also fixes one of Whisper's habits. On a long stretch of table noise
+        it can get stuck and write the same segment again and again. In Toe
+        Wittine's first game night it wrote <i>Over-packed a little bit.</i> 277
+        times in a row.
+      </p>
+      <p class="replace">
+        In <code>src/clean.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-2.html, step 1.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/clean.ts · clean</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(1)%20A%20night%20is%20its%20campaign's%20party%3A%20whatever%20the%20DM%20says%20at%20the%20table%2C%0A%20%20%2F%2F%20the%20players%20heard.%0A%20%20const%20visibility%20%3D%20%60%24%7Bnight.campaign%7D%2Fparty%60%3B%0A%20%20const%20records%3A%20SegmentRecord%5B%5D%20%3D%20%5B%5D%3B%0A%20%20for%20(const%20segment%20of%20night.segments)%20%7B%0A%20%20%20%20%2F%2F%20(2)%20whisper.cpp%20starts%20every%20segment%20with%20a%20space.%0A%20%20%20%20const%20text%20%3D%20segment.text.trim()%3B%0A%20%20%20%20%2F%2F%20(3)%20A%20repetition%20loop%3A%20Whisper%20writes%20the%20same%20segment%20again%20and%20again.%0A%20%20%20%20%2F%2F%20Keep%20the%20first.%0A%20%20%20%20if%20(text%20%3D%3D%3D%20records.at(-1)%3F.text)%20continue%3B%0A%20%20%20%20records.push(%7B%0A%20%20%20%20%20%20night%3A%20night.id%2C%0A%20%20%20%20%20%20start%3A%20segment.offsets.from%2C%0A%20%20%20%20%20%20end%3A%20segment.offsets.to%2C%0A%20%20%20%20%20%20campaign%3A%20night.campaign%2C%0A%20%20%20%20%20%20visibility%2C%0A%20%20%20%20%20%20text%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D%0A%20%20return%20records%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="1"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> A night is its campaign's party: whatever the DM says at the table,</span></span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// the players heard.</span></span></span><span class="ln" data-owners="1"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> visibility = <span class="t-str">`${night.campaign}/party`</span>;</span></span><span class="ln" data-owners=""><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> records: SegmentRecord[] = [];</span></span><span class="ln" data-owners=""><span class="num">5</span><span class="src" style="--ind: 4ch">  <span class="t-key">for</span> (<span class="t-key">const</span> segment <span class="t-key">of</span> night.segments) {</span></span><span class="ln" data-owners="2"><span class="num">6</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(2)</span> whisper.cpp starts every segment with a space.</span></span></span><span class="ln" data-owners="2"><span class="num">7</span><span class="src" style="--ind: 6ch">    <span class="t-key">const</span> text = segment.text.trim();</span></span><span class="ln" data-owners="3"><span class="num">8</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(3)</span> A repetition loop: Whisper writes the same segment again and again.</span></span></span><span class="ln" data-owners="3"><span class="num">9</span><span class="src" style="--ind: 6ch">    <span class="t-com">// Keep the first.</span></span></span><span class="ln" data-owners="3"><span class="num">10</span><span class="src" style="--ind: 6ch">    <span class="t-key">if</span> (text === records.at(-1)?.text) continue;</span></span><span class="ln" data-owners=""><span class="num">11</span><span class="src" style="--ind: 6ch">    records.push({</span></span><span class="ln" data-owners=""><span class="num">12</span><span class="src" style="--ind: 8ch">      night: night.id,</span></span><span class="ln" data-owners=""><span class="num">13</span><span class="src" style="--ind: 8ch">      start: segment.offsets.<span class="t-key">from</span>,</span></span><span class="ln" data-owners=""><span class="num">14</span><span class="src" style="--ind: 8ch">      end: segment.offsets.to,</span></span><span class="ln" data-owners=""><span class="num">15</span><span class="src" style="--ind: 8ch">      campaign: night.campaign,</span></span><span class="ln" data-owners=""><span class="num">16</span><span class="src" style="--ind: 8ch">      visibility,</span></span><span class="ln" data-owners=""><span class="num">17</span><span class="src" style="--ind: 8ch">      text,</span></span><span class="ln" data-owners=""><span class="num">18</span><span class="src" style="--ind: 6ch">    });</span></span><span class="ln" data-owners=""><span class="num">19</span><span class="src" style="--ind: 4ch">  }</span></span><span class="ln" data-owners=""><span class="num">20</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> records;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 3">
+          <div class="ncard" data-note="1">
+            <b><span class="badge">(1)</span> Visibility from the campaign.</b>
+            Every night gets <code>&lt;campaign&gt;/party</code>, because
+            whatever the DM says at the table, the players heard. DM-only
+            content lives in DM documents instead, and the last hour's filter
+            reads this field.
+          </div>
+          <div class="ncard" data-note="2">
+            <b><span class="badge">(2)</span> Trim the space.</b> whisper.cpp
+            starts every segment with one. Trimmed, two copies of the same words
+            compare equal, and the chunker counts only the characters a reader
+            sees.
+          </div>
+          <div class="ncard" data-note="3">
+            <b><span class="badge">(3)</span> Collapse the loop.</b> Only a run
+            in a row collapses, since the same words later in the night are a
+            new moment. Without this line, one stuck sentence fills chunk after
+            chunk.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Add <code>chunkNight</code>
+      </h2>
+      <p>
+        Now the chunker. Open <code>src/chunk.ts</code>.
+        <code>chunkNight</code> walks one night's records in order and closes a
+        chunk when the next segment won't fit. <code>size</code> counts
+        characters. <code>overlap</code> counts segments.
+      </p>
+      <p class="replace">
+        In <code>src/chunk.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-2.html, step 2.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/chunk.ts · chunkNight</span
+            ><button
+              class="copy"
+              data-copy="%20%20const%20chunks%3A%20Chunk%5B%5D%20%3D%20%5B%5D%3B%0A%20%20let%20current%3A%20SegmentRecord%5B%5D%20%3D%20%5B%5D%3B%0A%20%20for%20(const%20record%20of%20records)%20%7B%0A%20%20%20%20%2F%2F%20(4)%20Close%20the%20chunk%20when%20the%20next%20segment%20won't%20fit.%0A%20%20%20%20if%20(current.length%20%3E%200%20%26%26%20chunkText(%5B...current%2C%20record%5D).length%20%3E%20size)%20%7B%0A%20%20%20%20%20%20chunks.push(toChunk(current))%3B%0A%20%20%20%20%20%20%2F%2F%20(5)%20Start%20the%20next%20chunk%20with%20the%20last%20few%20segments%20of%20this%20one.%0A%20%20%20%20%20%20current%20%3D%20overlap%20%3E%200%20%3F%20current.slice(-overlap)%20%3A%20%5B%5D%3B%0A%20%20%20%20%20%20%2F%2F%20(6)%20Let%20go%20of%20repeated%20segments%20that%20leave%20no%20room%20for%20the%20new%20one.%0A%20%20%20%20%20%20while%20(%0A%20%20%20%20%20%20%20%20current.length%20%3E%200%20%26%26%0A%20%20%20%20%20%20%20%20chunkText(%5B...current%2C%20record%5D).length%20%3E%20size%0A%20%20%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%20%20current.shift()%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20current.push(record)%3B%0A%20%20%7D%0A%20%20%2F%2F%20(7)%20The%20last%20chunk%20never%20hits%20the%20size%20limit%2C%20so%20close%20it%20here.%0A%20%20if%20(current.length%20%3E%200)%20chunks.push(toChunk(current))%3B%0A%20%20return%20chunks%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners=""><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> chunks: Chunk[] = [];</span></span><span class="ln" data-owners=""><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">let</span> current: SegmentRecord[] = [];</span></span><span class="ln" data-owners=""><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">for</span> (<span class="t-key">const</span> record <span class="t-key">of</span> records) {</span></span><span class="ln" data-owners="4"><span class="num">4</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(4)</span> Close the chunk when the next segment won't fit.</span></span></span><span class="ln" data-owners="4"><span class="num">5</span><span class="src" style="--ind: 6ch">    <span class="t-key">if</span> (current.length &gt; 0 &amp;&amp; chunkText([...current, record]).length &gt; size) {</span></span><span class="ln" data-owners="4"><span class="num">6</span><span class="src" style="--ind: 8ch">      chunks.push(toChunk(current));</span></span><span class="ln" data-owners="4 5"><span class="num">7</span><span class="src" style="--ind: 8ch">      <span class="t-com">// <span class="t-mark">(5)</span> Start the next chunk with the last few segments of this one.</span></span></span><span class="ln" data-owners="4 5"><span class="num">8</span><span class="src" style="--ind: 8ch">      current = overlap &gt; 0 ? current.slice(-overlap) : [];</span></span><span class="ln" data-owners="4 6"><span class="num">9</span><span class="src" style="--ind: 8ch">      <span class="t-com">// <span class="t-mark">(6)</span> Let go of repeated segments that leave no room for the new one.</span></span></span><span class="ln" data-owners="4 6"><span class="num">10</span><span class="src" style="--ind: 8ch">      <span class="t-key">while</span> (</span></span><span class="ln" data-owners="4 6"><span class="num">11</span><span class="src" style="--ind: 10ch">        current.length &gt; 0 &amp;&amp;</span></span><span class="ln" data-owners="4 6"><span class="num">12</span><span class="src" style="--ind: 10ch">        chunkText([...current, record]).length &gt; size</span></span><span class="ln" data-owners="4 6"><span class="num">13</span><span class="src" style="--ind: 8ch">      ) {</span></span><span class="ln" data-owners="4 6"><span class="num">14</span><span class="src" style="--ind: 10ch">        current.shift();</span></span><span class="ln" data-owners="4 6"><span class="num">15</span><span class="src" style="--ind: 8ch">      }</span></span><span class="ln" data-owners="4"><span class="num">16</span><span class="src" style="--ind: 6ch">    }</span></span><span class="ln" data-owners=""><span class="num">17</span><span class="src" style="--ind: 6ch">    current.push(record);</span></span><span class="ln" data-owners=""><span class="num">18</span><span class="src" style="--ind: 4ch">  }</span></span><span class="ln" data-owners="7"><span class="num">19</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(7)</span> The last chunk never hits the size limit, so close it here.</span></span></span><span class="ln" data-owners="7"><span class="num">20</span><span class="src" style="--ind: 4ch">  <span class="t-key">if</span> (current.length &gt; 0) chunks.push(toChunk(current));</span></span><span class="ln" data-owners=""><span class="num">21</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> chunks;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 4">
+          <div class="ncard" data-note="4">
+            <b><span class="badge">(4)</span> Close before it overflows.</b> The
+            check runs before the segment goes in, so a chunk is whole segments
+            and only goes over <code>size</code> when one segment is longer than
+            that by itself. That segment gets a chunk of its own.
+          </div>
+          <div class="ncard" data-note="5">
+            <b><span class="badge">(5)</span> Repeat the last few segments.</b>
+            <code>overlap</code> counts segments, so a question at the end of
+            one chunk and its answer at the start of the next end up together.
+            The price: repeated segments are embedded, stored and paid for
+            twice.
+          </div>
+          <div class="ncard" data-note="6">
+            <b><span class="badge">(6)</span> Make room for the new segment.</b>
+            If the repeated segments and the new one are already over
+            <code>size</code>, drop repeated segments from the front. Without
+            this line a big overlap could fill a chunk with nothing new.
+          </div>
+          <div class="ncard" data-note="7">
+            <b><span class="badge">(7)</span> Close the last chunk.</b> The loop
+            only closes a chunk when a segment doesn't fit, and a night's last
+            chunk never hits that. Leave this out and the end of every night
+            goes missing.
+          </div>
+        </div>
+      </div>
+      <p class="checkcap">
+        Before you move on. One question about what you just pasted.
+      </p>
+      <div class="q" data-check="tail"></div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Add <code>toChunk</code>
+      </h2>
+      <p>
+        A chunk is more than its text. It carries what Act 4 needs to cite it
+        and what the last hour needs to filter it. Replace the
+        <code>throw</code> in <code>toChunk</code>, in the same file.
+      </p>
+      <p class="replace">
+        In <code>src/chunk.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-2.html, step 3.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/chunk.ts · toChunk</span
+            ><button
+              class="copy"
+              data-copy="%20%20const%20first%20%3D%20records%5B0%5D%3B%0A%20%20%2F%2F%20(8)%20Where%20it%20came%20from%20and%20who%20may%20see%20it%2C%20carried%20from%20the%20segments.%0A%20%20return%20%7B%0A%20%20%20%20night%3A%20first.night%2C%0A%20%20%20%20start%3A%20first.start%2C%0A%20%20%20%20end%3A%20records%5Brecords.length%20-%201%5D.end%2C%0A%20%20%20%20campaign%3A%20first.campaign%2C%0A%20%20%20%20visibility%3A%20first.visibility%2C%0A%20%20%20%20text%3A%20chunkText(records)%2C%0A%20%20%7D%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners=""><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> first = records[0];</span></span><span class="ln" data-owners="8"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(8)</span> Where it came from and who may see it, carried from the segments.</span></span></span><span class="ln" data-owners="8"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> {</span></span><span class="ln" data-owners="8"><span class="num">4</span><span class="src" style="--ind: 6ch">    night: first.night,</span></span><span class="ln" data-owners="8"><span class="num">5</span><span class="src" style="--ind: 6ch">    start: first.start,</span></span><span class="ln" data-owners="8"><span class="num">6</span><span class="src" style="--ind: 6ch">    end: records[records.length - 1].end,</span></span><span class="ln" data-owners="8"><span class="num">7</span><span class="src" style="--ind: 6ch">    campaign: first.campaign,</span></span><span class="ln" data-owners="8"><span class="num">8</span><span class="src" style="--ind: 6ch">    visibility: first.visibility,</span></span><span class="ln" data-owners="8"><span class="num">9</span><span class="src" style="--ind: 6ch">    text: chunkText(records),</span></span><span class="ln" data-owners="8"><span class="num">10</span><span class="src" style="--ind: 4ch">  };</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 1">
+          <div class="ncard" data-note="8">
+            <b
+              ><span class="badge">(8)</span> Where it came from, and who may
+              see it.</b
+            >
+            Act 4 cites the night and the start time, and the last hour filters
+            on visibility. If the chunk doesn't carry them, nothing later in the
+            pipeline can get them back.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Choose your size and overlap
+      </h2>
+      <p>
+        Open <code>src/choices.ts</code> and fill in <code>CHUNK_SIZE</code> and
+        <code>CHUNK_OVERLAP</code>. The tests don't check what you pick. They
+        run your code at your values and at four other settings, so it has to
+        work for any choice.
+      </p>
+      <ul>
+        <li>
+          <b>Smaller chunks</b> match a question tightly, but a fact can get
+          split: a name in one chunk, what happened to it in the next.
+        </li>
+        <li>
+          <b>Bigger chunks</b> keep facts together, but each covers more of the
+          night, its embedding says less about any one moment, and every chunk
+          in a prompt costs more tokens.
+        </li>
+        <li>
+          <b>Overlap</b> of a segment or two rescues a fact split at a boundary.
+          More than that mostly repeats text.
+        </li>
+      </ul>
+      <p>
+        Try 300, 600, 900 or 1,200 characters. The reranker you add in Act 4
+        reads at most 512 tokens, question and chunk together, so the list stops
+        at 1,200, which leaves room for the question.
+      </p>
+      <div class="q" data-check="boundary"></div>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Run the tests
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- 2</pre>
+        <button class="copy" data-copy="npm%20test%20--%202">Copy</button>
+      </div>
+      <p>
+        Until both values are set, two tests fail and tell you which one to
+        pick. The rest run your chunker on a night from each campaign: whole
+        segments, in order, within size, the overlap you asked for, and the
+        night, times, campaign and visibility on every chunk.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and write a line under <b>Chunking</b>:
+        the size and overlap you picked, and what you'd point to if someone in a
+        design review asked why.
+      </p>
+      <p class="shape">Size ___, overlap ___, because ___.</p>
+      <h2 id="step-7">
+        <span class="n"><span>7</span></span> Wisdom check
+      </h2>
+      <p class="checkcap">
+        One more, a minute at most. Skip it if the room is moving on.
+      </p>
+      <div class="q" data-check="cite"></div>
+      <p class="passed" hidden>✦ Wisdom check passed. On to act 3.</p>
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- 2</code>. It brings this act's code onto your
+        branch and leaves your <code>choices.ts</code> as it is. If you haven't
+        picked yet, <code>src/presenter-choices.ts</code> has the presenter's
+        values to start from.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "tail": {
+          "kind": "predict",
+          "reread": "7",
+          "q": "Delete the line marked (7) and run \u003ccode>npm test -- 2\u003c/code>. What happens?",
+          "opts": [
+            {
+              "t": "Nothing. The loop closes the last chunk.",
+              "why": "It doesn't. The loop closes a chunk only when the next segment won't fit, and after the last segment there is no next one."
+            },
+            {
+              "t": "The overlap test fails.",
+              "why": "Overlap is untouched. What goes missing is the end of the night."
+            },
+            {
+              "t": "The night's last segments are in no chunk, so a test fails.",
+              "ok": true,
+              "why": "They're still in \u003ccode>current\u003c/code> when the loop ends, and nothing pushes them. The test that checks every segment from first to last catches it."
+            },
+            {
+              "t": "Chunks go over size.",
+              "why": "The size check is line (4). Line (7) only closes what's left."
+            }
+          ]
+        },
+        "boundary": {
+          "kind": "choice",
+          "reread": "step-4",
+          "q": "At overlap 0, the segment that names the windmill ends one chunk, and the segment that says how it burned starts the next. Which change in \u003ccode>src/choices.ts\u003c/code> is most likely to bring them together?",
+          "opts": [
+            {
+              "t": "Lower \u003ccode>CHUNK_SIZE\u003c/code>.",
+              "why": "Smaller chunks split more facts, not fewer."
+            },
+            {
+              "t": "Raise \u003ccode>CHUNK_SIZE\u003c/code>, or set \u003ccode>CHUNK_OVERLAP\u003c/code> to 1.",
+              "ok": true,
+              "why": "Bigger chunks keep neighbours together, and one repeated segment puts the windmill at the start of the chunk that says how it burned. Both cost tokens."
+            },
+            {
+              "t": "Set \u003ccode>CHUNK_SIZE\u003c/code> to 3,000, so the whole scene fits.",
+              "why": "That's past the 512 tokens the reranker reads, so in Act 4 it couldn't score the whole chunk. Stay on the list."
+            },
+            {
+              "t": "Nothing in \u003ccode>choices.ts\u003c/code>. The chunker has to change.",
+              "why": "The chunker is fine. Size and overlap are the knobs, and they're yours."
+            }
+          ]
+        },
+        "cite": {
+          "kind": "concept",
+          "reread": "8",
+          "q": "In Act 4 an answer cites the night and the moment in it. In the last hour, a player's question never reaches the DM's documents. Where do the night, the moment and the visibility come from?",
+          "opts": [
+            {
+              "t": "Act 4 reads the transcript again to find them.",
+              "why": "It doesn't. By Act 4 the pipeline only has chunks and what they carry."
+            },
+            {
+              "t": "The embedding encodes them.",
+              "why": "An embedding encodes what the text means, not where it came from."
+            },
+            {
+              "t": "The vector store adds them when the chunk is indexed.",
+              "why": "The vector store keeps what it's given."
+            },
+            {
+              "t": "Cleaning puts them on every record, and each chunk carries them from its segments into the vector store.",
+              "ok": true,
+              "why": "The night and campaign come from the loader, the start time from Whisper's segment, and the visibility from the campaign. If a chunk doesn't carry them, nothing later can get them back."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>

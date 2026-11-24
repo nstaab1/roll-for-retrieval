@@ -1,0 +1,19 @@
+{
+  "roles": {
+    "barovia-dm": ["barovia/party", "barovia/dm"],
+    "barovia-player": ["barovia/party"],
+    "toe-wittine-dm": ["toe-wittine/party", "toe-wittine/dm"],
+    "toe-wittine-player": ["toe-wittine/party"]
+  },
+  "members": {
+    "nathan": ["barovia-dm", "toe-wittine-dm"],
+    "katie": ["barovia-player", "toe-wittine-player"],
+    "scott": ["barovia-player"],
+    "hannah": ["barovia-player"],
+    "justin": ["barovia-player"],
+    "jess": ["barovia-player"],
+    "millie": ["toe-wittine-player"],
+    "adam": ["toe-wittine-player"],
+    "sarah": ["toe-wittine-player"]
+  }
+}
