@@ -1,0 +1,45 @@
+{
+  "release": "clips-v1",
+  "clips": [
+    {
+      "file": "barovia-2025-12-23-blinsky-missing-order.mp3",
+      "title": "Blinsky: the missing order and the bulk order",
+      "campaign": "barovia",
+      "night": "2025-12-23",
+      "bytes": 2680834,
+      "sha256": "851a76c0eda5a4ee0e1f5fe2c9a7d097c2e8bb994099574187d438b059113cce"
+    },
+    {
+      "file": "barovia-2025-12-01-blinsky-invisible-dog.mp3",
+      "title": "Blinsky: a cloak for the invisible dog",
+      "campaign": "barovia",
+      "night": "2025-12-01",
+      "bytes": 3736808,
+      "sha256": "dbc3dfafa706a3cbabda683730f81f6c33d040199981c430aeab2a6b8825553f"
+    },
+    {
+      "file": "barovia-2025-12-29-windmill-finale.mp3",
+      "title": "The windmill finale",
+      "campaign": "barovia",
+      "night": "2025-12-29",
+      "bytes": 4800723,
+      "sha256": "1fdf80851bc04ae2abb065cbe3c664aec7fcc8107469b4a820fa3674e3e67a8b"
+    },
+    {
+      "file": "toe-wittine-session-4.1-basilisk.mp3",
+      "title": "Insulting the basilisk to death",
+      "campaign": "toe-wittine",
+      "night": "toe-wittine-session-4.1",
+      "bytes": 2824821,
+      "sha256": "9f16a6f800ff8f8339e81e2b5bd88eea4dcea641a6f41806c7fa2db2f7b2141a"
+    },
+    {
+      "file": "toe-wittine-session-3-mimic-chest.mp3",
+      "title": "The mimic chest",
+      "campaign": "toe-wittine",
+      "night": "toe-wittine-session-3",
+      "bytes": 3928860,
+      "sha256": "7a0a2b8f1ba269f662bb78a1b0be58a653c8fd588cd2261c95c51673111973fb"
+    }
+  ]
+}

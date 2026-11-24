@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Before Act 2: The Chunk Viewer</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Before Act 2
+        </div>
+        <div>
+          <h1>The Chunk Viewer</h1>
+          <p class="lede">
+            A chunker decides where one chunk ends and the next begins. Before
+            you write one in Act 2, see what happens when nothing guides that
+            choice. Here is one scene from the windmill finale, the clip you
+            transcribed in Act 1, cut at 3 sizes.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>you've found the word the cuts split</li>
+            <li><code>npm run quest:chunks</code> prints the same cuts</li>
+            <li>you've tried a size of your own</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Read the cuts
+      </h2>
+      <p>
+        The scene runs from 2:14:03 to 2:16:50 of
+        <code>barovia-2025-12-29</code>, 1,387 characters. Morgantha is forced
+        back from another plane, Freya's parents remember her, and Morgantha is
+        petrified.
+      </p>
+      <p>
+        The cutter counts characters and ignores where segments end, on purpose.
+      </p>
+      <figure class="cuts" data-size="200">
+        <figcaption>200 characters: 7 chunks, 2 words cut in two</figcaption>
+        <div class="chunk" data-n="1">
+          And she falls. She was actually trying to line up a super powerful
+          spell. And falls out right in front of Freya. And is stunned and takes
+          strong damage. That would be 100. That would be a significant
+        </div>
+        <div class="chunk" data-n="2">
+          amount of damage. And it... Yeah, you also have a Freya. You feel a
+          pull in something inside of you uncoils. Your wings start to... Well,
+          you're currently a snake. I'm going to say that you turn back
+        </div>
+        <div class="chunk" data-n="3">
+          into your fairy form. There's this strong pull energy that basically
+          shoots you back into your form. And your wings start to twitch. And
+          almost... To everyone else, it almost feels like something bad
+        </div>
+        <div class="chunk" data-n="4">
+          is happening. It's not. It's... Something is being released from you.
+          The air here, the... Everything smells like rot and death. And for a
+          moment... But for a moment, you smell home. You smell
+          <mark class="split">Elderhe</mark>
+        </div>
+        <div class="chunk" data-n="5">
+          <mark class="split">art</mark> Hollow. And there's a flash. And you
+          can see your parents. And they are uttering a name over and over
+          again. Your mother sits upright in her bed. Tears rolling down her
+          eyes. Mumbling your name. <mark class="split">A</mark>
+        </div>
+        <div class="chunk" data-n="6">
+          <mark class="split">nd</mark> your father drops his hammer. He was
+          doing some woodworking. And stares off into the trees. And at the same
+          time, they both say your name. Freya. They remember it. Morgantha
+          reels back. And she is
+        </div>
+        <div class="chunk" data-n="7">
+          clutching her head. And her form, because she was in another plane of
+          existence and took an incredible amount of damage being forced back
+          into this plane, Um, is petrified at this moment.
+        </div>
+      </figure>
+      <figure class="cuts" data-size="800">
+        <figcaption>800 characters: 2 chunks, 1 word cut in two</figcaption>
+        <div class="chunk" data-n="1">
+          And she falls. She was actually trying to line up a super powerful
+          spell. And falls out right in front of Freya. And is stunned and takes
+          strong damage. That would be 100. That would be a significant amount
+          of damage. And it... Yeah, you also have a Freya. You feel a pull in
+          something inside of you uncoils. Your wings start to... Well, you're
+          currently a snake. I'm going to say that you turn back into your fairy
+          form. There's this strong pull energy that basically shoots you back
+          into your form. And your wings start to twitch. And almost... To
+          everyone else, it almost feels like something bad is happening. It's
+          not. It's... Something is being released from you. The air here,
+          the... Everything smells like rot and death. And for a moment... But
+          for a moment, you smell home. You smell
+          <mark class="split">Elderhe</mark>
+        </div>
+        <div class="chunk" data-n="2">
+          <mark class="split">art</mark> Hollow. And there's a flash. And you
+          can see your parents. And they are uttering a name over and over
+          again. Your mother sits upright in her bed. Tears rolling down her
+          eyes. Mumbling your name. And your father drops his hammer. He was
+          doing some woodworking. And stares off into the trees. And at the same
+          time, they both say your name. Freya. They remember it. Morgantha
+          reels back. And she is clutching her head. And her form, because she
+          was in another plane of existence and took an incredible amount of
+          damage being forced back into this plane, Um, is petrified at this
+          moment.
+        </div>
+      </figure>
+      <figure class="cuts" data-size="3000">
+        <figcaption>3,000 characters: 1 chunk, 0 words cut in two</figcaption>
+        <div class="chunk" data-n="1">
+          And she falls. She was actually trying to line up a super powerful
+          spell. And falls out right in front of Freya. And is stunned and takes
+          strong damage. That would be 100. That would be a significant amount
+          of damage. And it... Yeah, you also have a Freya. You feel a pull in
+          something inside of you uncoils. Your wings start to... Well, you're
+          currently a snake. I'm going to say that you turn back into your fairy
+          form. There's this strong pull energy that basically shoots you back
+          into your form. And your wings start to twitch. And almost... To
+          everyone else, it almost feels like something bad is happening. It's
+          not. It's... Something is being released from you. The air here,
+          the... Everything smells like rot and death. And for a moment... But
+          for a moment, you smell home. You smell Elderheart Hollow. And there's
+          a flash. And you can see your parents. And they are uttering a name
+          over and over again. Your mother sits upright in her bed. Tears
+          rolling down her eyes. Mumbling your name. And your father drops his
+          hammer. He was doing some woodworking. And stares off into the trees.
+          And at the same time, they both say your name. Freya. They remember
+          it. Morgantha reels back. And she is clutching her head. And her form,
+          because she was in another plane of existence and took an incredible
+          amount of damage being forced back into this plane, Um, is petrified
+          at this moment.
+        </div>
+      </figure>
+      <p>
+        At 800, the cut lands inside a place name. Chunk 1 ends
+        <i>Elderhe</i> and chunk 2 starts <i>art</i>. Ask where Freya's home is,
+        and neither chunk has the name.
+      </p>
+      <p>
+        At 200, the cuts land inside 2 words. At 3,000, the whole scene fits in
+        one chunk. Nothing is split, but that one chunk is about everything in
+        the scene at once, so it matches no single question well.
+      </p>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Run the side quest
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm run quest:chunks</pre>
+        <button class="copy" data-copy="npm%20run%20quest%3Achunks">
+          Copy
+        </button>
+      </div>
+      <p>
+        It prints the same 3 cuts as tables, one numbered row per chunk, with a
+        line where the page draws each gold break. It reads the transcript on
+        your machine and calls no model, so it spends nothing.
+      </p>
+      <p>
+        Now try a size of your own. Find a size that keeps the place name whole,
+        then count the words it still splits.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">npm run quest:chunks -- --size 500</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20quest%3Achunks%20--%20--size%20500"
+        >
+          Copy
+        </button>
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> What your chunker does instead
+      </h2>
+      <p>
+        In Act 2 you write a chunker that closes a chunk between segments, never
+        inside one, so no word is cut in two. A fact can still fall across a
+        break between segments, and that's what overlap is for.
+      </p>
+      <div class="card"><b>Ready?</b> Open <a href="act-2.html">Act 2</a>.</div>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>

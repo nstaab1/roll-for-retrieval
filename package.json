@@ -1,0 +1,33 @@
+{
+  "name": "roll-for-retrieval",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "doctor": "node scripts/doctor.ts",
+    "catch-up": "node scripts/catch-up.ts",
+    "fetch-clips": "node scripts/fetch-clips.ts",
+    "transcribe": "node scripts/transcribe.ts",
+    "transcribe:hosted": "node scripts/transcribe-hosted.ts",
+    "compare": "node scripts/compare.ts",
+    "quest:chunks": "node scripts/quest-chunks.ts",
+    "quest:similarity": "node scripts/quest-similarity.ts",
+    "ingest": "node scripts/ingest.ts",
+    "search": "node scripts/search.ts",
+    "ask": "node scripts/ask.ts",
+    "eval": "node scripts/eval.ts",
+    "cost": "node scripts/cost.ts",
+    "test": "node scripts/test.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.10",
+    "@electric-sql/pglite-pgvector": "0.0.11",
+    "@huggingface/transformers": "4.3.1",
+    "openai": "7.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "prettier": "3.9.10",
+    "typescript": "7.0.2"
+  }
+}

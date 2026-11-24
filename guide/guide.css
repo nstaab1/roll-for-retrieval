@@ -1,0 +1,745 @@
+/* The Module look for every guide page. Dungeon is the dark mode and Lintel
+   the light one, the deck's two skins. guide.js picks the mode from the
+   system setting, and L switches it. The code panel is dark in both modes.
+   authoring/guide/contrast.ts checks every reading colour here at 4.5:1. */
+
+@font-face {
+  font-family: "Cinzel";
+  font-weight: 400;
+  src: url("fonts/cinzel-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cinzel";
+  font-weight: 700;
+  src: url("fonts/cinzel-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Proza Libre";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/proza-libre-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Proza Libre";
+  font-weight: 400;
+  font-style: italic;
+  src: url("fonts/proza-libre-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Proza Libre";
+  font-weight: 700;
+  font-style: normal;
+  src: url("fonts/proza-libre-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Proza Libre";
+  font-weight: 700;
+  font-style: italic;
+  src: url("fonts/proza-libre-latin-700-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 400;
+  src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 700;
+  src: url("fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2");
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --font-head: "Cinzel", serif;
+  --font-body: "Proza Libre", system-ui, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --torch: #e0a440;
+  /* The dark code panel, the same in both modes. */
+  --code-bg: #14120f;
+  --code-ink: #efe3c8;
+  --code-line: #3d342a;
+  --num: #a59680;
+  --c-comment: #b0a185;
+  --c-string: #b3d08f;
+  --c-key: #eaa27c;
+  --mark-bg: #e0a440;
+  --mark-ink: #1b1712;
+  --filebar-bg: #2b241d;
+  --filebar-ink: #e6d8bd;
+  --hl: rgb(224 164 64 / 0.18);
+}
+/* Dungeon: dark stone, torchlit gold. Also the mode before guide.js runs. */
+:root,
+[data-mode="dark"] {
+  --bg: #1d1a18;
+  --bg-edge: #0f0e0d;
+  --surface: #27231f;
+  --ink: #efe3c8;
+  --muted: #b9a98a;
+  --line: #463b2f;
+  --accent: #e0a440;
+  --accent-ink: #1b1712;
+  --accent-soft: #3a2f20;
+  --rule: #8a6a32;
+  --ok: #a9cf8a;
+  --bad: #e39483;
+}
+/* Lintel: light stone, dark bronze. */
+[data-mode="light"] {
+  --bg: #eee8dc;
+  --bg-edge: #ddd3c1;
+  --surface: #f8f4ec;
+  --ink: #221b14;
+  --muted: #5a4834;
+  --line: #d4c7af;
+  --accent: #6b420a;
+  --accent-ink: #f8f4ec;
+  --accent-soft: #e6d8bd;
+  --rule: #b8893a;
+  --ok: #3c6a2a;
+  --bad: #9b2e1c;
+}
+
+/* ---------- Page ---------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 16px/1.55 var(--font-body);
+  background: radial-gradient(
+    ellipse 120% 1400px at 50% 0,
+    var(--bg) 55%,
+    var(--bg-edge) 100%
+  );
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+code,
+pre {
+  font-family: var(--font-code);
+}
+p code,
+li code,
+td code,
+h4 code,
+.card code,
+.ncard code,
+.replace code,
+.q code {
+  font-size: 0.8em;
+  background: var(--accent-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+b,
+strong {
+  font-weight: 700;
+}
+a {
+  color: var(--accent);
+}
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 16px 90px;
+}
+main p,
+main ul {
+  max-width: 75ch;
+}
+
+/* ---------- Header ---------- */
+h1 {
+  font: 700 2rem/1.15 var(--font-head);
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+  margin: 2px 0 4px;
+}
+.kicker {
+  font: 700 0.78rem var(--font-head);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.d20 {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.18em;
+  color: var(--accent);
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(250px, 1fr);
+  gap: 4px 22px;
+  align-items: start;
+}
+.hero .kicker {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero .kicker::after {
+  content: "";
+  flex: 1;
+  height: 5px;
+  background: linear-gradient(90deg, var(--rule), transparent);
+  clip-path: polygon(0 50%, 4px 0, 100% 50%, 4px 100%);
+}
+.lede {
+  font-size: 1.05rem;
+  margin: 4px 0 10px;
+}
+.lede::first-letter {
+  float: left;
+  font: 700 3.1em/0.82 var(--font-head);
+  color: var(--accent);
+  margin: 4px 6px 0 0;
+}
+.objectives {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  outline: 1px solid var(--rule);
+  outline-offset: 3px;
+  border-radius: 2px;
+  padding: 8px 14px;
+  margin: 6px 4px 4px;
+  font-size: 0.93rem;
+}
+.objectives h3 {
+  font: 700 0.8rem var(--font-head);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 2px;
+}
+.objectives ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.objectives li::before {
+  content: "◆ ";
+  color: var(--rule);
+  font-size: 0.75em;
+}
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+/* A page with no "Done when" box, such as the index, has one column. */
+.hero:not(:has(.objectives)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.toc {
+  margin: 18px 0 0;
+  padding: 0 0 0 1.6em;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+.toc li::marker {
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+/* ---------- Steps ---------- */
+h2 {
+  font: 700 1.3rem/1.3 var(--font-head);
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  margin: 30px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+}
+h2::after {
+  content: "";
+  flex-basis: 100%;
+  height: 5px;
+  margin-top: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--rule) 60%,
+    transparent
+  );
+  clip-path: polygon(0 50%, 6px 0, 100% 40%, 100% 60%, 6px 100%);
+}
+h2 code {
+  font: 600 0.92em var(--font-code);
+  letter-spacing: 0;
+  text-transform: none;
+}
+h2 .n {
+  display: inline-grid;
+  place-items: center;
+  width: 1.45em;
+  height: 1.45em;
+  transform: rotate(45deg);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8em;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+h2 .n span {
+  transform: rotate(-45deg);
+  font-variant: normal;
+}
+h4 {
+  font: 700 0.8rem var(--font-head);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 10px 16px;
+  margin: 10px 0;
+  max-width: 75ch;
+}
+.card p {
+  margin: 4px 0;
+}
+.predict {
+  border-left: 4px solid var(--accent);
+}
+.shape {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Code ---------- */
+pre.code {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  border: 1px solid var(--code-line);
+  border-radius: 6px;
+  padding: 8px 0;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+pre.shell,
+pre.stub {
+  padding: 8px 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+pre.stub {
+  margin: 4px 0 8px;
+  color: var(--c-comment);
+}
+.replace {
+  margin: 8px 0 0;
+}
+.ln {
+  display: flex;
+  padding: 0 14px;
+  min-height: 1.55em;
+}
+.ln.hl {
+  background: var(--hl);
+}
+.ln .num {
+  flex: none;
+  width: 2.2em;
+  color: var(--num);
+  user-select: none;
+  text-align: right;
+  margin-right: 12px;
+}
+/* Long lines wrap, hanging under their own indentation. */
+.ln .src {
+  flex: 1;
+  min-width: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding-left: var(--ind);
+  text-indent: calc(-1 * var(--ind));
+}
+.t-com {
+  color: var(--c-comment);
+  font-style: italic;
+}
+.t-str {
+  color: var(--c-string);
+}
+.t-key {
+  color: var(--c-key);
+}
+.t-mark {
+  background: var(--mark-bg);
+  color: var(--mark-ink);
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.codewrap {
+  position: relative;
+  margin: 8px 0 6px;
+}
+.filebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--filebar-bg);
+  color: var(--filebar-ink);
+  border: 1px solid var(--code-line);
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  padding: 4px 8px 4px 14px;
+  min-height: 30px;
+  font: 700 0.72rem var(--font-head);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.filebar + pre.code {
+  border-radius: 0 0 6px 6px;
+}
+.copy {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font: 700 0.75rem var(--font-code);
+  border: 1px solid var(--code-line);
+  background: var(--code-bg);
+  color: var(--code-ink);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.filebar .copy {
+  position: static;
+}
+.copy:hover {
+  border-color: var(--torch);
+  color: var(--torch);
+}
+.copy.ok {
+  color: var(--c-string);
+  border-color: var(--c-string);
+}
+
+/* ---------- Note cards, below the code ---------- */
+.cardcap {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 6px;
+}
+.ncard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 8px 10px;
+  font-size: 0.86em;
+  line-height: 1.45;
+  transition: background 0.12s;
+}
+.ncard::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+  pointer-events: none;
+}
+.ncard b:first-child {
+  display: block;
+  margin-bottom: 2px;
+}
+.ncard.on {
+  background: var(--accent-soft);
+}
+.badge {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Two transcripts side by side ---------- */
+.compare {
+  margin: 10px 0;
+  max-width: 75ch;
+}
+.compare figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.compare table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  font-size: 0.93rem;
+}
+.compare th,
+.compare td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.compare th {
+  font: 700 0.75rem var(--font-head);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.compare th code {
+  font-size: 1.1em;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.compare td + td,
+.compare th + th {
+  border-left: 1px solid var(--line);
+}
+.compare mark {
+  background: var(--accent-soft);
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+  padding: 0 2px;
+}
+
+/* ---------- One passage cut into chunks ---------- */
+/* A dark panel per size, like the code panel, with a gold break between
+   chunks and a gold number on each. A word a cut lands in is underlined in
+   gold, so its two halves show. */
+.cuts {
+  margin: 10px 0 16px;
+  background: var(--code-bg);
+  color: var(--code-ink);
+  border: 1px solid var(--code-line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cuts figcaption {
+  background: var(--filebar-bg);
+  color: var(--filebar-ink);
+  border-bottom: 1px solid var(--code-line);
+  padding: 6px 14px;
+  font: 700 0.72rem var(--font-head);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.chunk {
+  position: relative;
+  padding: 10px 14px 10px 3.4em;
+  font: 0.86rem/1.6 var(--font-code);
+  overflow-wrap: anywhere;
+}
+.chunk::before {
+  content: attr(data-n);
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  color: var(--torch);
+  font-weight: 700;
+}
+.chunk + .chunk {
+  border-top: 2px solid var(--torch);
+}
+.chunk .split {
+  background: none;
+  color: inherit;
+  text-decoration: underline wavy var(--torch);
+  text-underline-offset: 4px;
+}
+
+/* ---------- Wisdom checks ---------- */
+.q {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 10px 14px;
+  margin: 10px 0 0;
+  max-width: 75ch;
+}
+.q::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+  pointer-events: none;
+}
+.q .qk {
+  font: 700 0.72rem var(--font-head);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.q .qt {
+  margin: 2px 0 8px;
+  font-weight: 700;
+}
+.opts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.opt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.3em 1fr;
+  gap: 6px 8px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 6px 10px;
+  cursor: pointer;
+  background: var(--bg);
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+.opt:hover {
+  border-color: var(--rule);
+}
+.q.done .opt {
+  cursor: default;
+}
+.opt .key {
+  font: 700 0.85em/1.5 var(--font-head);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.opt.right {
+  border-color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 9%, var(--bg));
+}
+.opt.wrong {
+  border-color: var(--bad);
+  background: color-mix(in srgb, var(--bad) 14%, var(--bg));
+}
+.opt.right .key::after {
+  content: " ✓";
+  color: var(--ok);
+}
+.opt.wrong .key::after {
+  content: " ✗";
+  color: var(--bad);
+}
+.why {
+  grid-column: 2;
+  font-size: 0.92em;
+  color: var(--muted);
+}
+.why a {
+  font-weight: 700;
+}
+.checkcap {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 10px 0 2px;
+}
+.passed {
+  font: 700 0.95rem var(--font-head);
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 14px 0 0;
+}
+.ncard.flash,
+h2.flash {
+  animation: flash 1.8s ease-out;
+}
+@keyframes flash {
+  0%,
+  35% {
+    box-shadow: 0 0 0 3px var(--accent);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+/* ---------- The similarity grid ---------- */
+/* A score shades its cell from the surface toward the accent. The shading
+   stops at 40% so the reading ink keeps 4.5:1 on every cell, and the
+   diagonal, a phrase against itself, is solid accent. contrast.ts checks
+   both. */
+.simgrid {
+  margin: 10px 0 16px;
+  max-width: 100%;
+}
+.simgrid figcaption {
+  font: 700 0.72rem var(--font-head);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.simwrap {
+  overflow-x: auto;
+}
+.simgrid table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 0.86rem;
+}
+.simgrid th {
+  font-weight: 400;
+  color: var(--ink);
+  text-align: left;
+  padding: 4px 8px;
+  vertical-align: bottom;
+}
+.simgrid thead th {
+  min-width: 5.5em;
+  max-width: 8em;
+  text-align: center;
+  line-height: 1.25;
+}
+.simgrid th span {
+  color: var(--accent);
+  font-weight: 700;
+}
+.simgrid tbody th {
+  white-space: nowrap;
+}
+.simgrid td {
+  background: color-mix(
+    in srgb,
+    var(--accent) calc(var(--s, 0) * 40%),
+    var(--surface)
+  );
+  color: var(--ink);
+  text-align: center;
+  padding: 6px 8px;
+  font: 0.86rem var(--font-code);
+  font-variant-numeric: tabular-nums;
+}
+.simgrid td.self {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
