@@ -1,0 +1,9 @@
+{
+  "campaign": "toe-wittine",
+  "source": "toe-wittine-session-1.MP3",
+  "model": "large-v3-turbo",
+  "audioSeconds": 10609.92,
+  "wallSeconds": 268,
+  "segments": 3200,
+  "transcribedAt": "2026-10-11T15:54:03.020Z"
+}

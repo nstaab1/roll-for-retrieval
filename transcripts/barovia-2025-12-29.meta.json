@@ -1,0 +1,9 @@
+{
+  "campaign": "barovia",
+  "source": "R20251229195031.MP3",
+  "model": "large-v3-turbo",
+  "audioSeconds": 10999.936,
+  "wallSeconds": 179,
+  "segments": 2511,
+  "transcribedAt": "2026-10-11T15:46:13.003Z"
+}

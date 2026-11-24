@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Act 1: Transcribe the Windmill</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Act 1
+        </div>
+        <div>
+          <h1>Transcribe the Windmill</h1>
+          <p class="lede">
+            Everything later in the workshop searches text, so the first job is
+            turning a game night's audio into it. You start Whisper on a clip in
+            the codespace, write the hosted call yourself, and put the two side
+            by side: what each one heard, how long it took and what it cost.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>
+              <code>npm run transcribe</code> wrote the windmill clip's
+              transcript
+            </li>
+            <li><code>npm test -- 1</code> passes</li>
+            <li><code>npm run compare</code> shows both transcripts</li>
+            <li>the wisdom checks, if there's time</li>
+          </ul>
+        </div>
+      </header>
+      <div class="card">
+        <b>Start Whisper first.</b> The clip is <b>The windmill finale</b>, 10
+        minutes of the 2025-12-29 Barovia game night. <code>base.en</code> takes
+        about 2 min on the 4-core codespace. Leave it running, and open a second
+        terminal with the <b>+</b> in the terminal panel for the rest.
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run transcribe -- --campaign barovia audio/barovia-2025-12-29-windmill-finale.mp3</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20transcribe%20--%20--campaign%20barovia%20audio%2Fbarovia-2025-12-29-windmill-finale.mp3"
+        >
+          Copy
+        </button>
+      </div>
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Add <code>transcribeHosted</code>
+      </h2>
+      <p>
+        Now the hosted side. Open <code>src/transcribe-hosted.ts</code>. The
+        function sends the clip to <code>gpt-transcribe</code> through the
+        shipped client and keeps what <code>compare</code> needs: the text, the
+        wall time and the dollars.
+      </p>
+      <p class="replace">
+        In <code>src/transcribe-hosted.ts</code>, replace this line with the
+        code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-1.html, step 1.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/transcribe-hosted.ts · transcribeHosted</span
+            ><button
+              class="copy"
+              data-copy="%20%20const%20started%20%3D%20performance.now()%3B%0A%20%20%2F%2F%20(1)%20The%20shipped%20client%20refuses%20a%20file%20over%2025%20MB%2C%20sends%20the%20rest%20to%0A%20%20%2F%2F%20gpt-transcribe%20and%20writes%20the%20cost%20log%20line.%0A%20%20const%20text%20%3D%20await%20transcribe(audio)%3B%0A%20%20const%20wallSeconds%20%3D%20elapsedSince(started)%3B%0A%20%20%2F%2F%20(2)%20ffprobe%20reads%20the%20clip's%20length.%20Hosted%20transcription%20is%20priced%20by%20it.%0A%20%20const%20audioSeconds%20%3D%20audioDuration(audio)%3B%0A%20%20const%20result%3A%20HostedTranscript%20%3D%20%7B%0A%20%20%20%20source%3A%20path.basename(audio)%2C%0A%20%20%20%20model%3A%20models.hostedTranscription%2C%0A%20%20%20%20audioSeconds%2C%0A%20%20%20%20wallSeconds%2C%0A%20%20%20%20%2F%2F%20(3)%20Priced%20from%20the%20table%20in%20src%2Fconfig.ts%2C%20the%20same%20way%20the%20cost%20log%20is.%0A%20%20%20%20dollars%3A%20dollarsFor(models.hostedTranscription%2C%20%7B%20audioSeconds%20%7D)%2C%0A%20%20%20%20%2F%2F%20(4)%20Plain%20text.%20No%20timestamps%2C%20so%20nothing%20here%20can%20be%20cited.%0A%20%20%20%20text%2C%0A%20%20%7D%3B%0A%20%20%2F%2F%20(5)%20Beside%20the%20clip%2C%20next%20to%20the%20local%20transcript%2C%20where%20compare%20looks.%0A%20%20writeFileSync(%0A%20%20%20%20transcriptPaths(audio).hosted%2C%0A%20%20%20%20%60%24%7BJSON.stringify(result%2C%20null%2C%202)%7D%5Cn%60%2C%0A%20%20)%3B%0A%20%20return%20result%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners=""><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> started = performance.now();</span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> The shipped client refuses a file over 25 MB, sends the rest to</span></span></span><span class="ln" data-owners="1"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-com">// gpt-transcribe and writes the cost log line.</span></span></span><span class="ln" data-owners="1"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> text = <span class="t-key">await</span> transcribe(audio);</span></span><span class="ln" data-owners=""><span class="num">5</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> wallSeconds = elapsedSince(started);</span></span><span class="ln" data-owners="2"><span class="num">6</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(2)</span> ffprobe reads the clip's length. Hosted transcription is priced by it.</span></span></span><span class="ln" data-owners="2"><span class="num">7</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> audioSeconds = audioDuration(audio);</span></span><span class="ln" data-owners=""><span class="num">8</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> result: HostedTranscript = {</span></span><span class="ln" data-owners=""><span class="num">9</span><span class="src" style="--ind: 6ch">    source: path.basename(audio),</span></span><span class="ln" data-owners=""><span class="num">10</span><span class="src" style="--ind: 6ch">    model: models.hostedTranscription,</span></span><span class="ln" data-owners=""><span class="num">11</span><span class="src" style="--ind: 6ch">    audioSeconds,</span></span><span class="ln" data-owners=""><span class="num">12</span><span class="src" style="--ind: 6ch">    wallSeconds,</span></span><span class="ln" data-owners="3"><span class="num">13</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(3)</span> Priced from the table in src/config.ts, the same way the cost log is.</span></span></span><span class="ln" data-owners="3"><span class="num">14</span><span class="src" style="--ind: 6ch">    dollars: dollarsFor(models.hostedTranscription, { audioSeconds }),</span></span><span class="ln" data-owners="4"><span class="num">15</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(4)</span> Plain text. No timestamps, so nothing here can be cited.</span></span></span><span class="ln" data-owners="4"><span class="num">16</span><span class="src" style="--ind: 6ch">    text,</span></span><span class="ln" data-owners=""><span class="num">17</span><span class="src" style="--ind: 4ch">  };</span></span><span class="ln" data-owners="5"><span class="num">18</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(5)</span> Beside the clip, next to the local transcript, where compare looks.</span></span></span><span class="ln" data-owners="5"><span class="num">19</span><span class="src" style="--ind: 4ch">  writeFileSync(</span></span><span class="ln" data-owners="5"><span class="num">20</span><span class="src" style="--ind: 6ch">    transcriptPaths(audio).hosted,</span></span><span class="ln" data-owners="5"><span class="num">21</span><span class="src" style="--ind: 6ch">    <span class="t-str">`${JSON.stringify(result, null, 2)}\n`</span>,</span></span><span class="ln" data-owners="5"><span class="num">22</span><span class="src" style="--ind: 4ch">  );</span></span><span class="ln" data-owners=""><span class="num">23</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> result;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 3">
+          <div class="ncard" data-note="1">
+            <b><span class="badge">(1)</span> The client does the call.</b> It
+            refuses a file over 25 MB, which is <code>gpt-transcribe</code>'s
+            upload cap, before anything is sent. Under the cap it sends the file
+            and writes one line to the cost log.
+          </div>
+          <div class="ncard" data-note="2">
+            <b><span class="badge">(2)</span> The clip's length.</b> Hosted
+            transcription is priced by the minute of audio, so the length is
+            what the price is worked out from. <code>ffprobe</code> reads it
+            from the file.
+          </div>
+          <div class="ncard" data-note="3">
+            <b><span class="badge">(3)</span> Dollars from the price table.</b>
+            The same table in <code>src/config.ts</code> prices every call in
+            the cost log, never the provider's response, so an OpenRouter key
+            and an OpenAI key log alike.
+          </div>
+          <div class="ncard" data-note="4">
+            <b><span class="badge">(4)</span> Plain text, no timestamps.</b>
+            <code>gpt-transcribe</code> returns the words and nothing about when
+            they were said, so nothing in it can be cited. It's for this
+            comparison only.
+          </div>
+          <div class="ncard" data-note="5">
+            <b><span class="badge">(5)</span> Written beside the clip.</b>
+            <code>compare</code> looks for
+            <code>&lt;clip&gt;.hosted.json</code> next to the local transcript.
+            The vector store reads <code>transcripts/</code>, so it never sees
+            this file.
+          </div>
+        </div>
+      </div>
+      <p class="checkcap">
+        Before you move on. One question about what you just pasted.
+      </p>
+      <div class="q" data-check="cap"></div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Run it
+      </h2>
+      <p>
+        The tests send fifteen seconds of the clip to
+        <code>gpt-transcribe</code>, twice, for well under a cent. Then run the
+        call on the whole clip, which costs $0.045 at $0.0045 a minute.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm test -- 1
+npm run transcribe:hosted -- audio/barovia-2025-12-29-windmill-finale.mp3</pre>
+        <button
+          class="copy"
+          data-copy="npm%20test%20--%201%0Anpm%20run%20transcribe%3Ahosted%20--%20audio%2Fbarovia-2025-12-29-windmill-finale.mp3"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        It prints the file it wrote, the wall time and the dollars. The file
+        sits beside the clip as
+        <code>barovia-2025-12-29-windmill-finale.hosted.json</code>.
+      </p>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Compare them
+      </h2>
+      <p>
+        Once Whisper has finished in the first terminal, put the two side by
+        side.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run compare -- audio/barovia-2025-12-29-windmill-finale.mp3</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20compare%20--%20audio%2Fbarovia-2025-12-29-windmill-finale.mp3"
+        >
+          Copy
+        </button>
+      </div>
+      <ul>
+        <li>
+          <b>Wall time.</b> The hosted call takes seconds. Whisper took minutes
+          on four cores.
+        </li>
+        <li>
+          <b>Dollars.</b> Local shows $0, with the codespace time beside it,
+          because the machine you rent is what it costs. Hosted shows what the
+          price table charges.
+        </li>
+        <li>
+          <b>Text.</b> Read the names. A name a model mishears is a name nobody
+          can search for later.
+        </li>
+      </ul>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> A slower, better model
+      </h2>
+      <p>
+        The codespace has a second Whisper model, <code>small.en</code>. It
+        hears more, and takes about 5 min 10 s on this clip against 2 min for
+        <code>base.en</code>. It writes over the
+        <code>base.en</code> transcript, so compare first if you want to keep
+        both.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run transcribe -- --campaign barovia --model small.en audio/barovia-2025-12-29-windmill-finale.mp3</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20transcribe%20--%20--campaign%20barovia%20--model%20small.en%20audio%2Fbarovia-2025-12-29-windmill-finale.mp3"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The transcripts you use after the break were made with
+        <code>large-v3-turbo</code>, a far bigger model, on the presenter's
+        machine. Here is one passage of this clip from each end:
+      </p>
+      <figure class="compare">
+        <figcaption>
+          The windmill finale, from 3:45 into the clip. The marks are where the
+          two disagree.
+        </figcaption>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"><code>base.en</code>, in the codespace</th>
+              <th scope="col">
+                <code>large-v3-turbo</code>, the prepared transcript
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                But for a moment, you smell home. You smell
+                <mark>other hard hollow</mark>.
+              </td>
+              <td>
+                But for a moment, you smell home. You smell
+                <mark>Elderheart Hollow</mark>.
+              </td>
+            </tr>
+            <tr>
+              <td>And there's a flash. And you can see your parents.</td>
+              <td>And there's a flash. And you can see your parents.</td>
+            </tr>
+            <tr>
+              <td>And they are uttering a name over and over again.</td>
+              <td>And they are uttering a name over and over again.</td>
+            </tr>
+            <tr>
+              <td>
+                Mother sits upright in her bed. <mark>Peers</mark> rolling down
+                her eyes, mumbling your name.
+              </td>
+              <td>
+                Your mother sits upright in her bed. <mark>Tears</mark> rolling
+                down her eyes. Mumbling your name.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                And your father drops his hammer. He was doing some woodworking
+                and <mark>stirs up</mark> into the trees.
+              </td>
+              <td>
+                And your father drops his hammer. He was doing some woodworking.
+                And <mark>stares off</mark> into the trees.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                And at the same time, they both say your name. Freya. They
+                remember it.
+              </td>
+              <td>
+                And at the same time, they both say your name. Freya. They
+                remember it.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mark>Morganther</mark> reels back and she is clutching her
+                head. And her form, because she was in another plane of
+                existence and took <mark>a credible</mark> amount of damage
+                being forced back into this plane, is petrified at this moment.
+              </td>
+              <td>
+                <mark>Morgantha</mark> reels back. And she is clutching her
+                head. And her form, because she was in another plane of
+                existence and took <mark>an incredible</mark> amount of damage
+                being forced back into this plane, Um, is petrified at this
+                moment.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+      <div class="q" data-check="names"></div>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Who said it?
+      </h2>
+      <p>
+        None of these transcripts say who is speaking. Splitting a transcript by
+        speaker is <b>diarization</b>. A hosted diarization model costs about
+        $0.10 per audio hour, and it hands back <i>Speaker 1</i> and
+        <i>Speaker 2</i>, not names, so someone still listens to every night and
+        names the speakers by hand.
+      </p>
+      <p>
+        We skipped it. The questions you ask the pipeline are about what
+        happened at the table, and an answer cites the night and the moment, not
+        the person. In the last hour you keep the DM's secrets out of player
+        answers, and that doesn't need a speaker either: whatever the DM says at
+        the table, the players heard. The secrets live in DM documents, and each
+        document says who may see it.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Wisdom check
+      </h2>
+      <p class="checkcap">
+        One more, a minute at most. Skip it if the room is moving on.
+      </p>
+      <div class="q" data-check="store"></div>
+      <p class="passed" hidden>✦ Wisdom check passed. On to act 2.</p>
+      <div class="card">
+        <b>After the break,</b> everyone switches to the prepared transcripts in
+        <code>transcripts/</code>: seven whole game nights from both campaigns,
+        in the same shape your local run just wrote, made with
+        <code>large-v3-turbo</code>.
+      </div>
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- 1</code>. It brings this act's code onto your
+        branch, so you can keep going.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "cap": {
+          "kind": "predict",
+          "reread": "1",
+          "q": "You point \u003ccode>npm run transcribe:hosted\u003c/code> at a whole game night: three hours of 64 kbit/s MP3, about 86 MB. What happens?",
+          "opts": [
+            {
+              "t": "\u003ccode>gpt-transcribe\u003c/code> gets the file and bills for three hours.",
+              "why": "It never gets the file. The client checks the size before it sends anything."
+            },
+            {
+              "t": "The client refuses it before any call, so nothing is spent.",
+              "ok": true,
+              "why": "86 MB is over the 25 MB upload cap, so the client throws before sending. A whole night goes through local Whisper instead."
+            },
+            {
+              "t": "The client cuts it into 25 MB pieces and sends each one.",
+              "why": "Nothing here cuts audio. The client sends one file or refuses it."
+            },
+            {
+              "t": "The call runs and times out.",
+              "why": "There is no call. The size check comes first."
+            }
+          ]
+        },
+        "names": {
+          "kind": "choice",
+          "reread": "step-4",
+          "q": "A player searches for Elderheart Hollow, and your transcript says \u003ci>other hard hollow\u003c/i>. You have ten spare minutes in the codespace. What do you change?",
+          "opts": [
+            {
+              "t": "Use the hosted transcript in the vector store instead.",
+              "why": "It has no timestamps, so nothing found in it could be cited."
+            },
+            {
+              "t": "Run the local command again with \u003ccode>--model small.en\u003c/code>.",
+              "ok": true,
+              "why": "A bigger model hears more names right, and \u003ccode>small.en\u003c/code> is the bigger of the two in the codespace. It takes about 5 min 10 s on this clip."
+            },
+            {
+              "t": "Add diarization.",
+              "why": "Diarization says who spoke. It doesn't change what Whisper heard."
+            },
+            {
+              "t": "Leave it. Chunking in Act 2 can fix it.",
+              "why": "Chunking cuts up the words it's given. A misheard word stays misheard all the way down the pipeline."
+            }
+          ]
+        },
+        "store": {
+          "kind": "concept",
+          "reread": "4",
+          "q": "The hosted transcript is never loaded into the vector store. Why?",
+          "opts": [
+            {
+              "t": "Its text is worse than Whisper's.",
+              "why": "Better or worse isn't the reason. Read both in \u003ccode>compare\u003c/code>: it has no timestamps either way."
+            },
+            {
+              "t": "It would cost money every time the vector store is built.",
+              "why": "It was paid for once, when you ran it. Building the vector store never calls it."
+            },
+            {
+              "t": "It has no timestamps, so an answer built from it couldn't point to the moment in the night.",
+              "ok": true,
+              "why": "Act 4 cites the night and the moment. Whisper's segments carry start times. The hosted text is one block of words."
+            },
+            {
+              "t": "It doesn't say which campaign it belongs to.",
+              "why": "A campaign could be added beside it. A timestamp can't: the model never returned one."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>

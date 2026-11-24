@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The close: Take It Home</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · The close
+        </div>
+        <div>
+          <h1>Take It Home</h1>
+          <p class="lede">
+            You built a pipeline that answers questions about two D&amp;D
+            campaigns and keeps the DM's secrets from the players. Push it, and
+            it's yours. Then point it at your own recordings and documents. The
+            loaders, the store and your filter never name a campaign, so your
+            data is new files and new rows, not new code.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>your <code>main</code> pushed to your fork</li>
+            <li>
+              one question of your own answered for one member and not another
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Push <code>main</code>
+      </h2>
+      <p>
+        Everyone pushes the same branch. Commit whatever you have, finished or
+        not.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">git add -A</pre>
+        <button class="copy" data-copy="git%20add%20-A">Copy</button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">git commit -m &quot;My workshop&quot;</pre>
+        <button
+          class="copy"
+          data-copy="git%20commit%20-m%20%22My%20workshop%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        If git says there's nothing to commit, your work is already in. Push
+        anyway.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">git push</pre>
+        <button class="copy" data-copy="git%20push">Copy</button>
+      </div>
+      <p>
+        You can't write to the workshop repo, so the first push offers to fork
+        it. Say yes. The fork lands under your account, and from then on
+        <code>origin</code> is your fork and <code>upstream</code> is the
+        workshop. That fork is what you take home.
+      </p>
+      <p>
+        <code>.env</code>, the cost log and your index stay out of git, so your
+        key never leaves with the fork.
+      </p>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Delete the codespace
+      </h2>
+      <p>
+        This step is optional. Once the push is done, the codespace holds
+        nothing your fork doesn't, apart from your key in <code>.env</code>. A
+        stopped codespace still counts against your free storage, so delete it
+        when you're done.
+      </p>
+      <ol>
+        <li>
+          Open
+          <a href="https://github.com/codespaces">github.com/codespaces</a>.
+        </li>
+        <li>Open the <b>⋯</b> menu beside this codespace.</li>
+        <li>Choose <b>Delete</b>.</li>
+      </ol>
+      <p>
+        To pick it up again, open a new codespace on your fork and copy your key
+        into a fresh <code>.env</code>.
+      </p>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Add your own recordings
+      </h2>
+      <p>
+        Your fork is public, and it tracks <code>transcripts/</code>,
+        <code>documents/</code> and <code>members.json</code>. Once your own
+        data goes in, stop pushing to the fork. To keep a copy on GitHub, create
+        a private repo of your own and push there.
+      </p>
+      <p>
+        Any recording works. A standup goes through the same command as a game
+        night. Put it in <code>audio/</code>, which git leaves out, so the audio
+        never goes to your fork. Then transcribe it locally, naming its
+        campaign:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run transcribe -- --campaign acme audio/standup.mp3</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20transcribe%20--%20--campaign%20acme%20audio%2Fstandup.mp3"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        An hour of audio takes about 12 min with <code>base.en</code> on 4
+        cores. The command writes the transcript and its meta file beside the
+        recording. The store reads <code>transcripts/</code>, so move both
+        there:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+mv audio/standup.json audio/standup.meta.json transcripts/</pre>
+        <button
+          class="copy"
+          data-copy="mv%20audio%2Fstandup.json%20audio%2Fstandup.meta.json%20transcripts%2F"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Hosted transcription won't do here. It returns no timestamps, so its
+        text can't be cited. A night's chunks get its campaign's party
+        visibility, so everything said in this recording is
+        <code>acme/party</code>.
+      </p>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Add your own documents
+      </h2>
+      <p>
+        A document is a Markdown file in <code>documents/</code> that opens with
+        its visibility. The loader refuses a file without one, so nothing
+        untagged reaches the store. Save this as
+        <code>documents/acme-reorg-plan.md</code>:
+      </p>
+      <div class="codewrap">
+        <div class="filebar"><span>documents/acme-reorg-plan.md</span></div>
+        <pre class="code shell">
+---
+visibility: acme/leads
+---
+
+# Reorg plan
+
+In March the platform group joins the payments team. Dana leads the merged team. We tell everyone at the all-hands on March 3, not before.</pre>
+      </div>
+      <p>
+        Use any visibility you like. The filter compares strings and never names
+        one, so <code>acme/leads</code> needs no code.
+      </p>
+      <p>
+        One line does still talk about games. <code>answerRules</code> in
+        <code>src/context.ts</code> tells the model it answers about two
+        tabletop campaigns. Answers read better once its first sentence says
+        what your sources are.
+      </p>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Say who sees what
+      </h2>
+      <p>
+        <code>members.json</code> gives each role its visibilities and each
+        member their roles. Alice is an engineer and sees the party. Bob is a
+        lead and sees the party and the leads. Add these rows to the end of
+        <code>"roles"</code>, with a comma after the row above them:
+      </p>
+      <div class="codewrap">
+        <div class="filebar"><span>members.json, roles</span></div>
+        <pre class="code shell">
+&quot;engineer&quot;: [&quot;acme/party&quot;],
+&quot;lead&quot;: [&quot;acme/party&quot;, &quot;acme/leads&quot;]</pre>
+      </div>
+      <p>Then add these to the end of <code>"members"</code> the same way:</p>
+      <div class="codewrap">
+        <div class="filebar"><span>members.json, members</span></div>
+        <pre class="code shell">
+&quot;alice&quot;: [&quot;engineer&quot;],
+&quot;bob&quot;: [&quot;lead&quot;]</pre>
+      </div>
+      <p>
+        Leave the workshop's rows where they are. Your members hold no Barovia
+        or Toe Wittine role, so the filter keeps the two campaigns out of their
+        answers.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Ask as two members
+      </h2>
+      <p>Rebuild your index so it holds the new night and document.</p>
+      <div class="codewrap">
+        <pre class="code shell">npm run ingest</pre>
+        <button class="copy" data-copy="npm%20run%20ingest">Copy</button>
+      </div>
+      <p>Ask as Alice:</p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user alice &quot;Which team is the platform group joining?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20alice%20%22Which%20team%20is%20the%20platform%20group%20joining%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The reorg plan isn't among her chunks, so she gets "I don't know" or an
+        answer from the standup. Now ask as Bob:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user bob &quot;Which team is the platform group joining?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20bob%20%22Which%20team%20is%20the%20platform%20group%20joining%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Only Bob's answer cites <code>acme-reorg-plan</code>. That's the same
+        filter you wrote for the DM's notes, on new rows. To score your own
+        data, change the asker in the eval set and write questions you know the
+        answers to, as the <a href="eval-and-cost.html">eval page</a> says.
+      </p>
+      <p>
+        The workshop's own tests count the shipped nights and documents, so
+        <code>npm test</code> fails once yours are in. That's expected. Those
+        tests check the workshop's data, not yours.
+      </p>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>
