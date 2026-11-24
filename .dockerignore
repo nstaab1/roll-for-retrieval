@@ -1,0 +1,5 @@
+# The image needs only these. Everything else stays out of the build context.
+*
+!package.json
+!package-lock.json
+!src/local-models.ts

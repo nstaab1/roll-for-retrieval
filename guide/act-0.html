@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Act 0: Set Up the Table</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Act 0
+        </div>
+        <div>
+          <h1>Set Up the Table</h1>
+          <p class="lede">
+            Before anyone rolls, the table gets set. You open the workshop in a
+            codespace, give it your hosted key, and run one command that says
+            whether everything is in place. When it prints READY, you're ready,
+            in the room and at home.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>the codespace is open</li>
+            <li>your key is in <code>.env</code></li>
+            <li><code>npm run doctor</code> prints READY</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Open the codespace
+      </h2>
+      <p>
+        On the workshop repo's GitHub page, open <b>Code</b>, then the
+        <b>Codespaces</b> tab, then <b>Create codespace on main</b>. It starts
+        from the workshop image, which already holds Node, ffmpeg, Whisper and
+        its two models, and the reranker. A cold start takes under two minutes.
+      </p>
+      <p>
+        While it starts, it installs the packages, fetches the 5 sample clips
+        into <code>audio/</code> and runs the doctor once. Unless you set your
+        key as a Codespaces secret, that first run says the key is missing. Step
+        2 fixes that.
+      </p>
+      <div class="card">
+        <b>On your own machine instead?</b> With Docker and VS Code's Dev
+        Containers extension, clone the repo and choose
+        <b>Reopen in Container</b>. It runs the same image, on x64 or an Apple
+        silicon Mac.
+      </div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Add your key
+      </h2>
+      <p>
+        Pre-work gave you an OpenRouter key. Copy the example file, then paste
+        your key after <code>OPENROUTER_API_KEY=</code> in <code>.env</code>.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">cp .env.example .env</pre>
+        <button class="copy" data-copy="cp%20.env.example%20.env">Copy</button>
+      </div>
+      <p>
+        With an OpenAI key instead, leave that line empty and use
+        <code>OPENAI_API_KEY=</code>. Either key runs every stage.
+        <code>.env</code> stays out of git. A key set as a Codespaces secret
+        wins over the file.
+      </p>
+      <div class="card">
+        <b>No key?</b> Ask the presenter for a spare one. It has a spend cap, so
+        it's safe to use for the day.
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Run the doctor
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm run doctor</pre>
+        <button class="copy" data-copy="npm%20run%20doctor">Copy</button>
+      </div>
+      <p>
+        It prints one line per check, then READY or NOT READY. A ready codespace
+        looks like this:
+      </p>
+      <div class="codewrap">
+        <div class="filebar"><span>npm run doctor</span></div>
+        <pre class="code shell">
+✓ Node v24.18.0
+✓ ffmpeg 5.1.9-0+deb12u1
+✓ Whisper base.en model
+✓ Whisper small.en model
+✓ Reranker model Xenova/ms-marco-MiniLM-L-6-v2
+✓ whisper-cli, AVX2 = 1
+✓ OpenRouter key from .env
+✓ 5 sample clips in audio/
+✓ 4 CPU cores
+READY</pre>
+      </div>
+      <ul>
+        <li>
+          <b>A ✗ line</b> ends with <b>Fix:</b> and what to do. Do it, then run
+          the doctor again.
+        </li>
+        <li>
+          <b>The key check</b> makes one real call, an embedding of one word for
+          a tiny fraction of a cent. It's the first line in your cost log.
+        </li>
+        <li>
+          <b>A ! line</b> is a warning, not a failure. Fewer than 4 cores still
+          works. Local transcription is just slower.
+        </li>
+      </ul>
+      <p>
+        The doctor is the only definition of ready. If it says READY and
+        something still breaks, tell the presenter: the doctor has a check
+        missing.
+      </p>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Find your way around
+      </h2>
+      <ul>
+        <li>
+          <b><code>guide/</code></b> holds this page and one page per act. Each
+          act page shows the code to add and why each part is there.
+        </li>
+        <li>
+          <b><code>src/</code></b> has a stub for every piece you write. Until
+          you fill it, it throws a message naming the page and step that has its
+          code.
+        </li>
+        <li>
+          <b><code>npm test -- 1</code></b> runs Act 1's tests, and the same
+          goes for 2 to 4.
+        </li>
+      </ul>
+
+      <div class="card"><b>READY?</b> Open <a href="act-1.html">Act 1</a>.</div>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>
