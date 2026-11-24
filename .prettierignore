@@ -1,0 +1,7 @@
+# Vendored by `npm run skills:update`, which would undo any reformat.
+.agents/
+# The prepared transcripts are whisper.cpp's JSON as it wrote it, so neither a
+# format check nor format-on-save rewrites them.
+transcripts/
+# The guide build's local output. Publish writes guide/ instead.
+authoring/out/

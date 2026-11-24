@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The last hour: Hallucinated NPCs</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · The last hour
+        </div>
+        <div>
+          <h1>Hallucinated NPCs</h1>
+          <p class="lede">
+            A pipeline that always answers will answer questions it has nothing
+            for. You ask yours about an NPC who never sat at the table, a name
+            Whisper misheard and a roll nobody wrote down, and see what comes
+            back. Then you add two fixes: a relevance gate that says "I don't
+            know" before the model is ever called, and a refusal instruction you
+            rewrite. Each fix catches a different ask.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li><code>npm test -- fix-hallucination</code> passes</li>
+            <li>
+              the Madam Eva question gets "I don't know" without asking the
+              model
+            </li>
+            <li>a rewritten <code>REFUSAL_INSTRUCTION</code></li>
+            <li>
+              your threshold on the <b>Retrieval</b> line in
+              <code>DECISIONS.md</code>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Ask three questions it can't
+        answer
+      </h2>
+      <p>Ask each of these as katie, who sits at both tables:</p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What did Madam Eva read in the cards?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20did%20Madam%20Eva%20read%20in%20the%20cards%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What does Glinsky sell?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20does%20Glinsky%20sell%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;Who rolled the natural 20?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22Who%20rolled%20the%20natural%2020%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Read the answer, then the scores under it. The reranker scores from 0 to
+        1, and the best chunk comes first.
+      </p>
+      <ul>
+        <li>
+          <b>Madam Eva</b> reads fortunes in the published adventure, and she
+          never appeared at this table. No chunk mentions her, so the best score
+          is tiny, with several zeros after the point. Whatever the model says,
+          it isn't from your nights.
+        </li>
+        <li>
+          <b>Glinsky</b> is how Whisper heard Blinsky in one passage of the
+          first Barovia night. A chunk really does say "Glinsky", so it scores
+          well, and the model answers with what Blinsky sells. The mistake is
+          Whisper's, and no fix on this page can see it.
+        </li>
+        <li>
+          <b>The natural 20</b> was rolled, and the transcripts have no
+          diarization, so no segment says who rolled it. Chunks about rolling
+          dice score high, near 1, and none holds the answer.
+        </li>
+      </ul>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Ask one of them three times
+      </h2>
+      <p>Run the natural 20 question three times:</p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;Who rolled the natural 20?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22Who%20rolled%20the%20natural%2020%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The chunks and their scores barely move between runs. The answers do.
+        One run may say "I don't know", another may explain that the sources
+        don't name anyone, and another may cite chunks for an answer they don't
+        hold. <code>openai/gpt-4o-mini</code> picks each word by sampling, so
+        one prompt can come back worded differently, or decided differently.
+      </p>
+      <p>
+        There's no temperature setting to turn down here, on purpose. Turning it
+        down narrows the sampling, but hosted models still don't promise the
+        same answer twice. Plan for an answer that varies. The last hour's eval
+        asks every question three times for this reason.
+      </p>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Add <code>passesGate</code>
+      </h2>
+      <p>
+        Open <code>src/gate.ts</code>. The relevance gate runs after the
+        reranker and before the prompt. When even the best chunk scores under
+        your threshold, <code>ask</code> answers "I don't know" without calling
+        the model at all. The gate reads the reranker's score, from
+        <code>Xenova/ms-marco-MiniLM-L-6-v2</code>, because it read the question
+        and the chunk together. Vector distance only says how near two things
+        sit.
+      </p>
+      <p class="replace">
+        In <code>src/gate.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/fix-hallucination.html, step 3.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/gate.ts · passesGate</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(1)%20The%20reranker's%20best%20score%3A%20how%20well%20the%20best%20chunk%20answers%20the%0A%20%20%2F%2F%20question.%20Vector%20distance%20only%20says%20how%20near%20it%20sits.%0A%20%20const%20best%20%3D%20Math.max(...ranked.map((chunk)%20%3D%3E%20chunk.score))%3B%0A%20%20%2F%2F%20(2)%20Under%20your%20threshold%2C%20even%20the%20best%20chunk%20doesn't%20answer%20it.%0A%20%20return%20best%20%3E%3D%20threshold%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="1"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> The reranker's best score: how well the best chunk answers the</span></span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// question. Vector distance only says how near it sits.</span></span></span><span class="ln" data-owners="1"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> best = Math.max(...ranked.map((chunk) =&gt; chunk.score));</span></span><span class="ln" data-owners="2"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(2)</span> Under your threshold, even the best chunk doesn't answer it.</span></span></span><span class="ln" data-owners="2"><span class="num">5</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> best &gt;= threshold;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 2">
+          <div class="ncard" data-note="1">
+            <b
+              ><span class="badge">(1)</span> The reranker's score, never
+              distance.</b
+            >
+            The nearest chunk to a question about Madam Eva is still near
+            something, so distance can't say that nothing answers it. The
+            reranker read each chunk with the question, so a low best score can.
+          </div>
+          <div class="ncard" data-note="2">
+            <b
+              ><span class="badge">(2)</span> Under the threshold, no answer
+              call.</b
+            >
+            When this returns false, <code>ask</code> answers "I don't know"
+            with no citations and never builds the prompt. That's the answer
+            call you don't pay for.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Choose your threshold
+      </h2>
+      <p>
+        Open <code>src/choices.ts</code> and set
+        <b><code>RELEVANCE_THRESHOLD</code></b
+        >. A best score under it gets "I don't know".
+      </p>
+      <p>
+        Use the scores from step 1. Most chunks in a chatty transcript score far
+        under 0.1, and the chunk that holds a real answer can score under 0.01.
+        Put the threshold above Madam Eva's best score and under the best score
+        of the questions your pipeline answers, such as the Blinsky question.
+        Too high, and your pipeline refuses questions it could answer. Too low,
+        and nothing gets stopped.
+      </p>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Run the tests
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- fix-hallucination</pre>
+        <button class="copy" data-copy="npm%20test%20--%20fix-hallucination">
+          Copy
+        </button>
+      </div>
+      <p>
+        Until <code>RELEVANCE_THRESHOLD</code> is set, one test fails and tells
+        you to pick it. The rest check the gate on a few made-up scores, then
+        build the small index from Act 4 and ask two real questions. The Madam
+        Eva question has to come back "I don't know" with no answer call in the
+        cost log. The Blinsky question has to get through to one answer call.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Ask again
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What did Madam Eva read in the cards?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20did%20Madam%20Eva%20read%20in%20the%20cards%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Under the answer, <code>npm run ask</code> now says the best score is
+        under your threshold, so the model wasn't asked. That's one answer call
+        you didn't pay for, and one answer you didn't have to trust the model
+        for.
+      </p>
+      <p>
+        Ask the other two again. Both still get through, because each has a
+        chunk that scores well. The gate can't tell a misheard name from a right
+        one, and it can't tell a chunk about rolling dice from a chunk that
+        names who rolled. The second fix is in the prompt.
+      </p>
+      <h2 id="step-7">
+        <span class="n"><span>7</span></span> Rewrite your refusal instruction
+      </h2>
+      <p>
+        Open <code>src/choices.ts</code> and rewrite
+        <b><code>REFUSAL_INSTRUCTION</code></b
+        >, the text you wrote in Act 4. Make it stricter in your own words.
+        Ideas that worked for the presenter:
+      </p>
+      <ul>
+        <li>
+          Answer only from the numbered sources, never from what the model knows
+          about Dungeons &amp; Dragons or its published adventures.
+        </li>
+        <li>
+          When no source says the answer outright, answer exactly "I don't
+          know." and list no sources.
+        </li>
+      </ul>
+      <p>
+        Ask the natural 20 question three times again. Then ask a question that
+        does have an answer:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;Who did the banshees at the windmill look like?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22Who%20did%20the%20banshees%20at%20the%20windmill%20look%20like%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        A stricter instruction refuses more, and some of what it refuses had an
+        answer. Check that it still answers this one and the Blinsky question.
+        Loosen a word if it doesn't.
+      </p>
+      <h2 id="step-8">
+        <span class="n"><span>8</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and add your threshold to the line under
+        <b>Retrieval</b> you wrote in Act 3. Say what score you picked, and
+        which asks it stops and lets through.
+      </p>
+      <p class="shape">
+        k ___, and "I don't know" under a best score of ___, because ___.
+      </p>
+
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- fix-hallucination</code>. It brings the gate
+        onto your branch and leaves your <code>choices.ts</code> as it is. If
+        you haven't picked a threshold yet,
+        <code>src/presenter-choices.ts</code> has the presenter's, and the
+        presenter's rewritten refusal instruction, to start from.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>

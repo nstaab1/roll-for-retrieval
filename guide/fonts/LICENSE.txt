@@ -1,0 +1,2 @@
+Cinzel, Proza Libre and JetBrains Mono, latin subsets from @fontsource 5.3.0.
+All three are under the SIL Open Font License 1.1: https://openfontlicense.org

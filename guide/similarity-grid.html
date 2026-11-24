@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Before Act 3: The Similarity Grid</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Before Act 3
+        </div>
+        <div>
+          <h1>The Similarity Grid</h1>
+          <p class="lede">
+            In Act 3 you turn every chunk into a vector and search by how close
+            the vectors are. Before you do, see what "close" means. Here are 8
+            short phrases from the campaigns, each compared with every other by
+            meaning.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>
+              you've found a pair the model scores high with no word in common
+            </li>
+            <li>you've found two phrases for one person that it scores low</li>
+            <li><code>npm run quest:similarity</code> prints the grid</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Read the grid
+      </h2>
+      <p>
+        Each cell is the cosine similarity of two phrases, from
+        <code>openai/text-embedding-3-small</code>. It measures how close the
+        two vectors point: 1.00 is the same direction, and the lower the number,
+        the less alike in meaning. The darker a cell, the closer the pair. A
+        phrase against itself is always 1.00.
+      </p>
+      <figure class="simgrid">
+        <figcaption>
+          Cosine similarity, embedded with openai/text-embedding-3-small
+        </figcaption>
+        <div class="simwrap">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><span>1</span> Blinsky</th>
+                <th scope="col"><span>2</span> the toymaker</th>
+                <th scope="col"><span>3</span> Blinsky's Toys</th>
+                <th scope="col"><span>4</span> a toy shop in town</th>
+                <th scope="col"><span>5</span> the blacksmith</th>
+                <th scope="col"><span>6</span> the windmill</th>
+                <th scope="col"><span>7</span> Morgantha</th>
+                <th scope="col"><span>8</span> Pizza, pizza, pizza.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span>1</span> Blinsky</th>
+                <td class="self">1.00</td>
+                <td style="--s: 0.16">0.16</td>
+                <td style="--s: 0.69">0.69</td>
+                <td style="--s: 0.08">0.08</td>
+                <td style="--s: 0.2">0.20</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.14">0.14</td>
+                <td style="--s: 0.14">0.14</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>2</span> the toymaker</th>
+                <td style="--s: 0.16">0.16</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.47">0.47</td>
+                <td style="--s: 0.61">0.61</td>
+                <td style="--s: 0.53">0.53</td>
+                <td style="--s: 0.34">0.34</td>
+                <td style="--s: 0.23">0.23</td>
+                <td style="--s: 0.13">0.13</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>3</span> Blinsky's Toys</th>
+                <td style="--s: 0.69">0.69</td>
+                <td style="--s: 0.47">0.47</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.5">0.50</td>
+                <td style="--s: 0.23">0.23</td>
+                <td style="--s: 0.19">0.19</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.17">0.17</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>4</span> a toy shop in town</th>
+                <td style="--s: 0.08">0.08</td>
+                <td style="--s: 0.61">0.61</td>
+                <td style="--s: 0.5">0.50</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.37">0.37</td>
+                <td style="--s: 0.3">0.30</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.15">0.15</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>5</span> the blacksmith</th>
+                <td style="--s: 0.2">0.20</td>
+                <td style="--s: 0.53">0.53</td>
+                <td style="--s: 0.23">0.23</td>
+                <td style="--s: 0.37">0.37</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.38">0.38</td>
+                <td style="--s: 0.24">0.24</td>
+                <td style="--s: 0.13">0.13</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>6</span> the windmill</th>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.34">0.34</td>
+                <td style="--s: 0.19">0.19</td>
+                <td style="--s: 0.3">0.30</td>
+                <td style="--s: 0.38">0.38</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.22">0.22</td>
+                <td style="--s: 0.18">0.18</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>7</span> Morgantha</th>
+                <td style="--s: 0.14">0.14</td>
+                <td style="--s: 0.23">0.23</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.24">0.24</td>
+                <td style="--s: 0.22">0.22</td>
+                <td class="self">1.00</td>
+                <td style="--s: 0.08">0.08</td>
+              </tr>
+              <tr>
+                <th scope="row"><span>8</span> Pizza, pizza, pizza.</th>
+                <td style="--s: 0.14">0.14</td>
+                <td style="--s: 0.13">0.13</td>
+                <td style="--s: 0.17">0.17</td>
+                <td style="--s: 0.15">0.15</td>
+                <td style="--s: 0.13">0.13</td>
+                <td style="--s: 0.18">0.18</td>
+                <td style="--s: 0.08">0.08</td>
+                <td class="self">1.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </figure>
+      <p>
+        <i>the toymaker</i> and <i>a toy shop in town</i> score 0.61. They share
+        no whole word, and the model still sees them as close. It matches
+        meaning, whatever the words.
+      </p>
+      <p>
+        <i>the toymaker</i> and <i>the blacksmith</i> score 0.53, lower, but
+        well above <i>Blinsky</i> and <i>the toymaker</i> at 0.16. Blinsky is
+        the toymaker, yet the model scores the toymaker nearer a blacksmith,
+        another trade, than nearer his own name. It doesn't know a name is a
+        person, so a question that asks for him by name can miss the chunk about
+        him.
+      </p>
+      <p>
+        The highest pair off the diagonal is <i>Blinsky</i> and
+        <i>Blinsky's Toys</i>, at 0.69. Sharing a name pulls two phrases
+        together, which is how the model can find his shop but not the man.
+      </p>
+      <p>
+        Pizza, pizza, pizza. scores low against everything. Table chatter lands
+        far from the story, which is why a question about the story doesn't pull
+        it in.
+      </p>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Run the side quest
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm run quest:similarity</pre>
+        <button class="copy" data-copy="npm%20run%20quest%3Asimilarity">
+          Copy
+        </button>
+      </div>
+      <p>
+        With a key set, it embeds the 8 phrases live, for under $0.000001, and
+        works out the cosine similarity in plain TypeScript, the same math
+        pgvector runs in Act 3. With no key, it prints the grid on this page and
+        says so.
+      </p>
+      <p>Now try your own. Put each phrase in quotes. It needs a key.</p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run quest:similarity -- &quot;Blinsky&quot; &quot;the man who makes toys&quot; &quot;the man who sells toys&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20quest%3Asimilarity%20--%20%22Blinsky%22%20%22the%20man%20who%20makes%20toys%22%20%22the%20man%20who%20sells%20toys%22"
+        >
+          Copy
+        </button>
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> What Act 3 does with it
+      </h2>
+      <p>
+        In Act 3 each chunk gets one vector, and a question gets one too. Search
+        returns the chunks whose vectors are nearest. A name, a place or a
+        paraphrase can all land near or far from the question, and you'll read
+        what comes back, mistakes included.
+      </p>
+      <div class="card"><b>Ready?</b> Open <a href="act-3.html">Act 3</a>.</div>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>

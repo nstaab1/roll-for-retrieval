@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The last hour: The Access Leak</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · The last hour
+        </div>
+        <div>
+          <h1>The Access Leak</h1>
+          <p class="lede">
+            The store holds the DM's documents beside the nights, and your
+            search returns whatever sits nearest the question, to whoever asks.
+            You ask as a player and get the DM's secret back. Then you write one
+            filter, inside the query, and ask one question as two members to
+            watch the same code give two answers.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li><code>npm test -- fix-access-leak</code> passes</li>
+            <li>
+              the Strahd question, asked as katie, no longer cites
+              <code>barovia-strahd-plan</code>
+            </li>
+            <li>the Blinsky question answered for katie and not for millie</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Predict where the filter goes
+      </h2>
+      <p>
+        Every chunk carries a visibility, such as <code>barovia/party</code> or
+        <code>barovia/dm</code>, and <code>members.json</code> says which ones
+        each member may see. Nothing reads either yet. Before you see what that
+        costs, pick where a filter would go.
+      </p>
+      <div class="q" data-check="where"></div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Ask as a player
+      </h2>
+      <p>
+        katie plays at both tables and runs neither. Ask what Strahd has
+        planned:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What does Strahd plan for the party after the festival?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20does%20Strahd%20plan%20for%20the%20party%20after%20the%20festival%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Read the chunks under the answer. The first is likely
+        <code>barovia-strahd-plan</code>, with visibility
+        <code>barovia/dm</code>: the DM's notes for next night. The answer tells
+        a player about the dinner at the castle, which is the secret the party
+        doesn't know yet.
+      </p>
+      <div class="card">
+        <b>No leak at your values?</b> Ask the backup instead. A Toe Wittine DM
+        document answers it, and a leaking answer names Hazel.
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;Who does Elder Briar write to every winter?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22Who%20does%20Elder%20Briar%20write%20to%20every%20winter%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Run the access tests
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- fix-access-leak</pre>
+        <button class="copy" data-copy="npm%20test%20--%20fix-access-leak">
+          Copy
+        </button>
+      </div>
+      <p>
+        Every test fails, on the secret or on a chunk the asker may not see.
+        Open <code>test/fix-access-leak/placement.test.ts</code>. Its store has
+        6 DM chunks nearest the question, and it tries the two places a filter
+        doesn't work:
+      </p>
+      <ul>
+        <li>
+          <b>After search.</b> Search returns its 8 nearest, and the DM's chunks
+          take 6 of those places. Drop them and a player keeps 2 of their 8.
+          Your reranker has also read the DM's text by then. On the eval's
+          hosted reranker swap, so has <code>cohere/rerank-v3.5</code>, on
+          someone else's servers.
+        </li>
+        <li>
+          <b>On the answer.</b> The prompt already holds the secret, so the
+          model has read it. It can word the secret any way it likes, and a
+          filter on its answer can't know what to look for.
+        </li>
+      </ul>
+      <p>
+        <code>every-member.test.ts</code> asks as every member of
+        <code>members.json</code>, at both campaigns, and as a member the file
+        doesn't know.
+      </p>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Add <code>searchVisible</code>
+      </h2>
+      <p>
+        Open <code>src/access.ts</code>. <code>ask</code> already calls
+        <code>searchVisible</code> with the asker's visibilities, and until now
+        it ran your Act 3 search. The filter is one line in your Act 3 query.
+      </p>
+      <p class="replace">
+        In <code>src/access.ts</code>, replace these lines with the code below
+        it:
+      </p>
+      <pre class="code stub">
+// Not added yet. Open guide/fix-access-leak.html, step 4. Until then,
+// this is Act 3's search, and every chunk can reach every asker.
+return search(store, question, k);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/access.ts · searchVisible</span
+            ><button
+              class="copy"
+              data-copy="%20%20const%20%5Bvector%5D%20%3D%20await%20embed(%5Bquestion%5D%2C%20%7B%20model%3A%20store.settings.model%20%7D)%3B%0A%20%20%2F%2F%20(1)%20Your%20Act%203%20query%20with%20one%20line%20more.%20WHERE%20runs%20before%20ORDER%20BY%20and%0A%20%20%2F%2F%20LIMIT%2C%20so%20the%20k%20nearest%20are%20counted%20among%20the%20chunks%20the%20asker%20may%20see.%0A%20%20const%20%7B%20rows%20%7D%20%3D%20await%20store.db.query%3CHit%3E(%0A%20%20%20%20%60SELECT%20night%2C%20start_ms%2C%20end_ms%2C%20document%2C%20campaign%2C%20visibility%2C%20text%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20embedding%20%3C%3D%3E%20%241%20AS%20distance%0A%20%20%20%20%20FROM%20chunks%0A%20%20%20%20%20WHERE%20visibility%20%3D%20ANY(%243)%0A%20%20%20%20%20ORDER%20BY%20distance%0A%20%20%20%20%20LIMIT%20%242%60%2C%0A%20%20%20%20%2F%2F%20(2)%20The%20asker's%20visibilities%20from%20the%20members%20file.%20The%20filter%20names%20none.%0A%20%20%20%20%5BtoVector(vector)%2C%20k%2C%20allowed%5D%2C%0A%20%20)%3B%0A%20%20return%20rows%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners=""><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> [vector] = <span class="t-key">await</span> embed([question], { model: store.settings.model });</span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> Your Act 3 query with one line more. WHERE runs before ORDER BY and</span></span></span><span class="ln" data-owners="1"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-com">// LIMIT, so the k nearest are counted among the chunks the asker may see.</span></span></span><span class="ln" data-owners="1"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> { rows } = <span class="t-key">await</span> store.db.query&lt;Hit&gt;(</span></span><span class="ln" data-owners="1"><span class="num">5</span><span class="src" style="--ind: 6ch">    <span class="t-str">`SELECT night, start_ms, end_ms, document, campaign, visibility, text,</span></span></span><span class="ln" data-owners="1"><span class="num">6</span><span class="src" style="--ind: 14ch"><span class="t-str">            embedding &lt;=&gt; $1 AS distance</span></span></span><span class="ln" data-owners="1"><span class="num">7</span><span class="src" style="--ind: 7ch"><span class="t-str">     FROM chunks</span></span></span><span class="ln" data-owners="1"><span class="num">8</span><span class="src" style="--ind: 7ch"><span class="t-str">     WHERE visibility = ANY($3)</span></span></span><span class="ln" data-owners="1"><span class="num">9</span><span class="src" style="--ind: 7ch"><span class="t-str">     ORDER BY distance</span></span></span><span class="ln" data-owners="1"><span class="num">10</span><span class="src" style="--ind: 7ch"><span class="t-str">     LIMIT $2`</span>,</span></span><span class="ln" data-owners="1 2"><span class="num">11</span><span class="src" style="--ind: 6ch">    <span class="t-com">// <span class="t-mark">(2)</span> The asker's visibilities from the members file. The filter names none.</span></span></span><span class="ln" data-owners="1 2"><span class="num">12</span><span class="src" style="--ind: 6ch">    [toVector(vector), k, allowed],</span></span><span class="ln" data-owners="1"><span class="num">13</span><span class="src" style="--ind: 4ch">  );</span></span><span class="ln" data-owners=""><span class="num">14</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> rows;</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 2">
+          <div class="ncard" data-note="1">
+            <b
+              ><span class="badge">(1)</span> Inside the query, before top-k.</b
+            >
+            <code>WHERE</code> runs before <code>ORDER BY</code> and
+            <code>LIMIT</code>, so the asker gets the k nearest chunks they may
+            see, all k of them. A DM chunk never leaves the store, so neither
+            the reranker nor the model reads it.
+          </div>
+          <div class="ncard" data-note="2">
+            <b
+              ><span class="badge">(2)</span> The filter names no visibility.</b
+            >
+            <code>allowed</code> comes from <code>members.json</code> through
+            <code>ask</code>. An empty list matches nothing, so a member the
+            file doesn't know gets no chunks at all.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Ask again
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- fix-access-leak</pre>
+        <button class="copy" data-copy="npm%20test%20--%20fix-access-leak">
+          Copy
+        </button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What does Strahd plan for the party after the festival?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20does%20Strahd%20plan%20for%20the%20party%20after%20the%20festival%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The tests pass. The answer is "I don't know", or something from the
+        nights, and no chunk under it is <code>barovia/dm</code>. The DM's plan
+        never left the store.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Same filter, different rows
+      </h2>
+      <p>
+        millie plays at Toe Wittine's table only. Blinsky's shop is in Barovia.
+        Ask as millie:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user millie &quot;What does Blinsky sell?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20millie%20%22What%20does%20Blinsky%20sell%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        No Barovia chunk comes back, so the answer is "I don't know". Now ask as
+        katie, who sits at both tables:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What does Blinsky sell?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20does%20Blinsky%20sell%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        This time the chunks under the answer come from Barovia nights, and at
+        most values the answer is toys. The same question, the same filter and
+        the same code gave two answers, because millie and katie are different
+        rows in <code>members.json</code>. A second campaign, or your company's
+        second team, is more rows in that file, never more code.
+      </p>
+
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- fix-access-leak</code>. It brings the filter
+        onto your branch and leaves your <code>choices.ts</code> as it is.
+      </div>
+      <div class="card">
+        <b>Done?</b> Open <a href="close.html">the close</a> to push your work
+        and take it home.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "where": {
+          "kind": "predict",
+          "reread": "1",
+          "q": "A player asks a question, and the DM's notes sit nearest it in the store. Where does a filter on visibility keep the DM's secret from that player?",
+          "opts": [
+            {
+              "t": "On the answer: check what the model wrote and cut out DM content.",
+              "why": "The model has read the secret by then. It can word it any way it likes, so the filter can't know what to look for."
+            },
+            {
+              "t": "After search: drop the DM's chunks from the k that search returns.",
+              "why": "The DM's chunks already took places in the top k. In the shipped test a player keeps 2 of their 8, and the reranker has read the rest."
+            },
+            {
+              "t": "In the prompt: tell the model not to repeat DM content.",
+              "why": "That's a request, and the secret is still in the prompt. A reworded question can get it out."
+            },
+            {
+              "t": "In the query: rank only the rows the player may see.",
+              "ok": true,
+              "why": "Top-k counts only chunks the player may see, so they get all k, and the DM's notes never leave the store."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>
