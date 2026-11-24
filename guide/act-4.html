@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Act 4: Rerank, Prompt and Answer</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · Act 4
+        </div>
+        <div>
+          <h1>Rerank, Prompt and Answer</h1>
+          <p class="lede">
+            Search hands you the chunks nearest the question, not the ones that
+            answer it. You add a reranker that reads the question and each chunk
+            together and sorts them again, build a prompt from the best few with
+            each one numbered, and get back an answer that cites the night and
+            moment, or the document, every fact came from. Then you ask your
+            pipeline a question.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li><code>npm test -- 4</code> passes</li>
+            <li>
+              your pipeline answers the Blinsky question and cites a night
+            </li>
+            <li>a line under <b>Reranking</b> in <code>DECISIONS.md</code></li>
+            <li>the wisdom checks, if there's time</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Add <code>rerank</code>
+      </h2>
+      <p>
+        Open <code>src/rerank.ts</code>. An embedding turns the question and
+        each chunk into vectors separately, so search only knows they're about
+        similar things. A reranker is a cross-encoder. It reads the question and
+        one chunk as a single input and scores how well the chunk answers it.
+        It's <code>Xenova/ms-marco-MiniLM-L-6-v2</code>, already in your
+        codespace, and it needs no key. It reads at most 512 tokens at once,
+        which is why Act 2's chunk sizes stop where they do.
+      </p>
+      <p class="replace">
+        In <code>src/rerank.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-4.html, step 1.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/rerank.ts · rerank</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(1)%20Only%20the%20first%20%60depth%60%20hits%20get%20scored.%20The%20rest%20never%20reach%20the%20prompt.%0A%20%20const%20scored%20%3D%20hits.slice(0%2C%20depth)%3B%0A%20%20%2F%2F%20(2)%20The%20reranker%20reads%20the%20question%20and%20each%20chunk%20together.%0A%20%20const%20scores%20%3D%20await%20scoreChunks(%0A%20%20%20%20question%2C%0A%20%20%20%20scored.map((hit)%20%3D%3E%20hit.text)%2C%0A%20%20)%3B%0A%20%20%2F%2F%20(3)%20Best%20score%20first.%20Vector%20distance%20no%20longer%20decides%20the%20order.%0A%20%20return%20scored%0A%20%20%20%20.map((hit%2C%20i)%20%3D%3E%20(%7B%20...hit%2C%20score%3A%20scores%5Bi%5D%20%7D))%0A%20%20%20%20.toSorted((a%2C%20b)%20%3D%3E%20b.score%20-%20a.score)%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="1"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(1)</span> Only the first `depth` hits get scored. The rest never reach the prompt.</span></span></span><span class="ln" data-owners="1"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> scored = hits.slice(0, depth);</span></span><span class="ln" data-owners="2"><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(2)</span> The reranker reads the question and each chunk together.</span></span></span><span class="ln" data-owners="2"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> scores = <span class="t-key">await</span> scoreChunks(</span></span><span class="ln" data-owners="2"><span class="num">5</span><span class="src" style="--ind: 6ch">    question,</span></span><span class="ln" data-owners="2"><span class="num">6</span><span class="src" style="--ind: 6ch">    scored.map((hit) =&gt; hit.text),</span></span><span class="ln" data-owners="2"><span class="num">7</span><span class="src" style="--ind: 4ch">  );</span></span><span class="ln" data-owners="3"><span class="num">8</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(3)</span> Best score first. Vector distance no longer decides the order.</span></span></span><span class="ln" data-owners="3"><span class="num">9</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> scored</span></span><span class="ln" data-owners=""><span class="num">10</span><span class="src" style="--ind: 6ch">    .map((hit, i) =&gt; ({ ...hit, score: scores[i] }))</span></span><span class="ln" data-owners=""><span class="num">11</span><span class="src" style="--ind: 6ch">    .toSorted((a, b) =&gt; b.score - a.score);</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 3">
+          <div class="ncard" data-note="1">
+            <b><span class="badge">(1)</span> Depth is a hard cut.</b> A hit
+            past <code>depth</code> is never scored, so it can't reach the
+            prompt however well it answers. The last hour's wrong game night
+            turns on this line.
+          </div>
+          <div class="ncard" data-note="2">
+            <b
+              ><span class="badge">(2)</span> Question and chunk, read
+              together.</b
+            >
+            The reranker sees which words in the chunk answer which words in the
+            question, which two separate vectors can't. It's slower than a
+            vector search, so it gets your few hits, never the whole store.
+          </div>
+          <div class="ncard" data-note="3">
+            <b
+              ><span class="badge">(3)</span> The score decides the order
+              now.</b
+            >
+            Each chunk keeps its score, from 0 to 1, and the best comes first.
+            The last hour's relevance gate reads the best score to decide
+            whether to answer at all.
+          </div>
+        </div>
+      </div>
+      <p class="checkcap">
+        Before you move on. One question about what you just pasted.
+      </p>
+      <div class="q" data-check="deep"></div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Add <code>buildPrompt</code>
+      </h2>
+      <p>
+        Open <code>src/context.ts</code>. This is context construction, where
+        the chunks you kept become the prompt. <code>answerRules</code> is
+        already there. It tells the model to use only the numbered sources and
+        to list the ones it used. Your refusal instruction goes right after it.
+      </p>
+      <p class="replace">
+        In <code>src/context.ts</code>, replace this line with the code below
+        it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-4.html, step 2.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/context.ts · buildPrompt</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(4)%20Each%20chunk%20gets%20a%20number%20and%20its%20source%2C%20so%20the%20answer%20can%20point%20at%20it.%0A%20%20const%20sources%20%3D%20chunks%0A%20%20%20%20.map((chunk%2C%20i)%20%3D%3E%20%60%5B%24%7Bi%20%2B%201%7D%5D%20%24%7BsourceOf(chunk)%7D%5Cn%24%7Bchunk.text%7D%60)%0A%20%20%20%20.join(%22%5Cn%5Cn%22)%3B%0A%20%20%2F%2F%20(5)%20The%20rules%20and%20your%20refusal%20go%20in%20the%20system%20message%2C%20the%20sources%20and%0A%20%20%2F%2F%20the%20question%20in%20the%20user's.%0A%20%20return%20%5B%0A%20%20%20%20%7B%20role%3A%20%22system%22%2C%20content%3A%20%60%24%7BanswerRules%7D%5Cn%24%7Brefusal%7D%60%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20role%3A%20%22user%22%2C%0A%20%20%20%20%20%20content%3A%20%60Sources%3A%5Cn%5Cn%24%7Bsources%7D%5Cn%5CnQuestion%3A%20%24%7Bquestion%7D%60%2C%0A%20%20%20%20%7D%2C%0A%20%20%5D%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="4"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(4)</span> Each chunk gets a number and its source, so the answer can point at it.</span></span></span><span class="ln" data-owners="4"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> sources = chunks</span></span><span class="ln" data-owners=""><span class="num">3</span><span class="src" style="--ind: 6ch">    .map((chunk, i) =&gt; <span class="t-str">`[${i + 1}] ${sourceOf(chunk)}\n${chunk.text}`</span>)</span></span><span class="ln" data-owners=""><span class="num">4</span><span class="src" style="--ind: 6ch">    .join(<span class="t-str">&quot;\n\n&quot;</span>);</span></span><span class="ln" data-owners="5"><span class="num">5</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(5)</span> The rules and your refusal go in the system message, the sources and</span></span></span><span class="ln" data-owners="5"><span class="num">6</span><span class="src" style="--ind: 4ch">  <span class="t-com">// the question in the user's.</span></span></span><span class="ln" data-owners="5"><span class="num">7</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> [</span></span><span class="ln" data-owners="5"><span class="num">8</span><span class="src" style="--ind: 6ch">    { role: <span class="t-str">&quot;system&quot;</span>, content: <span class="t-str">`${answerRules}\n${refusal}`</span> },</span></span><span class="ln" data-owners="5"><span class="num">9</span><span class="src" style="--ind: 6ch">    {</span></span><span class="ln" data-owners="5"><span class="num">10</span><span class="src" style="--ind: 8ch">      role: <span class="t-str">&quot;user&quot;</span>,</span></span><span class="ln" data-owners="5"><span class="num">11</span><span class="src" style="--ind: 8ch">      content: <span class="t-str">`Sources:\n\n${sources}\n\nQuestion: ${question}`</span>,</span></span><span class="ln" data-owners="5"><span class="num">12</span><span class="src" style="--ind: 6ch">    },</span></span><span class="ln" data-owners="5"><span class="num">13</span><span class="src" style="--ind: 4ch">  ];</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 2">
+          <div class="ncard" data-note="4">
+            <b><span class="badge">(4)</span> A number to point at.</b> The
+            model can only cite a chunk it can name. The number is what it
+            names, and the source beside it lets you check a citation by eye.
+          </div>
+          <div class="ncard" data-note="5">
+            <b
+              ><span class="badge">(5)</span> Standing rules apart from the
+              material.</b
+            >
+            The rules and your refusal are the same for every question, so they
+            go in the system message. The sources and the question change each
+            time, so they go in the user message.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Add <code>generateAnswer</code>
+      </h2>
+      <p>
+        Open <code>src/answer.ts</code>. The shipped client sends the prompt to
+        <code>openai/gpt-4o-mini</code>. <code>answerFormat</code> is already
+        there: a JSON schema with the answer's text and a list of source
+        numbers. You turn those numbers back into the chunks they label.
+      </p>
+      <p class="replace">
+        In <code>src/answer.ts</code>, replace this line with the code below it:
+      </p>
+      <pre class="code stub">
+throw new Error(&quot;Not added yet. Open guide/act-4.html, step 3.&quot;);</pre>
+      <div class="linked">
+        <div class="codewrap">
+          <div class="filebar">
+            <span>src/answer.ts · generateAnswer</span
+            ><button
+              class="copy"
+              data-copy="%20%20%2F%2F%20(6)%20The%20reply%20must%20fit%20answerFormat%3A%20the%20answer%2C%20then%20the%20source%20numbers.%0A%20%20const%20reply%20%3D%20await%20chat(messages%2C%20%7B%20response_format%3A%20answerFormat%20%7D)%3B%0A%20%20const%20%7B%20answer%2C%20sources%20%7D%3A%20CitedReply%20%3D%20JSON.parse(reply)%3B%0A%20%20%2F%2F%20(7)%20Number%20n%20labels%20chunks%5Bn%20-%201%5D.%20A%20number%20no%20chunk%20carries%20is%20dropped.%0A%20%20const%20cited%20%3D%20%5B...new%20Set(sources)%5D%0A%20%20%20%20.map((n)%20%3D%3E%20chunks%5Bn%20-%201%5D)%0A%20%20%20%20.filter((chunk)%20%3D%3E%20chunk%20!%3D%3D%20undefined)%3B%0A%20%20%2F%2F%20(8)%20Each%20cited%20chunk%20becomes%20a%20citation%3A%20its%20night%20and%20moment%2C%20or%20its%20document.%0A%20%20return%20%7B%20text%3A%20answer%2C%20citations%3A%20cited.map(citationOf)%20%7D%3B"
+            >
+              Copy
+            </button>
+          </div>
+          <pre
+            class="code"
+          ><span class="ln" data-owners="6"><span class="num">1</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(6)</span> The reply must fit answerFormat: the answer, then the source numbers.</span></span></span><span class="ln" data-owners="6"><span class="num">2</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> reply = <span class="t-key">await</span> chat(messages, { response_format: answerFormat });</span></span><span class="ln" data-owners=""><span class="num">3</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> { answer, sources }: CitedReply = JSON.parse(reply);</span></span><span class="ln" data-owners="7"><span class="num">4</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(7)</span> Number n labels chunks[n - 1]. A number no chunk carries is dropped.</span></span></span><span class="ln" data-owners="7"><span class="num">5</span><span class="src" style="--ind: 4ch">  <span class="t-key">const</span> cited = [...<span class="t-key">new</span> Set(sources)]</span></span><span class="ln" data-owners=""><span class="num">6</span><span class="src" style="--ind: 6ch">    .map((n) =&gt; chunks[n - 1])</span></span><span class="ln" data-owners=""><span class="num">7</span><span class="src" style="--ind: 6ch">    .filter((chunk) =&gt; chunk !== undefined);</span></span><span class="ln" data-owners="8"><span class="num">8</span><span class="src" style="--ind: 4ch">  <span class="t-com">// <span class="t-mark">(8)</span> Each cited chunk becomes a citation: its night and moment, or its document.</span></span></span><span class="ln" data-owners="8"><span class="num">9</span><span class="src" style="--ind: 4ch">  <span class="t-key">return</span> { text: answer, citations: cited.map(citationOf) };</span></span></pre>
+        </div>
+        <div class="cardcap">
+          Why each numbered part is there. Point at one to see its lines.
+        </div>
+        <div class="cards" style="--cols: 3">
+          <div class="ncard" data-note="6">
+            <b
+              ><span class="badge">(6)</span> JSON in a fixed shape, not
+              prose.</b
+            >
+            <code>answerFormat</code> is a strict schema, so the provider holds
+            the model to it and <code>JSON.parse</code> never meets free text.
+            Without it you'd be fishing source numbers out of sentences.
+          </div>
+          <div class="ncard" data-note="7">
+            <b
+              ><span class="badge">(7)</span> Numbers back to chunks,
+              checked.</b
+            >
+            The prompt numbers from 1, so number n is
+            <code>chunks[n - 1]</code>. A model can cite a source the prompt
+            never held, and the filter drops its <code>undefined</code>.
+          </div>
+          <div class="ncard" data-note="8">
+            <b
+              ><span class="badge">(8)</span> The citation comes from the
+              row.</b
+            >
+            The night and moment are copied from the chunk the store returned,
+            never from what the model wrote. The last hour's eval reads these
+            citations to check each answer used the right source.
+          </div>
+        </div>
+      </div>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Choose your depth, chunks kept and
+        refusal
+      </h2>
+      <p>
+        Open <code>src/choices.ts</code> and fill in the three Act 4 values.
+      </p>
+      <ul>
+        <li>
+          <b><code>RERANK_DEPTH</code></b> is how many of your
+          <code>RETRIEVAL_K</code> hits the reranker scores. Deeper finds an
+          answer search ranked low, and costs a little time on every question.
+        </li>
+        <li>
+          <b><code>CHUNKS_KEPT</code></b> is how many of the best go into the
+          prompt. Each one costs input tokens on every question, and a weak one
+          gives the model something wrong to lean on.
+        </li>
+        <li>
+          <b><code>REFUSAL_INSTRUCTION</code></b> is what the model is told to
+          do when the sources don't hold the answer. Write it in your own words.
+          The last hour tests it.
+        </li>
+      </ul>
+      <div class="q" data-check="kept"></div>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Run the tests
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm test -- 4</pre>
+        <button class="copy" data-copy="npm%20test%20--%204">Copy</button>
+      </div>
+      <p>
+        Until all three are set, three tests fail and tell you which one to
+        pick. The rest run your reranker on a few short chunks, check the prompt
+        numbers every chunk with its source, and make a few real answer calls,
+        for well under a cent. The last one builds a small index from the start
+        of two nights and asks the Blinsky question through all of it.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Ask your pipeline
+      </h2>
+      <p>
+        <code>members.json</code> lists my players and what each may see. Ask as
+        katie, who sits at both tables:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;What does Blinsky sell?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22What%20does%20Blinsky%20sell%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The first line says who you asked as and what
+        <code>members.json</code> lets them see. Nothing reads that yet, so
+        every chunk can reach every asker. The last hour changes that.
+      </p>
+      <p>
+        Then comes the answer, and under it what it cites: a night and the
+        moment in it, or a document. Last come the chunks the prompt held, each
+        with its reranker score. Find the night it cites and check the moment
+        against the chunk's text.
+      </p>
+      <h2 id="step-7">
+        <span class="n"><span>7</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and write a line under <b>Reranking</b>:
+        the depth and chunks kept you picked, and what you saw in the scores
+        that makes them enough.
+      </p>
+      <p class="shape">Depth ___ and ___ kept, because ___.</p>
+      <h2 id="step-8">
+        <span class="n"><span>8</span></span> Wisdom check
+      </h2>
+      <p class="checkcap">
+        One more, a minute at most. Skip it if the room is moving on.
+      </p>
+      <div class="q" data-check="cite"></div>
+      <p class="passed" hidden>✦ Wisdom check passed. On to the last hour.</p>
+      <div class="card">
+        <b>Out of time, or the tests won't pass?</b> Run
+        <code>npm run catch-up -- 4</code>. It brings this act's code onto your
+        branch and leaves your <code>choices.ts</code> as it is. If you haven't
+        picked yet, <code>src/presenter-choices.ts</code> has the presenter's
+        depth, chunks kept and refusal instruction to start from.
+      </div>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "deep": {
+          "kind": "predict",
+          "reread": "1",
+          "q": "Search returns 20 hits. The chunk that answers the question is 12th. Your \u003ccode>RERANK_DEPTH\u003c/code> is 10. What does \u003ccode>rerank\u003c/code> return?",
+          "opts": [
+            {
+              "t": "The answering chunk first, since the reranker spots it.",
+              "why": "The reranker only scores the first 10. It never sees the 12th."
+            },
+            {
+              "t": "Ten chunks, without the one that answers.",
+              "ok": true,
+              "why": "\u003ccode>slice(0, depth)\u003c/code> cuts before any scoring, so the 12th hit never gets a score."
+            },
+            {
+              "t": "All 20, sorted by score.",
+              "why": "Only the first \u003ccode>depth\u003c/code> are scored and returned."
+            },
+            {
+              "t": "An error, because depth is smaller than k.",
+              "why": "Scoring fewer than search returns is normal. That's what depth is for."
+            }
+          ]
+        },
+        "kept": {
+          "kind": "choice",
+          "reread": "step-4",
+          "q": "You raise \u003ccode>CHUNKS_KEPT\u003c/code> from 4 to 15 and leave everything else alone. What changes?",
+          "opts": [
+            {
+              "t": "Every answer gets better, since the model sees more.",
+              "why": "The extra chunks are the ones the reranker scored lower. More of them gives the model more to get wrong."
+            },
+            {
+              "t": "Each answer call costs more, and the prompt holds chunks the reranker scored low.",
+              "ok": true,
+              "why": "Each kept chunk is input tokens on every question, and the 5th to 15th best are weaker than the first 4."
+            },
+            {
+              "t": "The reranker scores more chunks.",
+              "why": "\u003ccode>RERANK_DEPTH\u003c/code> decides that. Chunks kept only cuts the reranked list."
+            },
+            {
+              "t": "Search returns more chunks.",
+              "why": "That's \u003ccode>RETRIEVAL_K\u003c/code>. Chunks kept comes after search and the reranker."
+            }
+          ]
+        },
+        "cite": {
+          "kind": "concept",
+          "reread": "8",
+          "q": "Why does the pipeline ask the model for source numbers instead of asking it to write the night and time it used?",
+          "opts": [
+            {
+              "t": "A number maps to one chunk, so the night and moment come from the store, never from what the model typed.",
+              "ok": true,
+              "why": "A model can misspell a night or invent a time. A number either labels a chunk in the prompt or gets dropped."
+            },
+            {
+              "t": "Numbers use fewer tokens.",
+              "why": "They do, by a few. That isn't why the citation can be trusted."
+            },
+            {
+              "t": "The model can't read the night names.",
+              "why": "It reads them fine. It can also make one up, which is the problem."
+            },
+            {
+              "t": "The eval needs numbers.",
+              "why": "The eval reads the citations, nights and moments, which the numbers are turned into."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The last hour: Does It Work, and What Does It Cost?</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · The last hour
+        </div>
+        <div>
+          <h1>Does It Work, and What Does It Cost?</h1>
+          <p class="lede">
+            So far you've asked your pipeline one question at a time and judged
+            each answer by eye. Now you ask it 10 questions, 3 times each, and
+            get numbers back. Then you price a question from the cost log, swap
+            one model for a pricier or newer one, and decide whether the upgrade
+            is worth what it costs. No code.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>your baseline and one swap printed side by side</li>
+            <li>
+              an <b>Evaluation</b> line and a <b>Cost</b> line in
+              <code>DECISIONS.md</code>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Run the eval
+      </h2>
+      <p>
+        The eval set is <code>eval-set.json</code>. Each question names the
+        night or document that answers it. 7 are one per night, 1 only the party
+        document answers, and 2 have no answer anywhere, so they pass only by
+        refusing. Every question is asked as <code>katie</code>, who sits at
+        both tables and may see every answer. That way the score means the same
+        before and after the access leak is fixed.
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">npm run eval</pre>
+        <button class="copy" data-copy="npm%20run%20eval">Copy</button>
+      </div>
+      <p>
+        It asks each question 3 times through the same <code>ask</code> you
+        built, at your choices, gate included. Each line prints as its question
+        finishes. 30 asks take about a minute and cost about $0.005.
+      </p>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Read the three numbers
+      </h2>
+      <ul>
+        <li>
+          <b>Expected source in the top 5.</b> The reranker's first 5 chunks
+          include the night or document that answers. Search and the reranker
+          don't sample, so this is one number, and the eval says so. A miss here
+          is retrieval's fault: the answer model never saw the source.
+        </li>
+        <li>
+          <b>Expected source cited.</b> The answer's citations name that source.
+          The eval reads the structured citations from Act 4, never the answer's
+          text, so a lucky phrase can't count. It prints as a range, because the
+          answer model samples its words.
+        </li>
+        <li>
+          <b>Refused when it should.</b> A question with no answer came back
+          citing nothing. A range too.
+        </li>
+      </ul>
+      <p>
+        Then read the question lines above the table. A question with its source
+        in the top 5 that's never cited found the right chunk and lost it later:
+        the prompt kept too few, or your refusal instruction turned it away. A
+        question with no answer that cites a night got a confident answer to
+        something that never happened.
+      </p>
+      <div class="card">
+        <b>On your own data,</b> change the asker line in
+        <code>eval-set.json</code> to one of your members, and write questions
+        whose answers you know. Keep a couple that nothing answers.
+      </div>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Price a question
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">npm run cost</pre>
+        <button class="copy" data-copy="npm%20run%20cost">Copy</button>
+      </div>
+      <p>
+        The cost summary reads <code>cost-log.jsonl</code>, where every shipped
+        client has written one line per call since Act 1. It adds them up by
+        stage and model, and leaves out the calls <code>npm test</code> made.
+        Hosted dollars come from the price table, never from the provider, so
+        both kinds of key log alike.
+      </p>
+      <p>
+        Local stages log $0, so the last column prices their wall seconds at the
+        codespace's $0.36 an hour. Local transcription and the reranker are
+        cheap per call, but they're not free. The eval's table already priced
+        one question the same way: hosted dollars, then local time.
+      </p>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Try one swap
+      </h2>
+      <p>
+        Pick one swap. Each runs the eval again with one stage's model replaced,
+        leaves <code>src/choices.ts</code> alone, and prints your latest
+        baseline beside it.
+      </p>
+      <ul>
+        <li>
+          <b>A bigger embedding model.</b>
+          <code>openai/text-embedding-3-large</code> instead of
+          <code>openai/text-embedding-3-small</code>. Its vectors don't match
+          your index's, so the eval rebuilds the index at your chunk values
+          first, for about $0.019. A second run reuses it.
+        </li>
+        <li>
+          <b>A hosted reranker.</b> <code>cohere/rerank-v3.5</code> instead of
+          the local <code>Xenova/ms-marco-MiniLM-L-6-v2</code>. It runs on
+          OpenRouter only, and on an OpenAI key the eval says so. Its scores sit
+          on their own scale, so your relevance threshold may gate differently.
+        </li>
+        <li>
+          <b>A newer answer model.</b> <code>openai/gpt-5-mini</code> instead of
+          <code>openai/gpt-4o-mini</code>. It reasons before it answers, so its
+          run is slower and writes more output tokens.
+        </li>
+      </ul>
+      <div class="codewrap">
+        <pre class="code shell">npm run eval -- --swap large-embedding</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20eval%20--%20--swap%20large-embedding"
+        >
+          Copy
+        </button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">npm run eval -- --swap hosted-reranker</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20eval%20--%20--swap%20hosted-reranker"
+        >
+          Copy
+        </button>
+      </div>
+      <div class="codewrap">
+        <pre class="code shell">npm run eval -- --swap newer-answer</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20eval%20--%20--swap%20newer-answer"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Read the two columns. Did any of the three numbers move by more than the
+        range already moves? What does a question cost now? Every run is kept in
+        <code>eval-runs/</code>, which git leaves out, so you can run another
+        swap later and still see your baseline. Tell the room which one you ran.
+        A few results go on screen, so everyone sees all three.
+      </p>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and write a line under
+        <b>Evaluation</b> and a line under <b>Cost</b>. Say which swap you ran
+        and whether you'd keep it, with the numbers that decided it. If the swap
+        changed your mind about a stage, revise that stage's line too.
+      </p>
+      <p class="shape">
+        Swapped in ___. Cited went from ___ to ___ for ___ a question, so I'd
+        ___.
+      </p>
+      <p class="shape">
+        One question costs ___ hosted and ___ s of local time.
+      </p>
+      <p>
+        These numbers come from rules you can read: a source in the top 5, a
+        citation, an empty citation list. The next step is LLM-as-judge, where a
+        second model grades each answer, but it isn't here today: a judge
+        samples too, so you'd check one model's guess with another's.
+      </p>
+    </main>
+    <script type="application/json" id="checks">
+      {}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+.env
+cost-log.jsonl
+audio/
+# The index `npm run ingest` builds at your values. The shipped one stays.
+index/yours.tar.gz
+# The index the large-embedding swap builds, and every eval run's results.
+index/large-embedding.tar.gz
+eval-runs/
