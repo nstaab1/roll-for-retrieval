@@ -1,0 +1,18 @@
+{
+  "name": "Roll for Retrieval",
+  "image": "ghcr.io/nstaab1/roll-for-retrieval:2026-11-23",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "updateContentCommand": "npm ci",
+  "postCreateCommand": "npm run fetch-clips; npm run doctor",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

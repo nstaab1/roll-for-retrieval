@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The last hour: The Wrong Game Night</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="guide.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="kicker">
+          <svg
+            class="d20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+            <path
+              d="M12 2 7.5 9.5h9zM7.5 9.5 3 7M16.5 9.5 21 7M7.5 9.5 12 17l4.5-7.5M12 17v5M12 17H3M12 17h9"
+            />
+          </svg>
+          Roll for Retrieval · The last hour
+        </div>
+        <div>
+          <h1>The Wrong Game Night</h1>
+          <p class="lede">
+            In Act 3 you searched for how the party destroyed the windmill, and
+            other nights crowded the list. Now you ask your whole pipeline, and
+            none of the chunks it keeps hold the fire, so it says "I don't know"
+            or answers from the wrong night. You fix it without writing code, by
+            turning one knob you've already set.
+          </p>
+        </div>
+        <div class="objectives">
+          <h3>Done when</h3>
+          <ul>
+            <li>
+              <code>barovia-2026-01-07</code> near 0:12:11 among the chunks
+              <code>npm run ask</code> prints for the windmill question
+            </li>
+            <li>
+              a revised <b>Chunking</b> or <b>Reranking</b> line in
+              <code>DECISIONS.md</code>
+            </li>
+            <li>the wisdom check, if there's time</li>
+          </ul>
+        </div>
+      </header>
+
+      <h2 id="step-1">
+        <span class="n"><span>1</span></span> Ask the windmill question
+      </h2>
+      <p>Ask it as katie, who sits at both tables:</p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;How did the party destroy the windmill?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22How%20did%20the%20party%20destroy%20the%20windmill%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        The party burned the windmill on <code>barovia-2026-01-07</code>. At
+        0:12:11 the DM says
+        <i>The windmill starts to take off in flames.</i> Expect a refusal, or
+        an answer from another night. Read the chunks under the reply, which
+        <code>npm run ask</code> lists either way. Is one of them from
+        <code>barovia-2026-01-07</code> near 0:12:11?
+      </p>
+      <p>
+        Probably not. Other Barovia nights mention the windmill far more often
+        than the night it burns. Their chunks are full of the word, so search
+        ranks them nearest the question, and the reranker sorts what search gave
+        it. If a DM document turns up too, hold that thought. The access leak is
+        this hour's last segment.
+      </p>
+      <div class="card">
+        <b>Already see it?</b> Your chunk values found the burning. Ask the
+        backup question instead, "Who did Izek burn alive?" The answer is on
+        <code>barovia-2025-12-23</code>, near 0:52:41, and the festival on
+        <code>barovia-2026-01-07</code> competes for it. Use that night and time
+        for the rest of the page.
+      </div>
+      <h2 id="step-2">
+        <span class="n"><span>2</span></span> Find where it ranks
+      </h2>
+      <p>
+        Run the search from Act 3, which lists your
+        <code>RETRIEVAL_K</code> nearest chunks before the reranker sees them:
+      </p>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run search -- &quot;How did the party destroy the windmill?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20search%20--%20%22How%20did%20the%20party%20destroy%20the%20windmill%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Look for <code>barovia-2026-01-07</code> near 0:12:11. The time is where
+        the chunk starts, so it reads a little before 0:12:11. Where it is
+        decides your knob.
+      </p>
+      <h2 id="step-3">
+        <span class="n"><span>3</span></span> Turn one knob
+      </h2>
+      <p>Change one value only, so you know which one fixed it.</p>
+      <ul>
+        <li>
+          <b>It's in the list, past your <code>RERANK_DEPTH</code>.</b> Search
+          found it and the reranker never read it. Raise
+          <code>RERANK_DEPTH</code> in <code>src/choices.ts</code>, as far as
+          your <code>RETRIEVAL_K</code>. Nothing needs rebuilding.
+        </li>
+        <li>
+          <b>It isn't in the list.</b> The reranker only sorts what search
+          returns, so a deeper rerank can't reach it. Change
+          <code>CHUNK_SIZE</code> in <code>src/choices.ts</code> to another size
+          from Act 2's list: 300, 600, 900, 1200. Then rebuild your index.
+        </li>
+      </ul>
+      <div class="codewrap">
+        <pre class="code shell">npm run ingest</pre>
+        <button class="copy" data-copy="npm%20run%20ingest">Copy</button>
+      </div>
+      <p>
+        The rebuild takes about a minute and costs about $0.003. A chunk's
+        vector stands for all of its text at once. At one size, the fire shares
+        a chunk with talk about other things, and the vector lands somewhere in
+        between. At another size the cuts fall elsewhere, and the chunk that
+        holds the fire can read more like the question.
+      </p>
+      <h2 id="step-4">
+        <span class="n"><span>4</span></span> Ask again
+      </h2>
+      <div class="codewrap">
+        <pre class="code shell">
+npm run ask -- --user katie &quot;How did the party destroy the windmill?&quot;</pre>
+        <button
+          class="copy"
+          data-copy="npm%20run%20ask%20--%20--user%20katie%20%22How%20did%20the%20party%20destroy%20the%20windmill%3F%22"
+        >
+          Copy
+        </button>
+      </div>
+      <p>
+        Look for <code>barovia-2026-01-07</code> near 0:12:11 among the chunks
+        again. Once it's in the prompt, the answer can cite that night.
+      </p>
+      <p>
+        Still missing? Try another size from the list, or the other knob. Then
+        ask the Blinsky question from Act 4 again too. A knob changes every
+        question, not only this one, and the next segment's eval measures what
+        yours did to the rest.
+      </p>
+      <h2 id="step-5">
+        <span class="n"><span>5</span></span> Write it down
+      </h2>
+      <p>
+        Open <code>DECISIONS.md</code> and revise your line under
+        <b>Chunking</b> or <b>Reranking</b>, whichever knob you turned. Say what
+        you changed it to, and what the windmill question did before and after.
+        A knob that didn't help is worth a clause too.
+      </p>
+      <p class="shape">
+        Changed ___ from ___ to ___, because the windmill question ___.
+      </p>
+      <h2 id="step-6">
+        <span class="n"><span>6</span></span> Wisdom check
+      </h2>
+      <p class="checkcap">
+        One question, a minute at most. Skip it if the room is moving on.
+      </p>
+      <div class="q" data-check="altar"></div>
+      <p class="passed" hidden>✦ Wisdom check passed. On to the eval.</p>
+    </main>
+    <script type="application/json" id="checks">
+      {
+        "altar": {
+          "kind": "concept",
+          "reread": "step-3",
+          "q": "katie plays at both tables and asks \"What was put back under the altar?\" Chunks come back from \u003ccode>barovia-2025-12-23\u003c/code>, where the party puts bones back under a church altar, and from \u003ccode>toe-wittine-session-1\u003c/code>, where the town needs its altar fire lit. What went wrong?",
+          "opts": [
+            {
+              "t": "A leak. The Toe Wittine chunk shouldn't reach her.",
+              "why": "She sits at both tables, so she may see both nights. Nothing came back that she isn't allowed to read."
+            },
+            {
+              "t": "The question doesn't say which table's altar, and both have one.",
+              "ok": true,
+              "why": "Both chunks really are about an altar. Name the church or the bones in the question, and the Barovia night wins."
+            },
+            {
+              "t": "The rerank is too shallow. A deeper one would push the Toe Wittine chunk out.",
+              "why": "The reranker reads that chunk with the question and finds an altar in it. Reading more chunks doesn't change its score."
+            },
+            {
+              "t": "The chunk size is wrong. Rebuild at another one.",
+              "why": "Every size still has a chunk about each altar. A knob changes how a chunk ranks, not a question that fits two nights."
+            }
+          ]
+        }
+      }
+    </script>
+  </body>
+</html>
